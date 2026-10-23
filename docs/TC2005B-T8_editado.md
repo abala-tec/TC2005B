@@ -12,15 +12,18 @@
     - 8.2.3 Motores actuales: Godot (puntos fuertes y puntos debiles)
     - 8.2.4 Motores actuales: Unreal (puntos fuertes y puntos debiles)
     - 8.2.5 Selección del motor: criterios 2D/3D, lenguaje, licencia y costo, plataforma destino, curva de aprendizaje
-    - 8.2.6 Game Development en 2026. (AI asset driven games)
+    - 8.2.6 Por que en el curso vamos a usar Unity (flexible no solo sirve para hacer juegos, mas facil de usar, es mas ligero, usa codigo no BluePrints, Unity les puede servir para otras materias o trabajos (robotica, VR, control))
+    - 8.2.7 Game Development en 2026. (AI asset driven games)
 
   - 8.5. GDD, Story Bible, Art Bible 
-    - 8.5.1  Tecnicas de tradicionales de Ing de software y la verdadera manera en la que se disenan los juegos. (ing. de software tradicional, mata el proceso creativo) (Software para una Planta Electrica vs un Simu de una planta electrica)
+    - 8.5.1  Tecnicas de tradicionales de Ing de software y la verdadera manera en la que se disenan los juegos. (ing. de software tradicional, mata el proceso creativo) (comparar ing de Software para una Planta Electrica vs un juego que simula una planta electrica)
     - 8.5.2  What is a GDD (simple, hyperflexible, no-format document to ground down creativity)
     - 8.5.3  High-Level Pitch & Pillars (id software pilars a good example)
     - 8.5.4  Game Play Mechanics (progression, controls, win/loss conditions)
     - 8.5.5  World and Characters
-    - 8.5.6  Technical tools definition. Definir las herramientas a usar y entender por que las estamos usando. El elegir una herramienta mal es el veneno del Gamedev (overengineer, tiempos de desarrollo elevados, )
+    - 8.5.6  Game Art, Good game and animations enhance the gameplay an immersion (battletoads, pizza tower, cuphead, agregar videos de youtube de esos juegos )
+    - 8.5.7  Technical tools definition. Definir las herramientas a usar y entender por que las estamos usando. (El elegir una herramienta mal es el veneno del Gamedev genera overengineer, dificulta de desarrollo, tiempos de desarrollo elevados, eleva costos tiempo=dinero )
+    - 8.5.8. Actividad en clase. Hacer tu GDD, definir el genero del juego, el nombre, reglas, meta, historia, objetivo, gameloop, 
 
   - 8.6 Game Development Principles  
     - 8.6.1 Carmack y Romero  
