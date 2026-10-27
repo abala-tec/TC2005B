@@ -15,25 +15,25 @@
     - 8.2.6 Por que en el curso vamos a usar Unity (flexible no solo sirve para hacer juegos, mas facil de usar, es mas ligero, usa codigo no BluePrints, Unity les puede servir para otras materias o trabajos (robotica, VR, control))
     - 8.2.7 Game Development en 2026. (AI asset driven games)
 
-  - 8.5. GDD, Story Bible, Art Bible 
-    - 8.5.1  Tecnicas de tradicionales de Ing de software y la verdadera manera en la que se disenan los juegos. (ing. de software tradicional, mata el proceso creativo) (comparar ing de Software para una Planta Electrica vs un juego que simula una planta electrica)
-    - 8.5.2  What is a GDD (simple, hyperflexible, no-format document to ground down creativity)
-    - 8.5.3  High-Level Pitch & Pillars (id software pilars a good example)
-    - 8.5.4  Game Play Mechanics (progression, controls, win/loss conditions)
-    - 8.5.5  World and Characters
-    - 8.5.6  Game Art, Good game and animations enhance the gameplay an immersion (battletoads, pizza tower, cuphead, agregar videos de youtube de esos juegos )
-    - 8.5.7  Technical tools definition. Definir las herramientas a usar y entender por que las estamos usando. (El elegir una herramienta mal es el veneno del Gamedev genera overengineer, dificulta de desarrollo, tiempos de desarrollo elevados, eleva costos tiempo=dinero )
-    - 8.5.8. Actividad en clase. Hacer tu GDD, definir el genero del juego, el nombre, reglas, meta, historia, objetivo, gameloop, 
+  - 8.3. GDD, Story Bible, Art Bible 
+    - 8.3.1  Tecnicas de tradicionales de Ing de software y la verdadera manera en la que se disenan los juegos. (ing. de software tradicional, mata el proceso creativo) (comparar ing de Software para una Planta Electrica vs un juego que simula una planta electrica)
+    - 8.3.2  What is a GDD (simple, hyperflexible, no-format document to ground down creativity)
+    - 8.3.3  High-Level Pitch & Pillars (id software pilars a good example)
+    - 8.3.4  Game Play Mechanics (progression, controls, win/loss conditions)
+    - 8.3.5  World and Characters
+    - 8.3.6  Game Art, Good game and animations enhance the gameplay an immersion (battletoads, pizza tower, cuphead, agregar videos de youtube de esos juegos )
+    - 8.3.7  Technical tools definition. Definir las herramientas a usar y entender por que las estamos usando. (El elegir una herramienta mal es el veneno del Gamedev genera overengineer, dificulta de desarrollo, tiempos de desarrollo elevados, eleva costos tiempo=dinero )
+    - 8.3.8. Actividad en clase. Hacer tu GDD, definir el genero del juego, el nombre, reglas, meta, historia, objetivo, gameloop, 
 
-  - 8.6 Game Development Principles  
-    - 8.6.1 Carmack y Romero  
-    - 8.6.2 Carmack y Romero - modelo de distrubucion de Doom
-    - 8.6.3 Carmack y Romero - 2 revoluciones tecnicaas Doom (tiempo real con hardware del carajo) Quake (3D que antecedio a los grandes)
-    - 8.6.4 Id Software’s Core Development & Programming Principles. (No prototypes, KISS, Tools improve workflows, Dev is the Tester, Fix bug inmediately, Focus on the current game)
+  - 8.4 Game Development Principles  
+    - 8.4.1 Carmack y Romero  
+    - 8.4.2 Carmack y Romero - modelo de distrubucion de Doom
+    - 8.4.3 Carmack y Romero - 2 revoluciones tecnicaas Doom (tiempo real con hardware del carajo) Quake (3D que antecedio a los grandes)
+    - 8.4.4 Id Software’s Core Development & Programming Principles. (No prototypes, KISS, Tools improve workflows, Dev is the Tester, Fix bug inmediately, Focus on the current game)
 
-  - 8.7 Desarrollo e implementación:
-    - 8.7.1 Unity basics, Escena, Gameobjects, Monobehaviour, game loop y temporización. (ejemplos con codigo en unity taller)
-    - 8.7.2 Elementos básicos de la interfaz gráfica: menús, HUD y pantallas en Unity (ejemplos con codigo en unity  taller )
+  - 8.5 Desarrollo e implementación:
+    - 8.5.1 Unity basics, Escena, Gameobjects, Monobehaviour, game loop y temporización. (ejemplos con codigo en unity taller)
+    - 8.5.2 Elementos básicos de la interfaz gráfica: menús, HUD y pantallas en Unity (ejemplos con codigo en unity  taller )
 
   - 8.8 Detalles tecnicos basicos:
     - 8.8.1 Matemáticas: cálculo de distancia, cálculo de ángulos con atan2 y vectores (suma y normalización) para movimiento y persecución. (ejemplos en C# puro, taller)
