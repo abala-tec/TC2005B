@@ -35,11 +35,13 @@
     - 8.5.1 Unity basics, Escena, Gameobjects, Monobehaviour, game loop y temporización. (ejemplos con codigo en unity taller)
     - 8.5.2 Elementos básicos de la interfaz gráfica: menús, HUD y pantallas en Unity (ejemplos con codigo en unity  taller )
 
-  - 8.8 Detalles tecnicos basicos:
-    - 8.8.1 Matemáticas: cálculo de distancia, cálculo de ángulos con atan2 y vectores (suma y normalización) para movimiento y persecución. (ejemplos en C# puro, taller)
-    - 8.8.2 Collisiones: collision de 2 rectangulos version naive y version optima.  (ejemplos en C# puro, taller)
-    - 8.8.2 Collisiones: collision de 2 cubos en 3d (solucion optima) (ejemplo con Unity, taller )
-    - 8.8.3 Busqueda de collisiones: hash grid simple en 2D para busqueda y collision (ejemplo con Unity, taller) 
+  - 8.6 Detalles tecnicos basicos:
+    - 8.6.1 Matemáticas: cálculo de distancia, cálculo de ángulos con atan2 y vectores (suma y normalización) para movimiento y persecución. (ejemplos en Unity, taller)
+
+    - 8.6.2 Collisiones: collision de 2 rectangulos version naive y version optima.  (ejemplos en Unity, taller)
+    - 8.6.3 Collisiones: collision de 2 cubos en 3d (solucion optima) (ejemplo con Unity, taller )
+    
+    - 8.6.4 Busqueda de collisiones: hash grid simple en 2D para busqueda y collision (ejemplo con Unity, taller) 
     
   - 8.9 Interacción humano-computadora en videojuegos:
     - 8.9.1 Controles, la interface entre el humano y la maquina.  (90% del Gameplay)
