@@ -1,5 +1,6 @@
-# macOS
+# macOS / Windows
 .DS_Store
+Thumbs.db
 
 # Unity generado
 [Ll]ibrary/
@@ -33,6 +34,7 @@ ExportedObj/
 .consulo/
 .vs/
 .idea/
+.vscode/
 
 # Builds de Unity
 *.apk
@@ -41,8 +43,8 @@ ExportedObj/
 *.app
 
 # Addressables empaquetados
-/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
 # Assets temporales de Android
-/[Aa]ssets/[Ss]treamingAssets/aa.meta
-/[Aa]ssets/[Ss]treamingAssets/aa/*
+[Aa]ssets/[Ss]treamingAssets/aa.meta
+[Aa]ssets/[Ss]treamingAssets/aa/*
