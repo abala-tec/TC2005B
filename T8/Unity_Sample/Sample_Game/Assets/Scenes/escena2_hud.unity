@@ -878,6 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeMove
   speed: 5
+  jumpForce: 5
   caidas: 0
   cayendo: 0
   textoCaidas: {fileID: 337752660}
