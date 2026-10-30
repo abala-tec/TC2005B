@@ -37,11 +37,15 @@
 
   - 8.6 Detalles tecnicos basicos:
     - 8.6.1 Matemáticas: cálculo de distancia, cálculo de ángulos con atan2 y vectores (suma y normalización) para movimiento y persecución. (ejemplos en Unity, taller)
+    - 8.6.2.1 script para seguir con la camara al jugador 
+    - 8.6.2.2 escalar el juego, plano mas grandes y spawner de enemigos (gameobject instansing) 
+    - 8.6.2.2.1 resolver bugs,  
+    - 8.6.2.3 materiales introduccion (cambiar el color del piso)
+    - 8.6.2.4 hash-grid para hacer busquedas eficientes. 
 
-    - 8.6.2 Collisiones: collision de 2 rectangulos version naive y version optima.  (ejemplos en Unity, taller)
-    - 8.6.3 Collisiones: collision de 2 cubos en 3d (solucion optima) (ejemplo con Unity, taller )
-    
-    - 8.6.4 Busqueda de collisiones: hash grid simple en 2D para busqueda y collision (ejemplo con Unity, taller) 
+    - 8.6.3 Collisiones: collision de 2 rectangulos version naive y version optima.  (ejemplos en Unity, taller)
+    - 8.6.4 Collisiones: collision de 2 cubos en 3d (solucion optima) (ejemplo con Unity, taller )
+    - 8.6.5 Busqueda de collisiones: hash grid simple en 2D para busqueda y collision (ejemplo con Unity, taller) 
     
   - 8.9 Interacción humano-computadora en videojuegos:
     - 8.9.1 Controles, la interface entre el humano y la maquina.  (90% del Gameplay)
