@@ -41,7 +41,7 @@
     - 8.6.2.2 escalar el juego, plano mas grandes y spawner de enemigos (gameobject instansing) 
     - 8.6.2.2.1 resolver bugs,  
     - 8.6.2.3 materiales introduccion (cambiar el color del piso)
-    - 8.6.2.4 hash-grid para hacer busquedas eficientes. 
+    - 8.6.2.4 implementar efecto 2.5 D como paper mario
 
     - 8.6.3 Collisiones: collision de 2 rectangulos version naive y version optima.  (ejemplos en Unity, taller)
     - 8.6.4 Collisiones: collision de 2 cubos en 3d (solucion optima) (ejemplo con Unity, taller )
