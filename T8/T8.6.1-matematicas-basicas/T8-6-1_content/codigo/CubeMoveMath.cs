@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;   // para leer el input del teclados
 using TMPro;
 using UnityEngine.UIElements;    // para poder acceder al HUD del juego
 
-public class CubeMove : MonoBehaviour
+public class CubeMoveMath : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float speed = 5.0f;

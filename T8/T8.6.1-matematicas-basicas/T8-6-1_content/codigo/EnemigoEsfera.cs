@@ -10,6 +10,8 @@ public class EnemigoEsfera : MonoBehaviour
     public float velocidad = 5.0f;
     public float distanciaContacto = 1.1f;  // distancia para saber si el cubo toco a la esfera
     public float anguloPisoton = 60f;
+    // radio de deteccion para empezar a perseguir al jugador
+    public float radioDeteccion = 3.0f;  
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -47,13 +49,49 @@ public class EnemigoEsfera : MonoBehaviour
     }
 
     //Moviendo la esfera de esquina a esquina
+    // void MoverEsfera()
+    // {
+    //     Vector3 objetivo = esquinas[indiceObjetivo];
+    //     Vector3 hacia = objetivo - transform.position;
+    //     float distancia = Longitud(hacia);
+
+    //     if (distancia < 0.1f)
+    //     {
+    //         // Elige otra esquina distinta: suma 1, 2 o 3 y da la vuelta
+    //         indiceObjetivo = (indiceObjetivo + UnityEngine.Random.Range(1, 4)) % 4;
+    //         return;
+    //     }
+
+    //     Vector3 direccion = Normalizar(hacia);
+    //     float paso = velocidad * Time.deltaTime;
+
+    //     transform.position = new Vector3(
+    //         transform.position.x + direccion.x * paso,
+    //         transform.position.y,                       // la altura no cambia
+    //         transform.position.z + direccion.z * paso
+    //     );
+    // }
+
+    //Moviendo la esfera de esquina y persigue al jugador
     void MoverEsfera()
     {
-        Vector3 objetivo = esquinas[indiceObjetivo];
+        // si la longutud de la esfera al cubo es mehor a radiodetection persiguiendo es true
+        bool persiguiendo = Longitud(cubo.position - transform.position) <= radioDeteccion;
+
+        Vector3 objetivo;
+        if (persiguiendo)
+        {
+            objetivo = cubo.position;
+        }
+        else
+        {
+            objetivo = esquinas[indiceObjetivo];
+        }
+        
         Vector3 hacia = objetivo - transform.position;
         float distancia = Longitud(hacia);
 
-        if (distancia < 0.1f)
+        if (distancia < 0.1f && !persiguiendo)
         {
             // Elige otra esquina distinta: suma 1, 2 o 3 y da la vuelta
             indiceObjetivo = (indiceObjetivo + UnityEngine.Random.Range(1, 4)) % 4;
