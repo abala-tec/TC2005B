@@ -14,10 +14,13 @@ public class S4_CubeMove : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textoCaidas;   //objeto serializable para conectar el texto de caidas del hub
     private bool estaEnSuelo = true; //bandera para evitar saltar en el aire
     private Rigidbody rb = null;
+    private SpriteRenderer sprite = null;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        GameObject goSprite = GameObject.Find("velma_sprite_walk");
+        sprite = goSprite.GetComponent<SpriteRenderer>();
     }
     
     // Resetea la posicion del cubo para empezar de nuevo
@@ -53,9 +56,11 @@ public class S4_CubeMove : MonoBehaviour
             // Lee eje en X con las fechas derecha izquierda
             if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) {
                 movement.x = 1f;
+                sprite.flipX = false;
             }
             if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) {
                 movement.x = -1f;
+                sprite.flipX = true;
             }
 
             // Define eje en Z con las flechas arriba abajo
