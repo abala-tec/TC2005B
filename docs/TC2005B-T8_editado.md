@@ -35,13 +35,19 @@
     - 8.5.1 Unity basics, Escena, Gameobjects, Monobehaviour, game loop y temporización. (ejemplos con codigo en unity taller)
     - 8.5.2 Elementos básicos de la interfaz gráfica: menús, HUD y pantallas en Unity (ejemplos con codigo en unity  taller )
 
-  - 8.6 Detalles tecnicos basicos:
-    - 8.6.1 Matemáticas: cálculo de distancia, cálculo de ángulos con atan2 y vectores (suma y normalización) para movimiento y persecución. (ejemplos en Unity, taller)
-    - 8.6.2.1 script para seguir con la camara al jugador 
-    - 8.6.2.2 escalar el juego, plano mas grandes y spawner de enemigos (gameobject instansing) 
-    - 8.6.2.2.1 resolver bugs,  
-    - 8.6.2.3 materiales introduccion (cambiar el color del piso)
-    - 8.6.2.4 implementar efecto 2.5 D como paper mario
+  - 8.6.1 Detalles tecnicos basicos, Matematicas para enemigos.
+    - 8.6.1.1 Matemáticas: cálculo de distancia, cálculo de ángulos con atan2 y vectores (suma y normalización) para movimiento y persecución. 
+    - 8.6.1.2 enemigos seguir al protagonista, (dentro de las cuatro esquinas definidas)
+  
+  - 8.6.2 Camara, Materiales basicos y Sprites.    
+    - 8.6.2.2 script para seguir con la camara al jugador  
+    - 8.6.2.3 escalar el juego, plano mas grandes y spawner de enemigos (gameobject instansing)
+    - 8.6.2.4 materiales introduccion (cambiar el color del piso)
+    - 8.6.2.5 agregar sprite 2d. para obtener un efecto como paper mario
+    - 8.6.2.6.1 convertir una imagen en un sprite.  
+    - 8.6.2.6.2 agregar sombra al sprite
+    - 8.6.2.6.3 rotar el sprite al presionar los botones izq/derecha  (flip)
+
 
     - 8.6.3 Collisiones: collision de 2 rectangulos version naive y version optima.  (ejemplos en Unity, taller)
     - 8.6.4 Collisiones: collision de 2 cubos en 3d (solucion optima) (ejemplo con Unity, taller )
