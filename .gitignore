@@ -2,6 +2,14 @@
 .DS_Store
 Thumbs.db
 
+# Python
+__pycache__/
+*.pyc
+
+# Builds temporales de presentaciones
+*.draft.pptx
+review/
+
 # Unity generado
 [Ll]ibrary/
 [Tt]emp/
