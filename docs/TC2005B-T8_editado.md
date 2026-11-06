@@ -48,16 +48,13 @@
     - 8.6.2.6.2 agregar sombra al sprite
     - 8.6.2.6.3 rotar el sprite al presionar los botones izq/derecha  (flip)
 
-
-    - 8.6.3 Collisiones: collision de 2 rectangulos version naive y version optima.  (ejemplos en Unity, taller)
-    - 8.6.4 Collisiones: collision de 2 cubos en 3d (solucion optima) (ejemplo con Unity, taller )
-    - 8.6.5 Busqueda de collisiones: hash grid simple en 2D para busqueda y collision (ejemplo con Unity, taller) 
     
-  - 8.9 Interacción humano-computadora en videojuegos:
-    - 8.9.1 Controles, la interface entre el humano y la maquina.  (90% del Gameplay)
-    - 8.9.2 Ejemplos de mecanicas (Quake 3 hyper rapido, controles tanque Redient Evil, proyect zomboid)
-    - 8.9.3 Mecanica de movimiento de Mario Bros 3 en Unity (curva de acelaracion y salto, basado en Mario Bros 3) (ejemplo con Unity taller )
-    - 8.9.4 Basic Enemies usando finite state machines. (taller unity)
+  - 8.7 Interacción humano-computadora en videojuegos:
+    - 8.7.1 Mecanica de movimiento de SuperMarioBrox 3 en Unity en 2D. (ejemplo con Unity taller)
+    - 8.9.2 Mecanica de movimiento de SuperMarioBrox 3 en Unity en 3D  (ejemplo con Unity taller)
+
+  - 8.8 Basic AI for video games. 
+    - 8.8.1 Enemigos Basicos usando state machines
 
   - 8.10 Generacion de assets. 
     - 8.10.1 Generacion de modelos 3d con herramientas de IA. (meshy.ai - Mixamo) (taller)
