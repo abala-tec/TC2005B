@@ -1,0 +1,172 @@
+using UnityEngine;
+using UnityEngine.InputSystem;   // para leer el input del teclados
+using TMPro;
+using UnityEditor.U2D;
+
+public class S5_VelmaWalk_2D : MonoBehaviour
+{
+    [Header("Velocidades SMB3 (1 unidad = 1 tile)")]
+    public float walkSpeed = 5.625f;          // $18 = 1.5 px/frame
+    public float runSpeed = 9.375f;           // $28 = 2.5 px/frame
+    public float acceleration = 12.3046875f;  // 0.0546875 px/frame²
+    public float braking = 12.3046875f;       // rate de frenado
+
+    [Header("Salto y gravedad")]
+    public float jumpSpeed = 13.125f;         // $38 = 3.5 px/frame
+    public float gravity = 70.3125f;          // 5/16 px/frame²
+    public float jumpGravity = 14.0625f;      // 1/16 px/frame²
+    public float jumpHoldLimit = 7.5f;        // $20 = 2 px/frame
+    public float maxFallSpeed = 15f;          // $40 = 4 px/frame
+
+    private Rigidbody rb;
+    private float vx;
+    private float vy;
+    private bool grounded;
+    private bool cayendo;
+    private SpriteRenderer sprite_render = null;
+
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        sprite_render = GetComponent<SpriteRenderer>(); 
+        rb.useGravity = false;    // la gravedad se calcula con el script no con Unity
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        rb.constraints = RigidbodyConstraints.FreezeRotationX
+                       | RigidbodyConstraints.FreezeRotationY
+                       | RigidbodyConstraints.FreezeRotationZ
+                       | RigidbodyConstraints.FreezePositionZ;  // el sprite es 2D no rota
+        
+    }
+    
+    // Resetea la posicion del cubo para empezar de nuevo
+    public void ResetButtonClick()
+    {
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.rotation = Quaternion.identity;  // reseata la orientacion del cubo callendo
+        rb.position = new Vector3(0.0f,1.0f,0.0f);  // resetea la poscion del cubo en el espacio
+        rb.constraints = RigidbodyConstraints.FreezeRotationX
+                       | RigidbodyConstraints.FreezeRotationY
+                       | RigidbodyConstraints.FreezeRotationZ
+                       | RigidbodyConstraints.FreezePositionZ; 
+    }
+
+
+    void Update()
+    {
+        Keyboard kb = Keyboard.current;
+        if (kb == null) return;
+
+        // Se leer entrada del teclado
+        float input = 0f;
+        if (kb.dKey.isPressed || kb.rightArrowKey.isPressed) 
+        {
+            input += 1f;
+            if (sprite_render != null) { sprite_render.flipX = false; } // flipea el sprite
+        }
+        if (kb.aKey.isPressed || kb.leftArrowKey.isPressed)
+        {
+            input -= 1f;
+            if (sprite_render != null) { sprite_render.flipX = true; }  // flipea el sprite
+        } 
+
+        // banderas para checar que botones estan presionados
+        bool runHeld = kb.leftShiftKey.isPressed || kb.xKey.isPressed;
+        bool jumpPressed = kb.spaceKey.wasPressedThisFrame || kb.zKey.wasPressedThisFrame;
+        bool jumpHeld = kb.spaceKey.isPressed || kb.zKey.isPressed;
+
+        // El suelo se detecta con Unity y los Rigidbodies OnCollisionEnter/Stay/Exit
+        if (grounded && vy <= 0f) vy = 0f; // tope para vy, cuando se toca el suelo y la velocidad vertical is negativa
+
+        // Re-deefine la velocidad maxima si se esta precionando RUN o no. 
+        // si presiona run topSpeed = runSpeed, si no topSpeed = walspeed
+        float topSpeed = runHeld ? runSpeed : walkSpeed;
+
+        // si esta precionando izq o derecha
+        if (input != 0f)
+        {
+            float target = input * topSpeed;
+
+            // Si va en la misma dirección Y rápido que la tope de velocidad (frena)
+            if (Mathf.Sign(vx) == Mathf.Sign(input) && Mathf.Abs(vx) > topSpeed)
+            {
+                // si va por el suelo frena, 
+                if (grounded)
+                    vx = Mathf.MoveTowards(vx, target, braking * Time.deltaTime);
+                // si va por el aire no hacer nada (conserva el momento)
+            }
+            else
+            {
+                // Si va en la direccion contraria O mas lento que el tope (acelera)
+                vx = Mathf.MoveTowards(vx, target, acceleration * Time.deltaTime);
+            }
+        }
+        else if (grounded)
+        {
+            // Sin input y en el suelo se frena. 
+            // Pero si esta en el conserva la velocidad y esto no se ejecuta
+            vx = Mathf.MoveTowards(vx, 0f, braking * Time.deltaTime);
+        }
+
+        // Inicio del evento del boton de salto 
+        // siempre empieza estando en el suelo
+        if (jumpPressed && grounded)
+        {
+            vy = jumpSpeed;  // velocidad del salto (en Y obvimente)
+            grounded = false; // se baja la bandera de ground (por que salto)
+        }
+
+        // Calculo de la gravedad (cuando no esta en el suelo)
+        if (!grounded)
+        {
+            // lightgravity es TRUE si jump se esta presionando y se esta subiendo.
+            // (primera fase de la parabola del salto)
+            bool lightGravity = jumpHeld && vy > jumpHoldLimit;
+
+            // si lightGravity es true usa jumpGravity. 
+            // si lightGravity es false usa gravity. 
+            // resta jumpgravity o gravity por cada unidad de tiempo en vy = vy - (G * time delta)
+            vy -= (lightGravity ? jumpGravity : gravity) * Time.deltaTime;
+
+            // Esto define un tope maximo para la velocidad en Y (maxFallSpeed)
+            vy = Mathf.Max(vy, -maxFallSpeed);
+        }
+
+        // Aplicar el resultado final la velocidad del rigid body del cubo. 
+        rb.linearVelocity = new Vector3(vx, vy, 0f);
+
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        CheckGround(collision);
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        CheckGround(collision);
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        grounded = false;
+    }
+
+    // funcion que checa si hay colision con el suelo.
+    // detectando si al rigid body del personaje lo esta tocando una fuerza por abajo.
+    void CheckGround(Collision collision)
+    {
+        if (vy > 0f) return;  // si esta subiendo o saltando: no cuenta como colision en el suelo
+
+        // checa con todos los objetos colisionado con el rigidbody
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            if (contact.normal.y > 0.5f) // si el contacto viene de abajo
+            {
+                grounded = true;
+                return;
+            }
+        }
+    }
+}
