@@ -1,8 +1,7 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using System;
 
-public class EnemigoEsfera : MonoBehaviour
+public class S3_EnemigoEsfera : MonoBehaviour
 {
     public Transform cubo;
     private Vector3[] esquinas;  //areglo de vector3 para guardar las esquinas
@@ -11,16 +10,16 @@ public class EnemigoEsfera : MonoBehaviour
     public float distanciaContacto = 1.1f;  // distancia para saber si el cubo toco a la esfera
     public float anguloPisoton = 60f;
     // radio de deteccion para empezar a perseguir al jugador
-    public float radioDeteccion = 3.0f;  
+    public float radioDeteccion = 3.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         esquinas = new Vector3[4];
         esquinas[0] = new Vector3(-4.5f, 0.5f, -4.5f);
-        esquinas[1] = new Vector3( 4.5f, 0.5f, -4.5f);
-        esquinas[2] = new Vector3( 4.5f, 0.5f,  4.5f);
-        esquinas[3] = new Vector3(-4.5f, 0.5f,  4.5f);
+        esquinas[1] = new Vector3(4.5f, 0.5f, -4.5f);
+        esquinas[2] = new Vector3(4.5f, 0.5f, 4.5f);
+        esquinas[3] = new Vector3(-4.5f, 0.5f, 4.5f);
 
         // setup de la primera esquina
         NewRandom();
@@ -31,7 +30,7 @@ public class EnemigoEsfera : MonoBehaviour
 
     void NewRandom()
     {
-        indiceObjetivo = UnityEngine.Random.Range(0, 4); 
+        indiceObjetivo = UnityEngine.Random.Range(0, 4);
     }
 
     static float Longitud(Vector3 v)
@@ -42,7 +41,8 @@ public class EnemigoEsfera : MonoBehaviour
     static Vector3 Normalizar(Vector3 v)
     {
         float longitud = Longitud(v);
-        if (longitud < 0.0001f) { 
+        if (longitud < 0.0001f)
+        {
             return new Vector3(0f, 0f, 0f);
         }
         return new Vector3(v.x / longitud, v.y / longitud, v.z / longitud);
@@ -87,7 +87,7 @@ public class EnemigoEsfera : MonoBehaviour
         {
             objetivo = esquinas[indiceObjetivo];
         }
-        
+
         Vector3 hacia = objetivo - transform.position;
         float distancia = Longitud(hacia);
 
@@ -127,16 +127,16 @@ public class EnemigoEsfera : MonoBehaviour
         float dy = haciaCubo.y;
         float dz = haciaCubo.z;
 
-        float horizontal = (float) Math.Sqrt(dx*dx + dz*dz);  // distancia horizontal
+        float horizontal = (float)Math.Sqrt(dx * dx + dz * dz);  // distancia horizontal
         float angulo = (float)(Math.Atan2(dy, horizontal) * 180.0 / Math.PI); // angulo vertical
 
-        if (angulo >= anguloPisoton && horizontal <= distanciaContacto){
+        if (angulo >= anguloPisoton && horizontal <= distanciaContacto)
+        {
             Debug.Log("PISOTON");
             Reset();
             return true;
         }
         return false;
-
     }
 
     // resetea la posicion de la esfera a una nueva esquina
@@ -152,9 +152,5 @@ public class EnemigoEsfera : MonoBehaviour
         MoverEsfera();
         // Contacto();
         Pisoton();
-
     }
-
-    
-    
 }

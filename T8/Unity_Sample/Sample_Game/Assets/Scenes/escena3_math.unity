@@ -876,7 +876,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a83d54f5ea444a6b0619d38ee280624, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CubeMove
+  m_EditorClassIdentifier: Assembly-CSharp::S3_CubeMoveMath
   speed: 5
   jumpForce: 5
   caidas: 0
@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21eb9041fbcf47a8a01e7bf72d07fa02, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemigoEsfera
+  m_EditorClassIdentifier: Assembly-CSharp::S3_EnemigoEsfera
   cubo: {fileID: 888733351}
   indiceObjetivo: 0
   velocidad: 5
@@ -1538,7 +1538,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 888733352}
-        m_TargetAssemblyTypeName: CubeMove, Assembly-CSharp
+        m_TargetAssemblyTypeName: S3_CubeMoveMath, Assembly-CSharp
         m_MethodName: ButtonClick
         m_Mode: 1
         m_Arguments:

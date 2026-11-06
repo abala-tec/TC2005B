@@ -1,10 +1,8 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;   // para leer el input del teclados
 using TMPro;
-using UnityEngine.UIElements;    // para poder acceder al HUD del juego
 
-public class CubeMoveHUD : MonoBehaviour
+public class S2_CubeMoveHUD : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float speed = 5.0f;
@@ -19,14 +17,14 @@ public class CubeMoveHUD : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-    
+
     // Resetea la posicion del cubo para empezar de nuevo
     public void ButtonClick()
     {
         if (cayendo == true)
         {
             transform.rotation = Quaternion.identity;  // reseata la orientacion del cubo callendo
-            transform.position = new Vector3(0.0f,1.0f,0.0f);  // resetea la poscion del cubo en el espacio
+            transform.position = new Vector3(0.0f, 1.0f, 0.0f);  // resetea la poscion del cubo en el espacio
             cayendo = false;
         }
     }
@@ -51,18 +49,22 @@ public class CubeMoveHUD : MonoBehaviour
         if (keyboard != null)
         {
             // Lee eje en X con las fechas derecha izquierda
-            if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) {
+            if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed)
+            {
                 movement.x = 1f;
             }
-            if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) {
+            if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed)
+            {
                 movement.x = -1f;
             }
 
             // Define eje en Z con las flechas arriba abajo
-            if (keyboard.wKey.isPressed || keyboard.upArrowKey.isPressed) {
+            if (keyboard.wKey.isPressed || keyboard.upArrowKey.isPressed)
+            {
                 movement.z = 1f;
             }
-            if (keyboard.sKey.isPressed || keyboard.downArrowKey.isPressed) {
+            if (keyboard.sKey.isPressed || keyboard.downArrowKey.isPressed)
+            {
                 movement.z = -1f;
             }
 
@@ -80,16 +82,18 @@ public class CubeMoveHUD : MonoBehaviour
         }
 
         if (transform.position.y <= -1.0f && cayendo == false)
-        {   
+        {
             cayendo = true;   // bandera para contar una sola caida
             caidas++;   // cuenta las caidas
-            Debug.Log($"Caidas: {caidas}");  
-            if (textoCaidas != null) { textoCaidas.text = caidas.ToString(); } //muestra el numero de caidas en el hub
+            Debug.Log($"Caidas: {caidas}");
+            if (textoCaidas != null)
+            {
+                textoCaidas.text = caidas.ToString();   //muestra el numero de caidas en el hub
+            }
         }
 
         // 4. Mueve el cubo teniendo en cuenta el dt, la velocidad, el vector de direccion
         transform.Translate(movement * speed * Time.deltaTime);
-
 
         // 1. Mueve al objeto hacia SU propio "adelante" (Space.Self es el valor por defecto)
         // transform.Translate(movement * speed * Time.deltaTime); 

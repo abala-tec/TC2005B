@@ -876,7 +876,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d62ed31e50f458891eaf19be288df3c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CubeMove
+  m_EditorClassIdentifier: Assembly-CSharp::S2_CubeMoveHUD
   speed: 5
   jumpForce: 5
   caidas: 0
@@ -1380,7 +1380,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 888733352}
-        m_TargetAssemblyTypeName: CubeMove, Assembly-CSharp
+        m_TargetAssemblyTypeName: S2_CubeMoveHUD, Assembly-CSharp
         m_MethodName: ButtonClick
         m_Mode: 1
         m_Arguments:

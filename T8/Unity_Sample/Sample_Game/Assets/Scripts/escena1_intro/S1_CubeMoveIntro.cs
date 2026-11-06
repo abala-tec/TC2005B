@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;   // para leer el input del teclados
 
-public class CubeMoveIntro : MonoBehaviour
+public class S1_CubeMoveIntro : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float speed = 5.0f;
@@ -24,24 +23,29 @@ public class CubeMoveIntro : MonoBehaviour
         if (keyboard != null)
         {
             // Lee eje en X con las fechas derecha izquierda
-            if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) {
+            if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed)
+            {
                 movement.x = 1f;
             }
-            if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) {
+            if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed)
+            {
                 movement.x = -1f;
             }
 
             // Define eje en Z con las flechas arriba abajo
-            if (keyboard.wKey.isPressed || keyboard.upArrowKey.isPressed) {
+            if (keyboard.wKey.isPressed || keyboard.upArrowKey.isPressed)
+            {
                 movement.z = 1f;
             }
-            if (keyboard.sKey.isPressed || keyboard.downArrowKey.isPressed) {
+            if (keyboard.sKey.isPressed || keyboard.downArrowKey.isPressed)
+            {
                 movement.z = -1f;
             }
 
-            if (keyboard.spaceKey.isPressed) {
+            if (keyboard.spaceKey.isPressed)
+            {
                 transform.rotation = Quaternion.identity;  // reseata la orientacion del cubo callendo
-                transform.position = new Vector3(0.0f,1.0f,0.0f);  // resetea la poscion del cubo en el espacio
+                transform.position = new Vector3(0.0f, 1.0f, 0.0f);  // resetea la poscion del cubo en el espacio
             }
         }
 
@@ -53,7 +57,6 @@ public class CubeMoveIntro : MonoBehaviour
 
         // 4. Mueve el cubo teniendo en cuenta el dt, la velocidad, el vector de direccion
         transform.Translate(movement * speed * Time.deltaTime);
-
 
         // 1. Mueve al objeto hacia SU propio "adelante" (Space.Self es el valor por defecto)
         // transform.Translate(movement * speed * Time.deltaTime); 
