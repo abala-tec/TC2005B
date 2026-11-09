@@ -53,8 +53,8 @@
     - 8.7.1 Mecanica de movimiento de SuperMarioBrox 3 en Unity en 2D. (ejemplo con Unity taller)
     - 8.9.2 Mecanica de movimiento de SuperMarioBrox 3 en Unity en 3D  (ejemplo con Unity taller)
 
-  - 8.8 Basic AI for video games. 
-    - 8.8.1 Enemigos Basicos usando state machines
+  - 8.1 Enemigos
+    - 8.8.1 BFS pathfinding para enemigos 
 
   - 8.10 Generacion de assets. 
     - 8.10.1 Generacion de modelos 3d con herramientas de IA. (meshy.ai - Mixamo) (taller)
