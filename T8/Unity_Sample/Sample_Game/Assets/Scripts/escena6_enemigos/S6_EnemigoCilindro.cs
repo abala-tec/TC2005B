@@ -3,6 +3,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using UnityEditor;
 
 public class S6_EnemigoCilindro : MonoBehaviour
 {
@@ -34,11 +35,13 @@ public class S6_EnemigoCilindro : MonoBehaviour
 
         // UnityEngine.Debug.Log(camino);
         if (camino == null || camino.Count == 0) return;   // sin camino: se queda quieto
+
         
-        // caminar hacia la siguiente casilla del camino
+        // caminar hacia la PRIMERA casilla del camino (camino[0])
         Vector3 objetivo = grid.CeldaAMundo(camino[0]);
         objetivo.y = transform.position.y;                  // la altura no cambia
         transform.position = Vector3.MoveTowards(transform.position, objetivo, velocidad * Time.deltaTime);
+        // if (transform.position == objetivo) camino.RemoveAt(0);   // TODO REGALADO. esta linea arregla el avanze chopeado del enemigo
     }
 
 
@@ -46,6 +49,21 @@ public class S6_EnemigoCilindro : MonoBehaviour
     void Update()
     {
         Perseguir();
+    }
+
+    void OnDrawGizmos()
+    {
+        S6_Grid grid = S6_Grid.Instancia;
+
+        if (camino == null || camino.Count == 0) return;
+        for (int i = 0; i < camino.Count - 1; i++)
+        {
+            Gizmos.color = new Color(1, 1, 0, 0.9f);
+            Gizmos.DrawLine(
+                grid.CeldaAMundo(camino[i]) + Vector3.up,
+                grid.CeldaAMundo(camino[i + 1]) + Vector3.up
+            );
+        }
     }
 
     
