@@ -1,0 +1,3660 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="892.8pt" height="460.8pt" viewBox="0 0 892.8 460.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-13T15:15:00.662488</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 460.8 
+L 892.8 460.8 
+L 892.8 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 204.831366 156.358013 
+L 194.286468 127.777603 
+L 172.997683 105.423449 
+L 144.298472 93.187346 
+L 113.5393 93.700253 
+L 83.716498 100.391621 
+L 56.311891 116.591639 
+L 43.563186 144.826196 
+L 45.032859 174.492976 
+L 54.025595 202.087174 
+L 73.62789 224.594671 
+L 100.947909 239.077479 
+L 132.807698 244.098848 
+L 162.670418 232.401855 
+L 182.931313 210.11615 
+L 198.571453 185.626725 
+z
+" clip-path="url(#pabeb403160)" style="fill: #f2f5f9"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 64.6896 214.2744 
+L 204.528095 157.775981 
+L 204.831366 156.358013 
+L 194.286468 127.777603 
+L 172.997683 105.423449 
+L 144.298472 93.187346 
+L 113.5393 93.700253 
+L 83.716498 100.391621 
+L 80.420991 102.339734 
+z
+" clip-path="url(#pabeb403160)" style="fill: #f08a3c; opacity: 0.1"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 64.6896 214.2744 
+L 204.528095 157.775981 
+" clip-path="url(#pabeb403160)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #f08a3c; stroke-opacity: 0.55"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 64.6896 214.2744 
+L 80.420991 102.339734 
+" clip-path="url(#pabeb403160)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #f08a3c; stroke-opacity: 0.55"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 131.72239 243.927794 
+L 124.202123 93.522451 
+" clip-path="url(#pabeb403160)" style="fill: none; stroke: #2b293d; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 44.469481 163.120649 
+L 127.932421 168.128425 
+" clip-path="url(#pabeb403160)" style="fill: none; stroke: #2b293d; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 94.932652 235.888689 
+L 103.152626 166.641638 
+" clip-path="url(#pabeb403160)" style="fill: none; stroke: #2b293d; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 204.831366 156.358013 
+L 194.286468 127.777603 
+L 172.997683 105.423449 
+L 144.298472 93.187346 
+L 113.5393 93.700253 
+L 83.716498 100.391621 
+L 56.311891 116.591639 
+L 43.563186 144.826196 
+L 45.032859 174.492976 
+L 54.025595 202.087174 
+L 73.62789 224.594671 
+L 100.947909 239.077479 
+L 132.807698 244.098848 
+L 162.670418 232.401855 
+L 182.931313 210.11615 
+L 198.571453 185.626725 
+L 204.831366 156.358013 
+z
+" clip-path="url(#pabeb403160)" style="fill: none; stroke: #2b293d; stroke-width: 2.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <!-- C -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(158.649094 171.7858) scale(0.19 -0.19)">
+     <defs>
+      <path id="Neuromax-SemiBold-27" d="M 2682 1466 
+L 2682 1082 
+C 2682 838 2483 595 2202 595 
+L 1357 595 
+C 1075 595 877 838 877 1082 
+L 877 3424 
+C 877 3667 1075 3910 1357 3910 
+L 2202 3910 
+C 2483 3910 2682 3667 2682 3424 
+L 2682 3174 
+L 3290 3174 
+L 3290 3443 
+C 3290 3949 2886 4506 2221 4506 
+L 1344 4506 
+C 672 4506 269 3955 269 3443 
+L 269 1056 
+C 269 544 678 0 1344 0 
+L 2221 0 
+C 2886 0 3290 550 3290 1056 
+L 3290 1466 
+L 2682 1466 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-SemiBold-27"/>
+    </g>
+   </g>
+   <g id="text_2">
+    <!-- E -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(84.947703 140.2258) scale(0.19 -0.19)">
+     <defs>
+      <path id="Neuromax-SemiBold-29" d="M 320 0 
+L 3040 0 
+L 3040 570 
+L 928 570 
+L 928 1946 
+L 2701 1946 
+L 2701 2502 
+L 928 2502 
+L 928 3936 
+L 2950 3936 
+L 2950 4499 
+L 320 4499 
+L 320 0 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-SemiBold-29"/>
+    </g>
+   </g>
+   <g id="text_3">
+    <!-- F -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(108.941297 215.9698) scale(0.19 -0.19)">
+     <defs>
+      <path id="Neuromax-SemiBold-2a" d="M 320 0 
+L 928 0 
+L 928 1946 
+L 2630 1946 
+L 2630 2502 
+L 928 2502 
+L 928 3936 
+L 2880 3936 
+L 2880 4499 
+L 320 4499 
+L 320 0 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-SemiBold-2a"/>
+    </g>
+   </g>
+   <g id="text_4">
+    <!-- G -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(67.010797 197.0338) scale(0.19 -0.19)">
+     <defs>
+      <path id="Neuromax-SemiBold-2b" d="M 2144 1818 
+L 2682 1818 
+L 2682 1082 
+C 2682 838 2483 595 2202 595 
+L 1357 595 
+C 1075 595 877 838 877 1082 
+L 877 3424 
+C 877 3667 1075 3910 1357 3910 
+L 2202 3910 
+C 2483 3910 2682 3667 2682 3424 
+L 2682 3174 
+L 3290 3174 
+L 3290 3443 
+C 3290 3949 2886 4506 2221 4506 
+L 1344 4506 
+C 672 4506 269 3955 269 3443 
+L 269 1056 
+C 269 544 678 0 1344 0 
+L 2221 0 
+C 2886 0 3290 550 3290 1056 
+L 3290 2381 
+L 2144 2381 
+L 2144 1818 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-SemiBold-2b"/>
+    </g>
+   </g>
+   <g id="patch_5">
+    <path d="M 119.7618 113.2824 
+L 129.861 113.2824 
+Q 132.3858 113.2824 132.3858 110.7576 
+L 132.3858 100.6584 
+Q 132.3858 98.1336 129.861 98.1336 
+L 119.7618 98.1336 
+Q 117.237 98.1336 117.237 100.6584 
+L 117.237 110.7576 
+Q 117.237 113.2824 119.7618 113.2824 
+z
+" clip-path="url(#pabeb403160)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 57.7464 171.8262 
+L 67.8456 171.8262 
+Q 70.3704 171.8262 70.3704 169.3014 
+L 70.3704 159.2022 
+Q 70.3704 156.6774 67.8456 156.6774 
+L 57.7464 156.6774 
+Q 55.2216 156.6774 55.2216 159.2022 
+L 55.2216 169.3014 
+Q 55.2216 171.8262 57.7464 171.8262 
+z
+" clip-path="url(#pabeb403160)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 90.7266 236.3664 
+L 100.8258 236.3664 
+Q 103.3506 236.3664 103.3506 233.8416 
+L 103.3506 223.7424 
+Q 103.3506 221.2176 100.8258 221.2176 
+L 90.7266 221.2176 
+Q 88.2018 221.2176 88.2018 223.7424 
+L 88.2018 233.8416 
+Q 88.2018 236.3664 90.7266 236.3664 
+z
+" clip-path="url(#pabeb403160)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_5">
+    <!-- L1 -->
+    <g style="fill: #ffffff" transform="translate(122.3094 108.5796) scale(0.072 -0.072)">
+     <defs>
+      <path id="Neuromax-SemiBold-30" d="M 320 0 
+L 2970 0 
+L 2970 570 
+L 928 570 
+L 928 4499 
+L 320 4499 
+L 320 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-SemiBold-15" d="M 557 64 
+L 1178 64 
+L 1178 4550 
+L 256 4550 
+L 256 3930 
+L 570 3930 
+L 557 64 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-15" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_6">
+    <!-- L2 -->
+    <g style="fill: #ffffff" transform="translate(59.505938 167.1234) scale(0.072 -0.072)">
+     <defs>
+      <path id="Neuromax-SemiBold-16" d="M 250 64 
+L 2624 64 
+L 2624 614 
+L 1037 614 
+L 2227 2317 
+C 2458 2650 2624 2950 2624 3354 
+L 2624 3462 
+C 2624 4064 2202 4608 1434 4608 
+C 640 4608 250 4064 250 3450 
+L 250 3245 
+L 858 3245 
+L 858 3424 
+C 858 3757 1011 4064 1421 4064 
+C 1824 4064 2003 3776 2003 3450 
+C 2003 3136 1920 2893 1728 2630 
+L 250 518 
+L 250 64 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-16" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_7">
+    <!-- L3 -->
+    <g style="fill: #ffffff" transform="translate(92.406825 231.6636) scale(0.072 -0.072)">
+     <defs>
+      <path id="Neuromax-SemiBold-17" d="M 256 1261 
+L 256 1094 
+C 256 448 698 -19 1478 -19 
+C 2330 -19 2746 595 2746 1242 
+C 2746 1683 2688 2150 2202 2413 
+C 2522 2624 2669 2976 2669 3302 
+L 2669 3443 
+C 2669 4070 2285 4589 1485 4589 
+C 698 4589 307 4102 307 3475 
+L 307 3290 
+L 902 3290 
+L 902 3462 
+C 902 3789 1082 4045 1472 4045 
+C 1882 4045 2054 3750 2054 3418 
+L 2054 3290 
+C 2054 2944 1869 2650 1446 2650 
+L 1152 2650 
+L 1152 2093 
+L 1453 2093 
+C 1926 2093 2125 1760 2125 1382 
+L 2125 1216 
+C 2125 851 1939 531 1485 531 
+C 1082 531 870 768 870 1114 
+L 870 1261 
+L 256 1261 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-17" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="patch_8">
+    <path d="M 68.380807 209.549871 
+Q 78.679126 196.368623 88.220282 184.156501 
+" clip-path="url(#pabeb403160)" style="fill: none; stroke: #2b293d; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 84.989348 185.693077 
+L 88.220282 184.156501 
+L 87.510982 187.663194 
+z
+" clip-path="url(#pabeb403160)" style="fill: #2b293d; stroke: #2b293d; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 64.6896 217.4304 
+C 65.526581 217.4304 66.329394 217.097864 66.921229 216.506029 
+C 67.513064 215.914194 67.8456 215.111381 67.8456 214.2744 
+C 67.8456 213.437419 67.513064 212.634606 66.921229 212.042771 
+C 66.329394 211.450936 65.526581 211.1184 64.6896 211.1184 
+C 63.852619 211.1184 63.049806 211.450936 62.457971 212.042771 
+C 61.866136 212.634606 61.5336 213.437419 61.5336 214.2744 
+C 61.5336 215.111381 61.866136 215.914194 62.457971 216.506029 
+C 63.049806 217.097864 63.852619 217.4304 64.6896 217.4304 
+z
+" clip-path="url(#pabeb403160)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_8">
+    <!-- cámara -->
+    <g style="fill: #4f5361" transform="translate(53.63835 232.1292) scale(0.08 -0.08)">
+     <defs>
+      <path id="Neuromax-Regular-46" d="M 1114 2733 
+L 2394 2733 
+L 2394 3251 
+L 1094 3251 
+C 621 3251 237 2867 237 2394 
+L 237 851 
+C 237 378 621 0 1094 0 
+L 2394 0 
+L 2394 512 
+L 1114 512 
+C 915 512 749 672 749 877 
+L 749 2374 
+C 749 2573 915 2733 1114 2733 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-92" d="M 474 3251 
+L 474 2733 
+L 1786 2733 
+C 1978 2733 2131 2579 2131 2387 
+L 2131 1990 
+C 2029 2035 1914 2061 1792 2061 
+L 1011 2061 
+C 538 2061 154 1677 154 1210 
+L 154 851 
+C 154 378 538 0 1011 0 
+L 1792 0 
+C 2259 0 2643 384 2643 851 
+L 2643 2394 
+C 2643 2867 2259 3251 1786 3251 
+L 474 3251 
+z
+M 2131 877 
+C 2131 672 1965 512 1766 512 
+L 1030 512 
+C 832 512 666 672 666 877 
+L 666 1184 
+C 666 1382 832 1549 1030 1549 
+L 1766 1549 
+C 1965 1549 2131 1382 2131 1184 
+L 2131 877 
+z
+M 1286 4698 
+L 877 3840 
+L 1331 3840 
+L 2010 4698 
+L 1286 4698 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-50" d="M 3872 3251 
+L 3213 3251 
+C 2931 3251 2675 3130 2496 2931 
+C 2317 3130 2061 3251 1773 3251 
+L 1120 3251 
+C 646 3251 262 2867 262 2394 
+L 262 0 
+L 774 0 
+L 774 2374 
+C 774 2573 941 2739 1139 2739 
+L 1741 2739 
+C 2003 2739 2214 2534 2234 2278 
+L 2234 0 
+L 2746 0 
+L 2752 2278 
+C 2771 2534 2989 2739 3251 2739 
+L 3846 2739 
+C 4051 2739 4211 2573 4211 2374 
+L 4211 0 
+L 4723 0 
+L 4723 2400 
+C 4723 2867 4346 3251 3872 3251 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-44" d="M 474 3251 
+L 474 2733 
+L 1786 2733 
+C 1978 2733 2131 2579 2131 2387 
+L 2131 1990 
+C 2029 2035 1914 2061 1792 2061 
+L 1011 2061 
+C 538 2061 154 1677 154 1210 
+L 154 851 
+C 154 378 538 0 1011 0 
+L 1792 0 
+C 2259 0 2643 384 2643 851 
+L 2643 2394 
+C 2643 2867 2259 3251 1786 3251 
+L 474 3251 
+z
+M 2131 877 
+C 2131 672 1965 512 1766 512 
+L 1030 512 
+C 832 512 666 672 666 877 
+L 666 1184 
+C 666 1382 832 1549 1030 1549 
+L 1766 1549 
+C 1965 1549 2131 1382 2131 1184 
+L 2131 877 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-55" d="M 1120 3251 
+C 646 3251 262 2867 262 2394 
+L 262 0 
+L 774 0 
+L 774 2374 
+C 774 2573 941 2739 1139 2739 
+L 1581 2739 
+L 1581 3251 
+L 1120 3251 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-Regular-46"/>
+     <use xlink:href="#Neuromax-Regular-92" transform="translate(39.203125 0)"/>
+     <use xlink:href="#Neuromax-Regular-50" transform="translate(84.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-44" transform="translate(162.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-55" transform="translate(207.390625 0)"/>
+     <use xlink:href="#Neuromax-Regular-44" transform="translate(231.1875 0)"/>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="line2d_6">
+    <path d="M 134.60625 296.532 
+L 96.33375 328.42575 
+" clip-path="url(#p02e059b97e)" style="fill: none; stroke: #7a8190; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 134.60625 296.532 
+L 177.435 328.42575 
+" clip-path="url(#p02e059b97e)" style="fill: none; stroke: #7a8190; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 96.33375 328.42575 
+L 74.46375 360.3195 
+" clip-path="url(#p02e059b97e)" style="fill: none; stroke: #7a8190; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 96.33375 328.42575 
+L 116.38125 360.3195 
+" clip-path="url(#p02e059b97e)" style="fill: none; stroke: #7a8190; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 116.38125 360.3195 
+L 101.80125 385.47 
+" clip-path="url(#p02e059b97e)" style="fill: none; stroke: #7a8190; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 116.38125 360.3195 
+L 132.78375 385.47 
+" clip-path="url(#p02e059b97e)" style="fill: none; stroke: #7a8190; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 124.03575 302.91075 
+L 145.17675 302.91075 
+Q 146.99925 302.91075 146.99925 301.08825 
+L 146.99925 291.97575 
+Q 146.99925 290.15325 145.17675 290.15325 
+L 124.03575 290.15325 
+Q 122.21325 290.15325 122.21325 291.97575 
+L 122.21325 301.08825 
+Q 122.21325 302.91075 124.03575 302.91075 
+z
+" clip-path="url(#p02e059b97e)" style="fill: #ffffff; stroke: #2b293d; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 85.76325 334.8045 
+L 106.90425 334.8045 
+Q 108.72675 334.8045 108.72675 332.982 
+L 108.72675 323.8695 
+Q 108.72675 322.047 106.90425 322.047 
+L 85.76325 322.047 
+Q 83.94075 322.047 83.94075 323.8695 
+L 83.94075 332.982 
+Q 83.94075 334.8045 85.76325 334.8045 
+z
+" clip-path="url(#p02e059b97e)" style="fill: #ffffff; stroke: #2b293d; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 105.81075 366.69825 
+L 126.95175 366.69825 
+Q 128.77425 366.69825 128.77425 364.87575 
+L 128.77425 355.76325 
+Q 128.77425 353.94075 126.95175 353.94075 
+L 105.81075 353.94075 
+Q 103.98825 353.94075 103.98825 355.76325 
+L 103.98825 364.87575 
+Q 103.98825 366.69825 105.81075 366.69825 
+z
+" clip-path="url(#p02e059b97e)" style="fill: #ffffff; stroke: #2b293d; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 177.435 336.9915 
+C 179.706663 336.9915 181.885591 336.088959 183.4919 334.48265 
+C 185.098209 332.876341 186.00075 330.697413 186.00075 328.42575 
+C 186.00075 326.154087 185.098209 323.975159 183.4919 322.36885 
+C 181.885591 320.762541 179.706663 319.86 177.435 319.86 
+C 175.163337 319.86 172.984409 320.762541 171.3781 322.36885 
+C 169.771791 323.975159 168.86925 326.154087 168.86925 328.42575 
+C 168.86925 330.697413 169.771791 332.876341 171.3781 334.48265 
+C 172.984409 336.088959 175.163337 336.9915 177.435 336.9915 
+z
+" clip-path="url(#p02e059b97e)" style="fill: #f7f9fc; stroke: #2b293d; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 74.46375 368.88525 
+C 76.735413 368.88525 78.914341 367.982709 80.52065 366.3764 
+C 82.126959 364.770091 83.0295 362.591163 83.0295 360.3195 
+C 83.0295 358.047837 82.126959 355.868909 80.52065 354.2626 
+C 78.914341 352.656291 76.735413 351.75375 74.46375 351.75375 
+C 72.192087 351.75375 70.013159 352.656291 68.40685 354.2626 
+C 66.800541 355.868909 65.898 358.047837 65.898 360.3195 
+C 65.898 362.591163 66.800541 364.770091 68.40685 366.3764 
+C 70.013159 367.982709 72.192087 368.88525 74.46375 368.88525 
+z
+" clip-path="url(#p02e059b97e)" style="fill: #f7f9fc; stroke: #2b293d; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 101.80125 394.03575 
+C 104.072913 394.03575 106.251841 393.133209 107.85815 391.5269 
+C 109.464459 389.920591 110.367 387.741663 110.367 385.47 
+C 110.367 383.198337 109.464459 381.019409 107.85815 379.4131 
+C 106.251841 377.806791 104.072913 376.90425 101.80125 376.90425 
+C 99.529587 376.90425 97.350659 377.806791 95.74435 379.4131 
+C 94.138041 381.019409 93.2355 383.198337 93.2355 385.47 
+C 93.2355 387.741663 94.138041 389.920591 95.74435 391.5269 
+C 97.350659 393.133209 99.529587 394.03575 101.80125 394.03575 
+z
+" clip-path="url(#p02e059b97e)" style="fill: #f7f9fc; stroke: #2b293d; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 132.78375 394.03575 
+C 135.055413 394.03575 137.234341 393.133209 138.84065 391.5269 
+C 140.446959 389.920591 141.3495 387.741663 141.3495 385.47 
+C 141.3495 383.198337 140.446959 381.019409 138.84065 379.4131 
+C 137.234341 377.806791 135.055413 376.90425 132.78375 376.90425 
+C 130.512087 376.90425 128.333159 377.806791 126.72685 379.4131 
+C 125.120541 381.019409 124.218 383.198337 124.218 385.47 
+C 124.218 387.741663 125.120541 389.920591 126.72685 391.5269 
+C 128.333159 393.133209 130.512087 394.03575 132.78375 394.03575 
+z
+" clip-path="url(#p02e059b97e)" style="fill: #f7f9fc; stroke: #2b293d; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_9">
+    <!-- L1 -->
+    <g style="fill: #2b293d" transform="translate(131.61775 299.76725) scale(0.086 -0.086)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-15" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_10">
+    <!-- L2 -->
+    <g style="fill: #2b293d" transform="translate(92.403953 331.661) scale(0.086 -0.086)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-16" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_11">
+    <!-- L3 -->
+    <g style="fill: #2b293d" transform="translate(112.356719 363.55475) scale(0.086 -0.086)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-17" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_12">
+    <!-- C -->
+    <g style="fill: #2b293d" transform="translate(174.8385 332.016) scale(0.096 -0.096)">
+     <use xlink:href="#Neuromax-SemiBold-27"/>
+    </g>
+   </g>
+   <g id="text_13">
+    <!-- E -->
+    <g style="fill: #2b293d" transform="translate(72.102 363.90975) scale(0.096 -0.096)">
+     <use xlink:href="#Neuromax-SemiBold-29"/>
+    </g>
+   </g>
+   <g id="text_14">
+    <!-- G -->
+    <g style="fill: #2b293d" transform="translate(99.147 389.06025) scale(0.096 -0.096)">
+     <use xlink:href="#Neuromax-SemiBold-2b"/>
+    </g>
+   </g>
+   <g id="text_15">
+    <!-- F -->
+    <g style="fill: #2b293d" transform="translate(130.5855 389.06025) scale(0.096 -0.096)">
+     <use xlink:href="#Neuromax-SemiBold-2a"/>
+    </g>
+   </g>
+   <g id="patch_17">
+    <path d="M 101.80125 396.95175 
+C 104.846246 396.95175 107.766936 395.74196 109.920073 393.588823 
+C 112.07321 391.435686 113.283 388.514996 113.283 385.47 
+C 113.283 382.425004 112.07321 379.504314 109.920073 377.351177 
+C 107.766936 375.19804 104.846246 373.98825 101.80125 373.98825 
+C 98.756254 373.98825 95.835564 375.19804 93.682427 377.351177 
+C 91.52929 379.504314 90.3195 382.425004 90.3195 385.47 
+C 90.3195 388.514996 91.52929 391.435686 93.682427 393.588823 
+C 95.835564 395.74196 98.756254 396.95175 101.80125 396.95175 
+L 101.80125 396.95175 
+z
+" clip-path="url(#p02e059b97e)" style="fill: none; stroke: #f08a3c; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+  </g>
+  <g id="axes_3">
+   <g id="patch_18">
+    <path d="M 420.543366 156.358013 
+L 409.998468 127.777603 
+L 388.709683 105.423449 
+L 360.010472 93.187346 
+L 329.2513 93.700253 
+L 299.428498 100.391621 
+L 272.023891 116.591639 
+L 259.275186 144.826196 
+L 260.744859 174.492976 
+L 269.737595 202.087174 
+L 289.33989 224.594671 
+L 316.659909 239.077479 
+L 348.519698 244.098848 
+L 378.382418 232.401855 
+L 398.643313 210.11615 
+L 414.283453 185.626725 
+z
+" clip-path="url(#pc4aec411d9)" style="fill: #f2f5f9"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 339.914123 93.522451 
+L 329.2513 93.700253 
+L 299.428498 100.391621 
+L 272.023891 116.591639 
+L 259.275186 144.826196 
+L 260.744859 174.492976 
+L 269.737595 202.087174 
+L 289.33989 224.594671 
+L 316.659909 239.077479 
+L 347.43439 243.927794 
+z
+" clip-path="url(#pc4aec411d9)" style="fill: #fce0e9"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 420.543366 156.358013 
+L 409.998468 127.777603 
+L 388.709683 105.423449 
+L 360.010472 93.187346 
+L 339.914123 93.522451 
+L 347.43439 243.927794 
+L 348.519698 244.098848 
+L 378.382418 232.401855 
+L 398.643313 210.11615 
+L 414.283453 185.626725 
+z
+" clip-path="url(#pc4aec411d9)" style="fill: #dde9fb"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 280.4016 214.2744 
+L 420.240095 157.775981 
+L 420.543366 156.358013 
+L 409.998468 127.777603 
+L 388.709683 105.423449 
+L 360.010472 93.187346 
+L 329.2513 93.700253 
+L 299.428498 100.391621 
+L 296.132991 102.339734 
+z
+" clip-path="url(#pc4aec411d9)" style="fill: #f08a3c; opacity: 0.1"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 280.4016 214.2744 
+L 420.240095 157.775981 
+" clip-path="url(#pc4aec411d9)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #f08a3c; stroke-opacity: 0.55"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 280.4016 214.2744 
+L 296.132991 102.339734 
+" clip-path="url(#pc4aec411d9)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #f08a3c; stroke-opacity: 0.55"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 347.43439 243.927794 
+L 339.914123 93.522451 
+" clip-path="url(#pc4aec411d9)" style="fill: none; stroke: #f08a3c; stroke-opacity: 0.38; stroke-width: 9"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 347.43439 243.927794 
+L 339.914123 93.522451 
+" clip-path="url(#pc4aec411d9)" style="fill: none; stroke: #2b293d; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 260.181481 163.120649 
+L 343.644421 168.128425 
+" clip-path="url(#pc4aec411d9)" style="fill: none; stroke: #2b293d; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 310.644652 235.888689 
+L 318.864626 166.641638 
+" clip-path="url(#pc4aec411d9)" style="fill: none; stroke: #2b293d; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 420.543366 156.358013 
+L 409.998468 127.777603 
+L 388.709683 105.423449 
+L 360.010472 93.187346 
+L 329.2513 93.700253 
+L 299.428498 100.391621 
+L 272.023891 116.591639 
+L 259.275186 144.826196 
+L 260.744859 174.492976 
+L 269.737595 202.087174 
+L 289.33989 224.594671 
+L 316.659909 239.077479 
+L 348.519698 244.098848 
+L 378.382418 232.401855 
+L 398.643313 210.11615 
+L 414.283453 185.626725 
+L 420.543366 156.358013 
+z
+" clip-path="url(#pc4aec411d9)" style="fill: none; stroke: #2b293d; stroke-width: 2.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_16">
+    <!-- C -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(374.361094 171.7858) scale(0.19 -0.19)">
+     <use xlink:href="#Neuromax-SemiBold-27"/>
+    </g>
+   </g>
+   <g id="text_17">
+    <!-- E -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(300.659703 140.2258) scale(0.19 -0.19)">
+     <use xlink:href="#Neuromax-SemiBold-29"/>
+    </g>
+   </g>
+   <g id="text_18">
+    <!-- F -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(324.653297 215.9698) scale(0.19 -0.19)">
+     <use xlink:href="#Neuromax-SemiBold-2a"/>
+    </g>
+   </g>
+   <g id="text_19">
+    <!-- G -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(282.722797 197.0338) scale(0.19 -0.19)">
+     <use xlink:href="#Neuromax-SemiBold-2b"/>
+    </g>
+   </g>
+   <g id="patch_23">
+    <path d="M 335.4738 113.2824 
+L 345.573 113.2824 
+Q 348.0978 113.2824 348.0978 110.7576 
+L 348.0978 100.6584 
+Q 348.0978 98.1336 345.573 98.1336 
+L 335.4738 98.1336 
+Q 332.949 98.1336 332.949 100.6584 
+L 332.949 110.7576 
+Q 332.949 113.2824 335.4738 113.2824 
+z
+" clip-path="url(#pc4aec411d9)" style="fill: #f08a3c; stroke: #ffffff; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 273.4584 171.8262 
+L 283.5576 171.8262 
+Q 286.0824 171.8262 286.0824 169.3014 
+L 286.0824 159.2022 
+Q 286.0824 156.6774 283.5576 156.6774 
+L 273.4584 156.6774 
+Q 270.9336 156.6774 270.9336 159.2022 
+L 270.9336 169.3014 
+Q 270.9336 171.8262 273.4584 171.8262 
+z
+" clip-path="url(#pc4aec411d9)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 306.4386 236.3664 
+L 316.5378 236.3664 
+Q 319.0626 236.3664 319.0626 233.8416 
+L 319.0626 223.7424 
+Q 319.0626 221.2176 316.5378 221.2176 
+L 306.4386 221.2176 
+Q 303.9138 221.2176 303.9138 223.7424 
+L 303.9138 233.8416 
+Q 303.9138 236.3664 306.4386 236.3664 
+z
+" clip-path="url(#pc4aec411d9)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_20">
+    <!-- L1 -->
+    <g style="fill: #ffffff" transform="translate(338.0214 108.5796) scale(0.072 -0.072)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-15" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_21">
+    <!-- L2 -->
+    <g style="fill: #ffffff" transform="translate(275.217938 167.1234) scale(0.072 -0.072)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-16" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_22">
+    <!-- L3 -->
+    <g style="fill: #ffffff" transform="translate(308.118825 231.6636) scale(0.072 -0.072)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-17" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="patch_26">
+    <path d="M 284.092807 209.549871 
+Q 294.391126 196.368623 303.932282 184.156501 
+" clip-path="url(#pc4aec411d9)" style="fill: none; stroke: #2b293d; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 300.701348 185.693077 
+L 303.932282 184.156501 
+L 303.222982 187.663194 
+z
+" clip-path="url(#pc4aec411d9)" style="fill: #2b293d; stroke: #2b293d; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 280.4016 217.4304 
+C 281.238581 217.4304 282.041394 217.097864 282.633229 216.506029 
+C 283.225064 215.914194 283.5576 215.111381 283.5576 214.2744 
+C 283.5576 213.437419 283.225064 212.634606 282.633229 212.042771 
+C 282.041394 211.450936 281.238581 211.1184 280.4016 211.1184 
+C 279.564619 211.1184 278.761806 211.450936 278.169971 212.042771 
+C 277.578136 212.634606 277.2456 213.437419 277.2456 214.2744 
+C 277.2456 215.111381 277.578136 215.914194 278.169971 216.506029 
+C 278.761806 217.097864 279.564619 217.4304 280.4016 217.4304 
+z
+" clip-path="url(#pc4aec411d9)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_23">
+    <!-- cámara -->
+    <g style="fill: #4f5361" transform="translate(269.35035 232.1292) scale(0.08 -0.08)">
+     <use xlink:href="#Neuromax-Regular-46"/>
+     <use xlink:href="#Neuromax-Regular-92" transform="translate(39.203125 0)"/>
+     <use xlink:href="#Neuromax-Regular-50" transform="translate(84.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-44" transform="translate(162.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-55" transform="translate(207.390625 0)"/>
+     <use xlink:href="#Neuromax-Regular-44" transform="translate(231.1875 0)"/>
+    </g>
+   </g>
+  </g>
+  <g id="axes_4">
+   <g id="line2d_18">
+    <path d="M 338.472 307.089931 
+L 289.201655 359.376828 
+" clip-path="url(#p160e313d06)" style="fill: none; stroke: #e8386d; stroke-width: 3.2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_19">
+    <path d="M 338.472 307.089931 
+L 387.742345 359.376828 
+" clip-path="url(#p160e313d06)" style="fill: none; stroke: #3b6fd4; stroke-width: 3.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_24">
+    <g id="patch_28">
+     <path d="M 297.220841 330.073517 
+L 317.381091 330.073517 
+L 317.381091 317.489517 
+L 297.220841 317.489517 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <!-- cerca -->
+    <g style="fill: #e8386d" transform="translate(298.452841 326.905517) scale(0.088 -0.088)">
+     <defs>
+      <path id="Neuromax-SemiBold-46" d="M 2477 0 
+L 2477 595 
+L 1158 595 
+C 973 595 845 742 845 909 
+L 845 2387 
+C 845 2541 979 2694 1158 2694 
+L 2477 2694 
+L 2477 3290 
+L 1139 3290 
+C 576 3290 237 2835 237 2406 
+L 237 883 
+C 237 454 576 0 1139 0 
+L 2477 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-SemiBold-48" d="M 845 2035 
+L 845 2381 
+C 845 2541 973 2694 1158 2694 
+L 1888 2694 
+C 2074 2694 2202 2541 2202 2381 
+L 2202 2035 
+L 845 2035 
+z
+M 845 1440 
+L 2810 1440 
+L 2810 2406 
+C 2810 2829 2470 3290 1914 3290 
+L 1139 3290 
+C 576 3290 237 2835 237 2406 
+L 237 883 
+C 237 454 576 0 1139 0 
+L 2477 0 
+L 2477 595 
+L 1158 595 
+C 973 595 845 742 845 909 
+L 845 1440 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-SemiBold-55" d="M 262 0 
+L 870 0 
+L 870 2387 
+C 870 2541 1005 2701 1184 2701 
+L 1670 2701 
+L 1670 3290 
+L 1165 3290 
+C 602 3290 262 2835 262 2406 
+L 262 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-SemiBold-44" d="M 1075 595 
+C 890 595 762 742 762 909 
+L 762 1210 
+C 762 1370 896 1530 1075 1530 
+L 1805 1530 
+C 1984 1530 2118 1370 2118 1210 
+L 2118 909 
+C 2118 742 1990 595 1805 595 
+L 1075 595 
+z
+M 474 2694 
+L 1824 2694 
+C 1997 2694 2118 2547 2118 2400 
+L 2118 2074 
+C 2029 2099 1926 2118 1830 2118 
+L 1056 2118 
+C 499 2118 154 1664 154 1235 
+L 154 883 
+C 154 454 493 0 1056 0 
+L 1830 0 
+C 2381 0 2726 461 2726 883 
+L 2726 2406 
+C 2726 2835 2381 3290 1824 3290 
+L 474 3290 
+L 474 2694 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-SemiBold-46"/>
+     <use xlink:href="#Neuromax-SemiBold-48" transform="translate(40.59375 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-55" transform="translate(87.296875 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-46" transform="translate(114 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-44" transform="translate(154.59375 0)"/>
+    </g>
+   </g>
+   <g id="text_25">
+    <g id="patch_29">
+     <path d="M 360.539159 330.073517 
+L 378.746909 330.073517 
+L 378.746909 317.489517 
+L 360.539159 317.489517 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <!-- lejos -->
+    <g style="fill: #3b6fd4" transform="translate(361.771159 326.905517) scale(0.088 -0.088)">
+     <defs>
+      <path id="Neuromax-SemiBold-4f" d="M 288 0 
+L 896 0 
+L 896 4506 
+L 288 4506 
+L 288 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-SemiBold-4d" d="M 282 3840 
+L 890 3840 
+L 890 4506 
+L 282 4506 
+L 282 3840 
+z
+M -864 -1299 
+L -109 -1299 
+C 506 -1299 890 -787 890 -314 
+L 890 3290 
+L 282 3290 
+L 282 -307 
+C 282 -525 102 -730 -147 -730 
+L -864 -730 
+L -864 -1299 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-SemiBold-52" d="M 1158 595 
+C 979 595 845 749 845 909 
+L 845 2387 
+C 845 2541 979 2701 1158 2701 
+L 1888 2701 
+C 2067 2701 2202 2541 2202 2387 
+L 2202 909 
+C 2202 749 2067 595 1888 595 
+L 1158 595 
+z
+M 237 890 
+C 237 461 576 0 1139 0 
+L 1914 0 
+C 2470 0 2810 467 2810 890 
+L 2810 2406 
+C 2810 2829 2470 3290 1914 3290 
+L 1139 3290 
+C 576 3290 237 2835 237 2406 
+L 237 890 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-SemiBold-56" d="M 218 1146 
+L 218 794 
+C 218 410 518 0 1024 0 
+L 1990 0 
+C 2490 0 2790 416 2790 794 
+L 2790 1133 
+C 2790 1517 2483 1926 1990 1926 
+L 1043 1926 
+C 922 1926 826 2029 826 2144 
+L 826 2477 
+C 826 2592 922 2701 1043 2701 
+L 1965 2701 
+C 2086 2701 2182 2592 2182 2477 
+L 2182 2144 
+L 2790 2144 
+L 2790 2496 
+C 2790 2874 2490 3290 1990 3290 
+L 1024 3290 
+C 518 3290 218 2880 218 2496 
+L 218 2125 
+C 218 1741 518 1331 1024 1331 
+L 1965 1331 
+C 2086 1331 2182 1222 2182 1114 
+L 2182 813 
+C 2182 698 2086 595 1965 595 
+L 1043 595 
+C 922 595 826 698 826 813 
+L 826 1146 
+L 218 1146 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-SemiBold-4f"/>
+     <use xlink:href="#Neuromax-SemiBold-48" transform="translate(18.703125 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-4d" transform="translate(65.40625 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-52" transform="translate(83.90625 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-56" transform="translate(131.703125 0)"/>
+    </g>
+   </g>
+   <g id="patch_30">
+    <path d="M 318.361655 316.944 
+L 358.582345 316.944 
+Q 361.397793 316.944 361.397793 314.128552 
+L 361.397793 300.05131 
+Q 361.397793 297.235862 358.582345 297.235862 
+L 318.361655 297.235862 
+Q 315.546207 297.235862 315.546207 300.05131 
+L 315.546207 314.128552 
+Q 315.546207 316.944 318.361655 316.944 
+z
+" clip-path="url(#p160e313d06)" style="fill: #ffffff; stroke: #f08a3c; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_31">
+    <path d="M 272.510069 368.426483 
+L 305.893241 368.426483 
+Q 308.306483 368.426483 308.306483 366.013241 
+L 308.306483 352.740414 
+Q 308.306483 350.327172 305.893241 350.327172 
+L 272.510069 350.327172 
+Q 270.096828 350.327172 270.096828 352.740414 
+L 270.096828 366.013241 
+Q 270.096828 368.426483 272.510069 368.426483 
+z
+" clip-path="url(#p160e313d06)" style="fill: #fce0e9; stroke: #e8386d; stroke-width: 2.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_32">
+    <path d="M 387.742345 377.878345 
+C 392.649005 377.878345 397.355361 375.928908 400.824893 372.459376 
+C 404.294425 368.989844 406.243862 364.283487 406.243862 359.376828 
+C 406.243862 354.470168 404.294425 349.763812 400.824893 346.294279 
+C 397.355361 342.824747 392.649005 340.87531 387.742345 340.87531 
+C 382.835685 340.87531 378.129329 342.824747 374.659797 346.294279 
+C 371.190264 349.763812 369.240828 354.470168 369.240828 359.376828 
+C 369.240828 364.283487 371.190264 368.989844 374.659797 372.459376 
+C 378.129329 375.928908 382.835685 377.878345 387.742345 377.878345 
+z
+" clip-path="url(#p160e313d06)" style="fill: #dde9fb; stroke: #3b6fd4; stroke-width: 2.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_26">
+    <!-- L1 -->
+    <g style="fill: #2b293d" transform="translate(333.607 312.261034) scale(0.14 -0.14)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-15" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_27">
+    <!-- L2 -->
+    <g style="fill: #2b293d" transform="translate(283.261265 364.192931) scale(0.13 -0.13)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-16" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_28">
+    <!-- C -->
+    <g style="fill: #2b293d" transform="translate(383.685314 364.902931) scale(0.15 -0.15)">
+     <use xlink:href="#Neuromax-SemiBold-27"/>
+    </g>
+   </g>
+  </g>
+  <g id="axes_5">
+   <g id="patch_33">
+    <path d="M 636.255366 156.358013 
+L 625.710468 127.777603 
+L 604.421683 105.423449 
+L 575.722472 93.187346 
+L 544.9633 93.700253 
+L 515.140498 100.391621 
+L 487.735891 116.591639 
+L 474.987186 144.826196 
+L 476.456859 174.492976 
+L 485.449595 202.087174 
+L 505.05189 224.594671 
+L 532.371909 239.077479 
+L 564.231698 244.098848 
+L 594.094418 232.401855 
+L 614.355313 210.11615 
+L 629.995453 185.626725 
+z
+" clip-path="url(#pb029a86ef3)" style="fill: #f2f5f9"/>
+   </g>
+   <g id="patch_34">
+    <path d="M 475.893481 163.120649 
+L 476.456859 174.492976 
+L 485.449595 202.087174 
+L 505.05189 224.594671 
+L 532.371909 239.077479 
+L 563.14639 243.927794 
+L 559.356421 168.128425 
+z
+" clip-path="url(#pb029a86ef3)" style="fill: #fce0e9"/>
+   </g>
+   <g id="patch_35">
+    <path d="M 555.626123 93.522451 
+L 544.9633 93.700253 
+L 515.140498 100.391621 
+L 487.735891 116.591639 
+L 474.987186 144.826196 
+L 475.893481 163.120649 
+L 559.356421 168.128425 
+z
+" clip-path="url(#pb029a86ef3)" style="fill: #dde9fb"/>
+   </g>
+   <g id="patch_36">
+    <path d="M 636.255366 156.358013 
+L 625.710468 127.777603 
+L 604.421683 105.423449 
+L 575.722472 93.187346 
+L 555.626123 93.522451 
+L 563.14639 243.927794 
+L 564.231698 244.098848 
+L 594.094418 232.401855 
+L 614.355313 210.11615 
+L 629.995453 185.626725 
+z
+" clip-path="url(#pb029a86ef3)" style="fill: #dde9fb"/>
+   </g>
+   <g id="patch_37">
+    <path d="M 496.1136 214.2744 
+L 635.952095 157.775981 
+L 636.255366 156.358013 
+L 625.710468 127.777603 
+L 604.421683 105.423449 
+L 575.722472 93.187346 
+L 544.9633 93.700253 
+L 515.140498 100.391621 
+L 511.844991 102.339734 
+z
+" clip-path="url(#pb029a86ef3)" style="fill: #f08a3c; opacity: 0.1"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 496.1136 214.2744 
+L 635.952095 157.775981 
+" clip-path="url(#pb029a86ef3)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #f08a3c; stroke-opacity: 0.55"/>
+   </g>
+   <g id="line2d_21">
+    <path d="M 496.1136 214.2744 
+L 511.844991 102.339734 
+" clip-path="url(#pb029a86ef3)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #f08a3c; stroke-opacity: 0.55"/>
+   </g>
+   <g id="line2d_22">
+    <path d="M 475.893481 163.120649 
+L 559.356421 168.128425 
+" clip-path="url(#pb029a86ef3)" style="fill: none; stroke: #f08a3c; stroke-opacity: 0.38; stroke-width: 9"/>
+   </g>
+   <g id="line2d_23">
+    <path d="M 563.14639 243.927794 
+L 555.626123 93.522451 
+" clip-path="url(#pb029a86ef3)" style="fill: none; stroke: #2b293d; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_24">
+    <path d="M 475.893481 163.120649 
+L 559.356421 168.128425 
+" clip-path="url(#pb029a86ef3)" style="fill: none; stroke: #2b293d; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_25">
+    <path d="M 526.356652 235.888689 
+L 534.576626 166.641638 
+" clip-path="url(#pb029a86ef3)" style="fill: none; stroke: #2b293d; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_38">
+    <path d="M 636.255366 156.358013 
+L 625.710468 127.777603 
+L 604.421683 105.423449 
+L 575.722472 93.187346 
+L 544.9633 93.700253 
+L 515.140498 100.391621 
+L 487.735891 116.591639 
+L 474.987186 144.826196 
+L 476.456859 174.492976 
+L 485.449595 202.087174 
+L 505.05189 224.594671 
+L 532.371909 239.077479 
+L 564.231698 244.098848 
+L 594.094418 232.401855 
+L 614.355313 210.11615 
+L 629.995453 185.626725 
+L 636.255366 156.358013 
+z
+" clip-path="url(#pb029a86ef3)" style="fill: none; stroke: #2b293d; stroke-width: 2.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_29">
+    <!-- C -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(590.073094 171.7858) scale(0.19 -0.19)">
+     <use xlink:href="#Neuromax-SemiBold-27"/>
+    </g>
+   </g>
+   <g id="text_30">
+    <!-- E -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(516.371703 140.2258) scale(0.19 -0.19)">
+     <use xlink:href="#Neuromax-SemiBold-29"/>
+    </g>
+   </g>
+   <g id="text_31">
+    <!-- F -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(540.365297 215.9698) scale(0.19 -0.19)">
+     <use xlink:href="#Neuromax-SemiBold-2a"/>
+    </g>
+   </g>
+   <g id="text_32">
+    <!-- G -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(498.434797 197.0338) scale(0.19 -0.19)">
+     <use xlink:href="#Neuromax-SemiBold-2b"/>
+    </g>
+   </g>
+   <g id="patch_39">
+    <path d="M 551.1858 113.2824 
+L 561.285 113.2824 
+Q 563.8098 113.2824 563.8098 110.7576 
+L 563.8098 100.6584 
+Q 563.8098 98.1336 561.285 98.1336 
+L 551.1858 98.1336 
+Q 548.661 98.1336 548.661 100.6584 
+L 548.661 110.7576 
+Q 548.661 113.2824 551.1858 113.2824 
+z
+" clip-path="url(#pb029a86ef3)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_40">
+    <path d="M 489.1704 171.8262 
+L 499.2696 171.8262 
+Q 501.7944 171.8262 501.7944 169.3014 
+L 501.7944 159.2022 
+Q 501.7944 156.6774 499.2696 156.6774 
+L 489.1704 156.6774 
+Q 486.6456 156.6774 486.6456 159.2022 
+L 486.6456 169.3014 
+Q 486.6456 171.8262 489.1704 171.8262 
+z
+" clip-path="url(#pb029a86ef3)" style="fill: #f08a3c; stroke: #ffffff; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_41">
+    <path d="M 522.1506 236.3664 
+L 532.2498 236.3664 
+Q 534.7746 236.3664 534.7746 233.8416 
+L 534.7746 223.7424 
+Q 534.7746 221.2176 532.2498 221.2176 
+L 522.1506 221.2176 
+Q 519.6258 221.2176 519.6258 223.7424 
+L 519.6258 233.8416 
+Q 519.6258 236.3664 522.1506 236.3664 
+z
+" clip-path="url(#pb029a86ef3)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_33">
+    <!-- L1 -->
+    <g style="fill: #ffffff" transform="translate(553.7334 108.5796) scale(0.072 -0.072)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-15" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_34">
+    <!-- L2 -->
+    <g style="fill: #ffffff" transform="translate(490.929938 167.1234) scale(0.072 -0.072)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-16" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_35">
+    <!-- L3 -->
+    <g style="fill: #ffffff" transform="translate(523.830825 231.6636) scale(0.072 -0.072)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-17" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="patch_42">
+    <path d="M 499.804807 209.549871 
+Q 510.103126 196.368623 519.644282 184.156501 
+" clip-path="url(#pb029a86ef3)" style="fill: none; stroke: #2b293d; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 516.413348 185.693077 
+L 519.644282 184.156501 
+L 518.934982 187.663194 
+z
+" clip-path="url(#pb029a86ef3)" style="fill: #2b293d; stroke: #2b293d; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="patch_43">
+    <path d="M 496.1136 217.4304 
+C 496.950581 217.4304 497.753394 217.097864 498.345229 216.506029 
+C 498.937064 215.914194 499.2696 215.111381 499.2696 214.2744 
+C 499.2696 213.437419 498.937064 212.634606 498.345229 212.042771 
+C 497.753394 211.450936 496.950581 211.1184 496.1136 211.1184 
+C 495.276619 211.1184 494.473806 211.450936 493.881971 212.042771 
+C 493.290136 212.634606 492.9576 213.437419 492.9576 214.2744 
+C 492.9576 215.111381 493.290136 215.914194 493.881971 216.506029 
+C 494.473806 217.097864 495.276619 217.4304 496.1136 217.4304 
+z
+" clip-path="url(#pb029a86ef3)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_36">
+    <!-- cámara -->
+    <g style="fill: #4f5361" transform="translate(485.06235 232.1292) scale(0.08 -0.08)">
+     <use xlink:href="#Neuromax-Regular-46"/>
+     <use xlink:href="#Neuromax-Regular-92" transform="translate(39.203125 0)"/>
+     <use xlink:href="#Neuromax-Regular-50" transform="translate(84.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-44" transform="translate(162.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-55" transform="translate(207.390625 0)"/>
+     <use xlink:href="#Neuromax-Regular-44" transform="translate(231.1875 0)"/>
+    </g>
+   </g>
+  </g>
+  <g id="axes_6">
+   <g id="line2d_26">
+    <path d="M 554.184 307.089931 
+L 603.454345 359.376828 
+" clip-path="url(#p231fb5ba1f)" style="fill: none; stroke: #e8386d; stroke-width: 3.2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_27">
+    <path d="M 554.184 307.089931 
+L 504.913655 359.376828 
+" clip-path="url(#p231fb5ba1f)" style="fill: none; stroke: #3b6fd4; stroke-width: 3.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_37">
+    <g id="patch_44">
+     <path d="M 575.274909 330.073517 
+L 595.435159 330.073517 
+L 595.435159 317.489517 
+L 575.274909 317.489517 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <!-- cerca -->
+    <g style="fill: #e8386d" transform="translate(576.506909 326.905517) scale(0.088 -0.088)">
+     <use xlink:href="#Neuromax-SemiBold-46"/>
+     <use xlink:href="#Neuromax-SemiBold-48" transform="translate(40.59375 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-55" transform="translate(87.296875 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-46" transform="translate(114 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-44" transform="translate(154.59375 0)"/>
+    </g>
+   </g>
+   <g id="text_38">
+    <g id="patch_45">
+     <path d="M 513.909091 330.073517 
+L 532.116841 330.073517 
+L 532.116841 317.489517 
+L 513.909091 317.489517 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <!-- lejos -->
+    <g style="fill: #3b6fd4" transform="translate(515.141091 326.905517) scale(0.088 -0.088)">
+     <use xlink:href="#Neuromax-SemiBold-4f"/>
+     <use xlink:href="#Neuromax-SemiBold-48" transform="translate(18.703125 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-4d" transform="translate(65.40625 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-52" transform="translate(83.90625 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-56" transform="translate(131.703125 0)"/>
+    </g>
+   </g>
+   <g id="text_39">
+    <!-- camino: L1 · L2 -->
+    <g style="fill: #7a8190" transform="translate(531.770875 384.137103) scale(0.08 -0.08)">
+     <defs>
+      <path id="Neuromax-Regular-4c" d="M 800 0 
+L 800 3251 
+L 288 3251 
+L 288 0 
+L 800 0 
+z
+M 800 3898 
+L 800 4480 
+L 288 4480 
+L 288 3898 
+L 800 3898 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-51" d="M 1901 3251 
+L 1120 3251 
+C 646 3251 262 2867 262 2394 
+L 262 0 
+L 774 0 
+L 774 2374 
+C 774 2573 941 2739 1139 2739 
+L 1875 2739 
+C 2080 2739 2240 2573 2240 2374 
+L 2240 0 
+L 2752 0 
+L 2752 2400 
+C 2752 2867 2368 3251 1901 3251 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-52" d="M 1875 3251 
+L 1094 3251 
+C 621 3251 237 2867 237 2394 
+L 237 858 
+C 237 384 621 0 1094 0 
+L 1875 0 
+C 2342 0 2726 384 2726 858 
+L 2726 2394 
+C 2726 2867 2342 3251 1875 3251 
+z
+M 2214 877 
+C 2214 678 2048 512 1850 512 
+L 1114 512 
+C 915 512 749 678 749 877 
+L 749 2374 
+C 749 2573 915 2739 1114 2739 
+L 1850 2739 
+C 2048 2739 2214 2573 2214 2374 
+L 2214 877 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-1e" d="M 858 2662 
+L 858 3290 
+L 230 3290 
+L 230 2662 
+L 858 2662 
+z
+M 858 32 
+L 858 659 
+L 230 659 
+L 230 32 
+L 858 32 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-3" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-30" d="M 832 486 
+L 832 4474 
+L 320 4474 
+L 320 0 
+L 2886 0 
+L 2886 486 
+L 832 486 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-15" d="M 1082 64 
+L 1082 4525 
+L 256 4525 
+L 256 3987 
+L 576 3987 
+L 563 64 
+L 1082 64 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-6f" d="M 518 1914 
+C 698 1914 845 2061 845 2240 
+C 845 2419 698 2566 518 2566 
+C 339 2566 192 2419 192 2240 
+C 192 2061 339 1914 518 1914 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-16" d="M 250 64 
+L 2541 64 
+L 2541 531 
+L 902 531 
+L 2150 2330 
+C 2374 2637 2541 2976 2541 3360 
+L 2541 3469 
+C 2541 4141 2042 4589 1395 4589 
+C 710 4589 250 4147 250 3456 
+L 250 3290 
+L 762 3290 
+L 762 3430 
+C 762 3827 960 4122 1382 4122 
+C 1786 4122 2016 3846 2016 3456 
+L 2016 3360 
+C 2016 3130 1920 2874 1734 2598 
+L 250 467 
+L 250 64 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-Regular-46"/>
+     <use xlink:href="#Neuromax-Regular-44" transform="translate(39.203125 0)"/>
+     <use xlink:href="#Neuromax-Regular-50" transform="translate(84.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-4c" transform="translate(162.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-51" transform="translate(179.390625 0)"/>
+     <use xlink:href="#Neuromax-Regular-52" transform="translate(226.59375 0)"/>
+     <use xlink:href="#Neuromax-Regular-1e" transform="translate(273 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(290.09375 0)"/>
+     <use xlink:href="#Neuromax-Regular-30" transform="translate(323 0)"/>
+     <use xlink:href="#Neuromax-Regular-15" transform="translate(367.703125 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(389.609375 0)"/>
+     <use xlink:href="#Neuromax-Regular-6f" transform="translate(422.515625 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(438.8125 0)"/>
+     <use xlink:href="#Neuromax-Regular-30" transform="translate(471.71875 0)"/>
+     <use xlink:href="#Neuromax-Regular-16" transform="translate(516.421875 0)"/>
+    </g>
+   </g>
+   <g id="text_40">
+    <!-- el hijo cercano no siempre es el izquierdo -->
+    <g style="fill: #7a8190" transform="translate(490.6715 394.594483) scale(0.08 -0.08)">
+     <defs>
+      <path id="Neuromax-Regular-48" d="M 749 877 
+L 749 1459 
+L 2726 1459 
+L 2726 2394 
+C 2726 2867 2342 3251 1875 3251 
+L 1094 3251 
+C 621 3251 237 2867 237 2394 
+L 237 851 
+C 237 378 621 0 1094 0 
+L 2394 0 
+L 2394 512 
+L 1114 512 
+C 915 512 749 672 749 877 
+z
+M 749 1978 
+L 749 2368 
+C 749 2573 915 2733 1114 2733 
+L 1850 2733 
+C 2048 2733 2214 2573 2214 2368 
+L 2214 1978 
+L 749 1978 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-4f" d="M 800 0 
+L 800 4480 
+L 288 4480 
+L 288 0 
+L 800 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-4b" d="M 1926 3251 
+L 1146 3251 
+C 1024 3251 909 3226 800 3181 
+L 800 4480 
+L 288 4480 
+L 288 0 
+L 800 0 
+L 800 2374 
+C 800 2573 966 2739 1165 2739 
+L 1901 2739 
+C 2106 2739 2266 2573 2266 2374 
+L 2266 0 
+L 2778 0 
+L 2778 2394 
+C 2778 2867 2394 3251 1926 3251 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-4d" d="M 288 -358 
+C 288 -621 70 -832 -192 -832 
+L -864 -832 
+L -864 -1318 
+L -154 -1318 
+C 371 -1318 800 -890 800 -365 
+L 800 3251 
+L 288 3251 
+L 288 -358 
+z
+M 800 3898 
+L 800 4480 
+L 288 4480 
+L 288 3898 
+L 800 3898 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-56" d="M 2707 2490 
+C 2707 2912 2368 3251 1952 3251 
+L 979 3251 
+C 557 3251 218 2912 218 2490 
+L 218 2112 
+C 218 1690 557 1350 979 1350 
+L 1926 1350 
+C 2074 1350 2195 1229 2195 1082 
+L 2195 781 
+C 2195 634 2074 512 1926 512 
+L 998 512 
+C 851 512 730 634 730 781 
+L 730 1075 
+L 218 1075 
+L 218 762 
+C 218 339 557 0 979 0 
+L 1952 0 
+C 2368 0 2707 339 2707 762 
+L 2707 1107 
+C 2707 1523 2368 1862 1952 1862 
+L 998 1862 
+C 851 1862 730 1984 730 2131 
+L 730 2470 
+C 730 2618 851 2739 998 2739 
+L 1926 2739 
+C 2074 2739 2195 2618 2195 2470 
+L 2195 2176 
+L 2707 2176 
+L 2707 2490 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-53" d="M 1901 3251 
+L 1120 3251 
+C 646 3251 262 2867 262 2394 
+L 262 -1235 
+L 774 -1235 
+L 774 70 
+C 883 26 998 0 1120 0 
+L 1901 0 
+C 2368 0 2752 384 2752 858 
+L 2752 2400 
+C 2752 2867 2368 3251 1901 3251 
+z
+M 2240 877 
+C 2240 678 2074 512 1875 512 
+L 1139 512 
+C 941 512 774 678 774 877 
+L 774 2374 
+C 774 2573 941 2739 1139 2739 
+L 1875 2739 
+C 2074 2739 2240 2573 2240 2374 
+L 2240 877 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-5d" d="M 768 512 
+C 730 512 710 557 730 582 
+L 2163 2656 
+C 2246 2765 2253 2906 2195 3034 
+C 2138 3162 2003 3251 1856 3251 
+L 243 3251 
+L 243 2733 
+L 1568 2733 
+C 1606 2733 1626 2694 1606 2662 
+L 179 640 
+C 83 512 77 346 154 205 
+C 224 77 365 0 506 0 
+L 2234 0 
+L 2234 512 
+L 768 512 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-54" d="M 1875 3251 
+L 1094 3251 
+C 621 3251 237 2867 237 2394 
+L 237 858 
+C 237 384 621 0 1094 0 
+L 1875 0 
+C 1997 0 2112 26 2214 70 
+L 2214 -1235 
+L 2726 -1235 
+L 2726 2400 
+C 2726 2867 2342 3251 1875 3251 
+z
+M 2214 877 
+C 2214 678 2048 512 1850 512 
+L 1114 512 
+C 915 512 749 678 749 877 
+L 749 2374 
+C 749 2573 915 2739 1114 2739 
+L 1850 2739 
+C 2048 2739 2214 2573 2214 2374 
+L 2214 877 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-58" d="M 2240 3245 
+L 2240 877 
+C 2240 672 2080 512 1875 512 
+L 1139 512 
+C 941 512 774 672 774 877 
+L 774 3245 
+L 262 3245 
+L 262 851 
+C 262 378 646 0 1120 0 
+L 1901 0 
+C 2368 0 2752 378 2752 851 
+L 2752 3245 
+L 2240 3245 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-Regular-47" d="M 2214 4480 
+L 2214 3174 
+C 2112 3219 1997 3251 1875 3251 
+L 1094 3251 
+C 621 3251 237 2867 237 2394 
+L 237 851 
+C 237 378 621 0 1094 0 
+L 1875 0 
+C 2342 0 2726 378 2726 851 
+L 2726 4480 
+L 2214 4480 
+z
+M 2214 877 
+C 2214 672 2054 512 1850 512 
+L 1114 512 
+C 915 512 749 672 749 877 
+L 749 2374 
+C 749 2573 915 2733 1114 2733 
+L 1850 2733 
+C 2054 2733 2214 2573 2214 2374 
+L 2214 877 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-Regular-48"/>
+     <use xlink:href="#Neuromax-Regular-4f" transform="translate(45.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(62.390625 0)"/>
+     <use xlink:href="#Neuromax-Regular-4b" transform="translate(95.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-4c" transform="translate(142.890625 0)"/>
+     <use xlink:href="#Neuromax-Regular-4d" transform="translate(159.984375 0)"/>
+     <use xlink:href="#Neuromax-Regular-52" transform="translate(176.984375 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(223.390625 0)"/>
+     <use xlink:href="#Neuromax-Regular-46" transform="translate(256.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-48" transform="translate(295.5 0)"/>
+     <use xlink:href="#Neuromax-Regular-55" transform="translate(340.796875 0)"/>
+     <use xlink:href="#Neuromax-Regular-46" transform="translate(366 0)"/>
+     <use xlink:href="#Neuromax-Regular-44" transform="translate(405.203125 0)"/>
+     <use xlink:href="#Neuromax-Regular-51" transform="translate(450.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-52" transform="translate(497.5 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(543.90625 0)"/>
+     <use xlink:href="#Neuromax-Regular-51" transform="translate(576.8125 0)"/>
+     <use xlink:href="#Neuromax-Regular-52" transform="translate(624.015625 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(670.421875 0)"/>
+     <use xlink:href="#Neuromax-Regular-56" transform="translate(703.328125 0)"/>
+     <use xlink:href="#Neuromax-Regular-4c" transform="translate(749.125 0)"/>
+     <use xlink:href="#Neuromax-Regular-48" transform="translate(766.21875 0)"/>
+     <use xlink:href="#Neuromax-Regular-50" transform="translate(811.515625 0)"/>
+     <use xlink:href="#Neuromax-Regular-53" transform="translate(889.515625 0)"/>
+     <use xlink:href="#Neuromax-Regular-55" transform="translate(936.3125 0)"/>
+     <use xlink:href="#Neuromax-Regular-48" transform="translate(961.515625 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(1006.8125 0)"/>
+     <use xlink:href="#Neuromax-Regular-48" transform="translate(1039.71875 0)"/>
+     <use xlink:href="#Neuromax-Regular-56" transform="translate(1085.015625 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(1130.8125 0)"/>
+     <use xlink:href="#Neuromax-Regular-48" transform="translate(1163.71875 0)"/>
+     <use xlink:href="#Neuromax-Regular-4f" transform="translate(1209.015625 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(1226.109375 0)"/>
+     <use xlink:href="#Neuromax-Regular-4c" transform="translate(1259.015625 0)"/>
+     <use xlink:href="#Neuromax-Regular-5d" transform="translate(1276.109375 0)"/>
+     <use xlink:href="#Neuromax-Regular-54" transform="translate(1313.015625 0)"/>
+     <use xlink:href="#Neuromax-Regular-58" transform="translate(1359.8125 0)"/>
+     <use xlink:href="#Neuromax-Regular-4c" transform="translate(1407.015625 0)"/>
+     <use xlink:href="#Neuromax-Regular-48" transform="translate(1424.109375 0)"/>
+     <use xlink:href="#Neuromax-Regular-55" transform="translate(1469.40625 0)"/>
+     <use xlink:href="#Neuromax-Regular-47" transform="translate(1494.609375 0)"/>
+     <use xlink:href="#Neuromax-Regular-52" transform="translate(1541.40625 0)"/>
+    </g>
+   </g>
+   <g id="patch_46">
+    <path d="M 534.073655 316.944 
+L 574.294345 316.944 
+Q 577.109793 316.944 577.109793 314.128552 
+L 577.109793 300.05131 
+Q 577.109793 297.235862 574.294345 297.235862 
+L 534.073655 297.235862 
+Q 531.258207 297.235862 531.258207 300.05131 
+L 531.258207 314.128552 
+Q 531.258207 316.944 534.073655 316.944 
+z
+" clip-path="url(#p231fb5ba1f)" style="fill: #ffffff; stroke: #f08a3c; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_47">
+    <path d="M 586.762759 368.426483 
+L 620.145931 368.426483 
+Q 622.559172 368.426483 622.559172 366.013241 
+L 622.559172 352.740414 
+Q 622.559172 350.327172 620.145931 350.327172 
+L 586.762759 350.327172 
+Q 584.349517 350.327172 584.349517 352.740414 
+L 584.349517 366.013241 
+Q 584.349517 368.426483 586.762759 368.426483 
+z
+" clip-path="url(#p231fb5ba1f)" style="fill: #fce0e9; stroke: #e8386d; stroke-width: 2.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_48">
+    <path d="M 504.913655 377.878345 
+C 509.820315 377.878345 514.526671 375.928908 517.996203 372.459376 
+C 521.465736 368.989844 523.415172 364.283487 523.415172 359.376828 
+C 523.415172 354.470168 521.465736 349.763812 517.996203 346.294279 
+C 514.526671 342.824747 509.820315 340.87531 504.913655 340.87531 
+C 500.006995 340.87531 495.300639 342.824747 491.831107 346.294279 
+C 488.361575 349.763812 486.412138 354.470168 486.412138 359.376828 
+C 486.412138 364.283487 488.361575 368.989844 491.831107 372.459376 
+C 495.300639 375.928908 500.006995 377.878345 504.913655 377.878345 
+z
+" clip-path="url(#p231fb5ba1f)" style="fill: #dde9fb; stroke: #3b6fd4; stroke-width: 2.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_41">
+    <!-- L2 -->
+    <g style="fill: #2b293d" transform="translate(547.786656 312.261034) scale(0.14 -0.14)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-16" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_42">
+    <!-- L3 -->
+    <g style="fill: #2b293d" transform="translate(597.370751 364.192931) scale(0.13 -0.13)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-17" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_43">
+    <!-- E -->
+    <g style="fill: #2b293d" transform="translate(501.223421 364.902931) scale(0.15 -0.15)">
+     <use xlink:href="#Neuromax-SemiBold-29"/>
+    </g>
+   </g>
+  </g>
+  <g id="axes_7">
+   <g id="patch_49">
+    <path d="M 851.967366 156.358013 
+L 841.422468 127.777603 
+L 820.133683 105.423449 
+L 791.434472 93.187346 
+L 760.6753 93.700253 
+L 730.852498 100.391621 
+L 703.447891 116.591639 
+L 690.699186 144.826196 
+L 692.168859 174.492976 
+L 701.161595 202.087174 
+L 720.76389 224.594671 
+L 748.083909 239.077479 
+L 779.943698 244.098848 
+L 809.806418 232.401855 
+L 830.067313 210.11615 
+L 845.707453 185.626725 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #f2f5f9"/>
+   </g>
+   <g id="patch_50">
+    <path d="M 691.605481 163.120649 
+L 692.168859 174.492976 
+L 701.161595 202.087174 
+L 720.76389 224.594671 
+L 742.068652 235.888689 
+L 750.288626 166.641638 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #fce0e9"/>
+   </g>
+   <g id="patch_51">
+    <path d="M 742.068652 235.888689 
+L 748.083909 239.077479 
+L 778.85839 243.927794 
+L 775.068421 168.128425 
+L 750.288626 166.641638 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #dde9fb"/>
+   </g>
+   <g id="patch_52">
+    <path d="M 771.338123 93.522451 
+L 760.6753 93.700253 
+L 730.852498 100.391621 
+L 703.447891 116.591639 
+L 690.699186 144.826196 
+L 691.605481 163.120649 
+L 775.068421 168.128425 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #dde9fb"/>
+   </g>
+   <g id="patch_53">
+    <path d="M 851.967366 156.358013 
+L 841.422468 127.777603 
+L 820.133683 105.423449 
+L 791.434472 93.187346 
+L 771.338123 93.522451 
+L 778.85839 243.927794 
+L 779.943698 244.098848 
+L 809.806418 232.401855 
+L 830.067313 210.11615 
+L 845.707453 185.626725 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #dde9fb"/>
+   </g>
+   <g id="patch_54">
+    <path d="M 711.8256 214.2744 
+L 851.664095 157.775981 
+L 851.967366 156.358013 
+L 841.422468 127.777603 
+L 820.133683 105.423449 
+L 791.434472 93.187346 
+L 760.6753 93.700253 
+L 730.852498 100.391621 
+L 727.556991 102.339734 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #f08a3c; opacity: 0.1"/>
+   </g>
+   <g id="line2d_28">
+    <path d="M 711.8256 214.2744 
+L 851.664095 157.775981 
+" clip-path="url(#p8edf5f4a18)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #f08a3c; stroke-opacity: 0.55"/>
+   </g>
+   <g id="line2d_29">
+    <path d="M 711.8256 214.2744 
+L 727.556991 102.339734 
+" clip-path="url(#p8edf5f4a18)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #f08a3c; stroke-opacity: 0.55"/>
+   </g>
+   <g id="line2d_30">
+    <path d="M 742.068652 235.888689 
+L 750.288626 166.641638 
+" clip-path="url(#p8edf5f4a18)" style="fill: none; stroke: #f08a3c; stroke-opacity: 0.38; stroke-width: 9"/>
+   </g>
+   <g id="line2d_31">
+    <path d="M 778.85839 243.927794 
+L 771.338123 93.522451 
+" clip-path="url(#p8edf5f4a18)" style="fill: none; stroke: #2b293d; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_32">
+    <path d="M 691.605481 163.120649 
+L 775.068421 168.128425 
+" clip-path="url(#p8edf5f4a18)" style="fill: none; stroke: #2b293d; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_33">
+    <path d="M 742.068652 235.888689 
+L 750.288626 166.641638 
+" clip-path="url(#p8edf5f4a18)" style="fill: none; stroke: #2b293d; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_55">
+    <path d="M 851.967366 156.358013 
+L 841.422468 127.777603 
+L 820.133683 105.423449 
+L 791.434472 93.187346 
+L 760.6753 93.700253 
+L 730.852498 100.391621 
+L 703.447891 116.591639 
+L 690.699186 144.826196 
+L 692.168859 174.492976 
+L 701.161595 202.087174 
+L 720.76389 224.594671 
+L 748.083909 239.077479 
+L 779.943698 244.098848 
+L 809.806418 232.401855 
+L 830.067313 210.11615 
+L 845.707453 185.626725 
+L 851.967366 156.358013 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: none; stroke: #2b293d; stroke-width: 2.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_44">
+    <!-- C -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(805.785094 171.7858) scale(0.19 -0.19)">
+     <use xlink:href="#Neuromax-SemiBold-27"/>
+    </g>
+   </g>
+   <g id="text_45">
+    <!-- E -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(732.083703 140.2258) scale(0.19 -0.19)">
+     <use xlink:href="#Neuromax-SemiBold-29"/>
+    </g>
+   </g>
+   <g id="text_46">
+    <!-- F -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(756.077297 215.9698) scale(0.19 -0.19)">
+     <use xlink:href="#Neuromax-SemiBold-2a"/>
+    </g>
+   </g>
+   <g id="text_47">
+    <!-- G -->
+    <g style="fill: #2b293d; opacity: 0.88" transform="translate(714.146797 197.0338) scale(0.19 -0.19)">
+     <use xlink:href="#Neuromax-SemiBold-2b"/>
+    </g>
+   </g>
+   <g id="patch_56">
+    <path d="M 766.8978 113.2824 
+L 776.997 113.2824 
+Q 779.5218 113.2824 779.5218 110.7576 
+L 779.5218 100.6584 
+Q 779.5218 98.1336 776.997 98.1336 
+L 766.8978 98.1336 
+Q 764.373 98.1336 764.373 100.6584 
+L 764.373 110.7576 
+Q 764.373 113.2824 766.8978 113.2824 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_57">
+    <path d="M 704.8824 171.8262 
+L 714.9816 171.8262 
+Q 717.5064 171.8262 717.5064 169.3014 
+L 717.5064 159.2022 
+Q 717.5064 156.6774 714.9816 156.6774 
+L 704.8824 156.6774 
+Q 702.3576 156.6774 702.3576 159.2022 
+L 702.3576 169.3014 
+Q 702.3576 171.8262 704.8824 171.8262 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_58">
+    <path d="M 737.8626 236.3664 
+L 747.9618 236.3664 
+Q 750.4866 236.3664 750.4866 233.8416 
+L 750.4866 223.7424 
+Q 750.4866 221.2176 747.9618 221.2176 
+L 737.8626 221.2176 
+Q 735.3378 221.2176 735.3378 223.7424 
+L 735.3378 233.8416 
+Q 735.3378 236.3664 737.8626 236.3664 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #f08a3c; stroke: #ffffff; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_48">
+    <!-- L1 -->
+    <g style="fill: #ffffff" transform="translate(769.4454 108.5796) scale(0.072 -0.072)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-15" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_49">
+    <!-- L2 -->
+    <g style="fill: #ffffff" transform="translate(706.641938 167.1234) scale(0.072 -0.072)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-16" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_50">
+    <!-- L3 -->
+    <g style="fill: #ffffff" transform="translate(739.542825 231.6636) scale(0.072 -0.072)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-17" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="patch_59">
+    <path d="M 715.516807 209.549871 
+Q 725.815126 196.368623 735.356282 184.156501 
+" clip-path="url(#p8edf5f4a18)" style="fill: none; stroke: #2b293d; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 732.125348 185.693077 
+L 735.356282 184.156501 
+L 734.646982 187.663194 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #2b293d; stroke: #2b293d; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="patch_60">
+    <path d="M 724.134 180.1896 
+C 725.640566 180.1896 727.085629 179.591035 728.150932 178.525732 
+C 729.216235 177.460429 729.8148 176.015366 729.8148 174.5088 
+C 729.8148 173.002234 729.216235 171.557171 728.150932 170.491868 
+C 727.085629 169.426565 725.640566 168.828 724.134 168.828 
+C 722.627434 168.828 721.182371 169.426565 720.117068 170.491868 
+C 719.051765 171.557171 718.4532 173.002234 718.4532 174.5088 
+C 718.4532 176.015366 719.051765 177.460429 720.117068 178.525732 
+C 721.182371 179.591035 722.627434 180.1896 724.134 180.1896 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_61">
+    <path d="M 762.9528 190.92 
+C 764.459366 190.92 765.904429 190.321435 766.969732 189.256132 
+C 768.035035 188.190829 768.6336 186.745766 768.6336 185.2392 
+C 768.6336 183.732634 768.035035 182.287571 766.969732 181.222268 
+C 765.904429 180.156965 764.459366 179.5584 762.9528 179.5584 
+C 761.446234 179.5584 760.001171 180.156965 758.935868 181.222268 
+C 757.870565 182.287571 757.272 183.732634 757.272 185.2392 
+C 757.272 186.745766 757.870565 188.190829 758.935868 189.256132 
+C 760.001171 190.321435 761.446234 190.92 762.9528 190.92 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_62">
+    <path d="M 747.804 127.8 
+C 749.310566 127.8 750.755629 127.201435 751.820932 126.136132 
+C 752.886235 125.070829 753.4848 123.625766 753.4848 122.1192 
+C 753.4848 120.612634 752.886235 119.167571 751.820932 118.102268 
+C 750.755629 117.036965 749.310566 116.4384 747.804 116.4384 
+C 746.297434 116.4384 744.852371 117.036965 743.787068 118.102268 
+C 742.721765 119.167571 742.1232 120.612634 742.1232 122.1192 
+C 742.1232 123.625766 742.721765 125.070829 743.787068 126.136132 
+C 744.852371 127.201435 746.297434 127.8 747.804 127.8 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_63">
+    <path d="M 822.9168 159.36 
+C 824.423366 159.36 825.868429 158.761435 826.933732 157.696132 
+C 827.999035 156.630829 828.5976 155.185766 828.5976 153.6792 
+C 828.5976 152.172634 827.999035 150.727571 826.933732 149.662268 
+C 825.868429 148.596965 824.423366 147.9984 822.9168 147.9984 
+C 821.410234 147.9984 819.965171 148.596965 818.899868 149.662268 
+C 817.834565 150.727571 817.236 152.172634 817.236 153.6792 
+C 817.236 155.185766 817.834565 156.630829 818.899868 157.696132 
+C 819.965171 158.761435 821.410234 159.36 822.9168 159.36 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_64">
+    <path d="M 711.8256 217.4304 
+C 712.662581 217.4304 713.465394 217.097864 714.057229 216.506029 
+C 714.649064 215.914194 714.9816 215.111381 714.9816 214.2744 
+C 714.9816 213.437419 714.649064 212.634606 714.057229 212.042771 
+C 713.465394 211.450936 712.662581 211.1184 711.8256 211.1184 
+C 710.988619 211.1184 710.185806 211.450936 709.593971 212.042771 
+C 709.002136 212.634606 708.6696 213.437419 708.6696 214.2744 
+C 708.6696 215.111381 709.002136 215.914194 709.593971 216.506029 
+C 710.185806 217.097864 710.988619 217.4304 711.8256 217.4304 
+z
+" clip-path="url(#p8edf5f4a18)" style="fill: #2b293d; stroke: #ffffff; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_51">
+    <!-- cámara -->
+    <g style="fill: #4f5361" transform="translate(700.77435 232.1292) scale(0.08 -0.08)">
+     <use xlink:href="#Neuromax-Regular-46"/>
+     <use xlink:href="#Neuromax-Regular-92" transform="translate(39.203125 0)"/>
+     <use xlink:href="#Neuromax-Regular-50" transform="translate(84.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-44" transform="translate(162.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-55" transform="translate(207.390625 0)"/>
+     <use xlink:href="#Neuromax-Regular-44" transform="translate(231.1875 0)"/>
+    </g>
+   </g>
+   <g id="text_52">
+    <!-- 1 -->
+    <g style="fill: #ffffff" transform="translate(723.221156 177.5934) scale(0.078 -0.078)">
+     <use xlink:href="#Neuromax-SemiBold-15"/>
+    </g>
+   </g>
+   <g id="text_53">
+    <!-- 2 -->
+    <g style="fill: #ffffff" transform="translate(761.186222 188.3238) scale(0.078 -0.078)">
+     <use xlink:href="#Neuromax-SemiBold-16"/>
+    </g>
+   </g>
+   <g id="text_54">
+    <!-- 3 -->
+    <g style="fill: #ffffff" transform="translate(745.9515 125.2038) scale(0.078 -0.078)">
+     <use xlink:href="#Neuromax-SemiBold-17"/>
+    </g>
+   </g>
+   <g id="text_55">
+    <!-- 4 -->
+    <g style="fill: #ffffff" transform="translate(820.989956 156.7638) scale(0.078 -0.078)">
+     <defs>
+      <path id="Neuromax-SemiBold-18" d="M 192 909 
+L 1837 909 
+L 1837 64 
+L 2451 64 
+L 2451 909 
+L 2931 909 
+L 2931 1472 
+L 2451 1472 
+L 2451 4550 
+L 1862 4550 
+L 198 1414 
+C 198 1414 192 1402 192 1376 
+L 192 909 
+z
+M 851 1466 
+L 1837 3296 
+L 1837 1466 
+L 851 1466 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-SemiBold-18"/>
+    </g>
+   </g>
+  </g>
+  <g id="axes_8">
+   <g id="line2d_34">
+    <path d="M 769.896 307.089931 
+L 720.625655 359.376828 
+" clip-path="url(#p02738d5f54)" style="fill: none; stroke: #e8386d; stroke-width: 3.2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_35">
+    <path d="M 769.896 307.089931 
+L 819.166345 359.376828 
+" clip-path="url(#p02738d5f54)" style="fill: none; stroke: #3b6fd4; stroke-width: 3.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_56">
+    <g id="patch_65">
+     <path d="M 728.644841 330.073517 
+L 748.805091 330.073517 
+L 748.805091 317.489517 
+L 728.644841 317.489517 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <!-- cerca -->
+    <g style="fill: #e8386d" transform="translate(729.876841 326.905517) scale(0.088 -0.088)">
+     <use xlink:href="#Neuromax-SemiBold-46"/>
+     <use xlink:href="#Neuromax-SemiBold-48" transform="translate(40.59375 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-55" transform="translate(87.296875 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-46" transform="translate(114 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-44" transform="translate(154.59375 0)"/>
+    </g>
+   </g>
+   <g id="text_57">
+    <g id="patch_66">
+     <path d="M 791.963159 330.073517 
+L 810.170909 330.073517 
+L 810.170909 317.489517 
+L 791.963159 317.489517 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <!-- lejos -->
+    <g style="fill: #3b6fd4" transform="translate(793.195159 326.905517) scale(0.088 -0.088)">
+     <use xlink:href="#Neuromax-SemiBold-4f"/>
+     <use xlink:href="#Neuromax-SemiBold-48" transform="translate(18.703125 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-4d" transform="translate(65.40625 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-52" transform="translate(83.90625 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-56" transform="translate(131.703125 0)"/>
+    </g>
+   </g>
+   <g id="text_58">
+    <!-- camino: L1 · L2 · L3 -->
+    <g style="fill: #7a8190" transform="translate(740.566625 383.734897) scale(0.08 -0.08)">
+     <defs>
+      <path id="Neuromax-Regular-17" d="M 1440 -19 
+C 2176 -19 2662 480 2662 1216 
+L 2662 1370 
+C 2662 1818 2490 2208 2067 2406 
+C 2400 2579 2586 2938 2586 3309 
+L 2586 3450 
+C 2586 4147 2138 4570 1446 4570 
+C 768 4570 307 4179 307 3482 
+L 307 3341 
+L 806 3341 
+L 806 3469 
+C 806 3859 1043 4102 1434 4102 
+C 1843 4102 2067 3821 2067 3424 
+L 2067 3296 
+C 2067 2886 1830 2598 1408 2598 
+L 1158 2598 
+L 1158 2125 
+L 1414 2125 
+C 1882 2125 2138 1805 2138 1357 
+L 2138 1190 
+C 2138 755 1901 448 1446 448 
+C 1050 448 774 672 774 1082 
+L 774 1190 
+L 256 1190 
+L 256 1062 
+C 256 358 768 -19 1440 -19 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-Regular-46"/>
+     <use xlink:href="#Neuromax-Regular-44" transform="translate(39.203125 0)"/>
+     <use xlink:href="#Neuromax-Regular-50" transform="translate(84.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-4c" transform="translate(162.296875 0)"/>
+     <use xlink:href="#Neuromax-Regular-51" transform="translate(179.390625 0)"/>
+     <use xlink:href="#Neuromax-Regular-52" transform="translate(226.59375 0)"/>
+     <use xlink:href="#Neuromax-Regular-1e" transform="translate(273 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(290.09375 0)"/>
+     <use xlink:href="#Neuromax-Regular-30" transform="translate(323 0)"/>
+     <use xlink:href="#Neuromax-Regular-15" transform="translate(367.703125 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(389.609375 0)"/>
+     <use xlink:href="#Neuromax-Regular-6f" transform="translate(422.515625 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(438.8125 0)"/>
+     <use xlink:href="#Neuromax-Regular-30" transform="translate(471.71875 0)"/>
+     <use xlink:href="#Neuromax-Regular-16" transform="translate(516.421875 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(560.328125 0)"/>
+     <use xlink:href="#Neuromax-Regular-6f" transform="translate(593.234375 0)"/>
+     <use xlink:href="#Neuromax-Regular-3" transform="translate(609.53125 0)"/>
+     <use xlink:href="#Neuromax-Regular-30" transform="translate(642.4375 0)"/>
+     <use xlink:href="#Neuromax-Regular-17" transform="translate(687.140625 0)"/>
+    </g>
+   </g>
+   <g id="text_59">
+    <!-- hojas en orden: G · F · E · C -->
+    <g style="fill: #2b293d" transform="translate(721.704312 394.878483) scale(0.088 -0.088)">
+     <defs>
+      <path id="Neuromax-SemiBold-4b" d="M 288 0 
+L 896 0 
+L 896 2387 
+C 896 2541 1030 2701 1210 2701 
+L 1939 2701 
+C 2125 2701 2246 2547 2246 2387 
+L 2246 0 
+L 2861 0 
+L 2861 2406 
+C 2861 2829 2522 3290 1965 3290 
+L 1190 3290 
+C 1088 3290 992 3270 896 3245 
+L 896 4506 
+L 288 4506 
+L 288 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-SemiBold-3" transform="scale(0.015625)"/>
+      <path id="Neuromax-SemiBold-51" d="M 262 0 
+L 870 0 
+L 870 2387 
+C 870 2541 1005 2701 1184 2701 
+L 1914 2701 
+C 2099 2701 2221 2547 2221 2387 
+L 2221 0 
+L 2835 0 
+L 2835 2406 
+C 2835 2835 2490 3290 1939 3290 
+L 1165 3290 
+C 602 3290 262 2835 262 2406 
+L 262 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-SemiBold-47" d="M 1158 595 
+C 973 595 845 742 845 909 
+L 845 2387 
+C 845 2541 979 2694 1158 2694 
+L 1888 2694 
+C 2074 2694 2202 2547 2202 2387 
+L 2202 909 
+C 2202 742 2074 595 1888 595 
+L 1158 595 
+z
+M 2202 3245 
+C 2112 3270 2016 3290 1914 3290 
+L 1139 3290 
+C 576 3290 237 2835 237 2406 
+L 237 883 
+C 237 454 576 0 1139 0 
+L 1914 0 
+C 2464 0 2810 461 2810 883 
+L 2810 4506 
+L 2202 4506 
+L 2202 3245 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-SemiBold-1e" d="M 230 32 
+L 954 32 
+L 954 736 
+L 230 736 
+L 230 32 
+z
+M 230 2624 
+L 954 2624 
+L 954 3328 
+L 230 3328 
+L 230 2624 
+z
+" transform="scale(0.015625)"/>
+      <path id="Neuromax-SemiBold-6f" d="M 192 2253 
+C 192 2080 333 1888 563 1888 
+C 800 1888 941 2080 941 2253 
+C 941 2419 800 2618 563 2618 
+C 333 2618 192 2419 192 2253 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Neuromax-SemiBold-4b"/>
+     <use xlink:href="#Neuromax-SemiBold-52" transform="translate(49 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-4d" transform="translate(96.796875 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-44" transform="translate(115.296875 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-56" transform="translate(161.796875 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-3" transform="translate(209 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-48" transform="translate(241.90625 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-51" transform="translate(288.609375 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-3" transform="translate(337.203125 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-52" transform="translate(370.109375 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-55" transform="translate(417.90625 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-47" transform="translate(444.609375 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-48" transform="translate(492.8125 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-51" transform="translate(539.515625 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-1e" transform="translate(588.109375 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-3" transform="translate(606.8125 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-2b" transform="translate(639.71875 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-3" transform="translate(695.015625 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-6f" transform="translate(727.921875 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-3" transform="translate(745.828125 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-2a" transform="translate(778.734375 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-3" transform="translate(824.53125 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-6f" transform="translate(857.4375 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-3" transform="translate(875.34375 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-29" transform="translate(908.25 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-3" transform="translate(957.453125 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-6f" transform="translate(990.359375 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-3" transform="translate(1008.265625 0)"/>
+     <use xlink:href="#Neuromax-SemiBold-27" transform="translate(1041.171875 0)"/>
+    </g>
+   </g>
+   <g id="patch_67">
+    <path d="M 749.785655 316.944 
+L 790.006345 316.944 
+Q 792.821793 316.944 792.821793 314.128552 
+L 792.821793 300.05131 
+Q 792.821793 297.235862 790.006345 297.235862 
+L 749.785655 297.235862 
+Q 746.970207 297.235862 746.970207 300.05131 
+L 746.970207 314.128552 
+Q 746.970207 316.944 749.785655 316.944 
+z
+" clip-path="url(#p02738d5f54)" style="fill: #ffffff; stroke: #f08a3c; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_68">
+    <path d="M 720.625655 377.878345 
+C 725.532315 377.878345 730.238671 375.928908 733.708203 372.459376 
+C 737.177736 368.989844 739.127172 364.283487 739.127172 359.376828 
+C 739.127172 354.470168 737.177736 349.763812 733.708203 346.294279 
+C 730.238671 342.824747 725.532315 340.87531 720.625655 340.87531 
+C 715.718995 340.87531 711.012639 342.824747 707.543107 346.294279 
+C 704.073575 349.763812 702.124138 354.470168 702.124138 359.376828 
+C 702.124138 364.283487 704.073575 368.989844 707.543107 372.459376 
+C 711.012639 375.928908 715.718995 377.878345 720.625655 377.878345 
+z
+" clip-path="url(#p02738d5f54)" style="fill: #fce0e9; stroke: #e8386d; stroke-width: 2.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_69">
+    <path d="M 819.166345 377.878345 
+C 824.073005 377.878345 828.779361 375.928908 832.248893 372.459376 
+C 835.718425 368.989844 837.667862 364.283487 837.667862 359.376828 
+C 837.667862 354.470168 835.718425 349.763812 832.248893 346.294279 
+C 828.779361 342.824747 824.073005 340.87531 819.166345 340.87531 
+C 814.259685 340.87531 809.553329 342.824747 806.083797 346.294279 
+C 802.614264 349.763812 800.664828 354.470168 800.664828 359.376828 
+C 800.664828 364.283487 802.614264 368.989844 806.083797 372.459376 
+C 809.553329 375.928908 814.259685 377.878345 819.166345 377.878345 
+z
+" clip-path="url(#p02738d5f54)" style="fill: #dde9fb; stroke: #3b6fd4; stroke-width: 2.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_60">
+    <!-- L3 -->
+    <g style="fill: #2b293d" transform="translate(763.344437 312.261034) scale(0.14 -0.14)">
+     <use xlink:href="#Neuromax-SemiBold-30"/>
+     <use xlink:href="#Neuromax-SemiBold-17" transform="translate(46.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_61">
+    <!-- G -->
+    <g style="fill: #2b293d" transform="translate(716.47839 364.902931) scale(0.15 -0.15)">
+     <use xlink:href="#Neuromax-SemiBold-2b"/>
+    </g>
+   </g>
+   <g id="text_62">
+    <!-- F -->
+    <g style="fill: #2b293d" transform="translate(815.731579 364.902931) scale(0.15 -0.15)">
+     <use xlink:href="#Neuromax-SemiBold-2a"/>
+    </g>
+   </g>
+   <g id="patch_70">
+    <path d="M 720.625655 381.096 
+C 726.385647 381.096 731.9105 378.807531 735.983429 374.734602 
+C 740.056359 370.661672 742.344828 365.136819 742.344828 359.376828 
+C 742.344828 353.616836 740.056359 348.091983 735.983429 344.019053 
+C 731.9105 339.946124 726.385647 337.657655 720.625655 337.657655 
+C 714.865663 337.657655 709.34081 339.946124 705.267881 344.019053 
+C 701.194952 348.091983 698.906483 353.616836 698.906483 359.376828 
+C 698.906483 365.136819 701.194952 370.661672 705.267881 374.734602 
+C 709.34081 378.807531 714.865663 381.096 720.625655 381.096 
+L 720.625655 381.096 
+z
+" clip-path="url(#p02738d5f54)" style="fill: none; stroke: #f08a3c; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+  </g>
+  <g id="text_63">
+   <!-- 1 · EL MAPA Y SU ÁRBOL -->
+   <g style="fill: #2b293d" transform="translate(68.131906 26.3422) scale(0.106 -0.106)">
+    <defs>
+     <path id="Neuromax-SemiBold-31" d="M 294 0 
+L 902 0 
+L 902 3424 
+C 902 3674 1101 3904 1382 3904 
+L 1869 3904 
+C 2234 3904 2490 3597 2490 3283 
+L 2490 0 
+L 3098 0 
+L 3098 3283 
+C 3098 3597 3354 3910 3725 3910 
+L 4205 3910 
+C 4493 3910 4691 3667 4691 3424 
+L 4691 0 
+L 5299 0 
+L 5299 3443 
+C 5299 3949 4890 4506 4230 4506 
+L 3706 4506 
+C 3334 4506 3014 4333 2797 4096 
+C 2579 4333 2253 4506 1888 4506 
+L 1363 4506 
+C 698 4506 294 3955 294 3443 
+L 294 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-SemiBold-25" d="M 1235 2022 
+L 1786 3910 
+L 2022 3910 
+L 2573 2022 
+L 1235 2022 
+z
+M 6 0 
+L 634 0 
+L 1082 1517 
+L 2720 1517 
+L 3162 0 
+L 3795 0 
+L 2605 3987 
+C 2522 4256 2259 4506 1901 4506 
+C 1536 4506 1286 4256 1203 3987 
+L 6 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-SemiBold-34" d="M 928 2118 
+L 928 3904 
+L 2438 3904 
+C 2611 3904 2733 3757 2733 3610 
+L 2733 2413 
+C 2733 2266 2611 2118 2438 2118 
+L 928 2118 
+z
+M 320 0 
+L 928 0 
+L 928 1523 
+L 2458 1523 
+C 3008 1523 3341 1978 3341 2394 
+L 3341 3635 
+C 3341 4058 3008 4499 2458 4499 
+L 320 4499 
+L 320 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-SemiBold-3d" d="M 1517 0 
+L 2131 0 
+L 2131 1971 
+C 2189 2138 2266 2259 2355 2387 
+C 2445 2502 2547 2624 2650 2790 
+L 3757 4506 
+L 3059 4506 
+L 1830 2541 
+L 634 4506 
+L -58 4506 
+L 1011 2790 
+C 1114 2624 1210 2502 1299 2387 
+C 1382 2259 1459 2138 1517 1971 
+L 1517 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-SemiBold-37" d="M 224 1139 
+L 224 787 
+C 224 403 525 -6 1030 -6 
+L 2208 -6 
+C 2707 -6 3014 403 3014 787 
+L 3014 1798 
+C 3014 2182 2707 2592 2208 2592 
+L 1050 2592 
+C 928 2592 832 2701 832 2816 
+L 832 3693 
+C 832 3802 922 3904 1050 3904 
+L 2189 3904 
+C 2387 3904 2400 3706 2400 3558 
+C 2400 3501 2394 3443 2394 3398 
+L 2394 3354 
+L 3014 3354 
+L 3014 3706 
+C 3014 4096 2707 4506 2208 4506 
+L 1030 4506 
+C 525 4506 224 4096 224 3706 
+L 224 2790 
+C 224 2406 531 1997 1030 1997 
+L 2189 1997 
+C 2304 1997 2394 1894 2394 1779 
+L 2394 806 
+C 2394 691 2304 589 2189 589 
+L 1050 589 
+C 928 589 832 691 832 806 
+L 832 1139 
+L 224 1139 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-SemiBold-39" d="M 294 4499 
+L 294 1094 
+C 294 499 794 -70 1530 -70 
+L 2214 -70 
+C 2950 -70 3450 499 3450 1094 
+L 3450 4499 
+L 2842 4499 
+L 2842 1075 
+C 2842 736 2560 435 2170 435 
+L 1574 435 
+C 1184 435 902 736 902 1075 
+L 902 4499 
+L 294 4499 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-SemiBold-74" d="M 1235 2022 
+L 1786 3910 
+L 2022 3910 
+L 2573 2022 
+L 1235 2022 
+z
+M 6 0 
+L 634 0 
+L 1082 1517 
+L 2720 1517 
+L 3162 0 
+L 3795 0 
+L 2605 3987 
+C 2522 4256 2259 4506 1901 4506 
+C 1536 4506 1286 4256 1203 3987 
+L 6 0 
+z
+M 1267 4986 
+L 1818 4986 
+L 2560 5920 
+L 1715 5920 
+L 1267 4986 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-SemiBold-36" d="M 928 2118 
+L 928 3904 
+L 2438 3904 
+C 2611 3904 2733 3757 2733 3610 
+L 2733 2413 
+C 2733 2266 2611 2118 2438 2118 
+L 928 2118 
+z
+M 320 0 
+L 928 0 
+L 928 1530 
+L 1926 1530 
+L 2720 0 
+L 3366 0 
+L 2573 1542 
+C 3059 1613 3341 1978 3341 2394 
+L 3341 3635 
+C 3341 4058 3008 4499 2458 4499 
+L 320 4499 
+L 320 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-SemiBold-26" d="M 928 2637 
+L 928 3910 
+L 1830 3910 
+C 2086 3910 2259 3699 2259 3482 
+L 2259 3066 
+C 2259 2842 2086 2637 1830 2637 
+L 928 2637 
+z
+M 928 570 
+L 928 2054 
+L 2323 2054 
+C 2598 2054 2778 1830 2778 1594 
+L 2778 1024 
+C 2778 787 2598 570 2323 570 
+L 928 570 
+z
+M 320 0 
+L 2381 0 
+C 3014 0 3392 518 3392 998 
+L 3392 1613 
+C 3392 2042 3187 2406 2688 2528 
+C 2848 2662 2874 2867 2874 3034 
+L 2874 3571 
+C 2874 4019 2509 4506 1926 4506 
+L 320 4506 
+L 320 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-SemiBold-33" d="M 1357 595 
+C 1075 595 877 832 877 1082 
+L 877 3424 
+C 877 3674 1075 3904 1357 3904 
+L 2202 3904 
+C 2483 3904 2682 3674 2682 3424 
+L 2682 1082 
+C 2682 832 2483 595 2202 595 
+L 1357 595 
+z
+M 269 1056 
+C 269 544 678 0 1344 0 
+L 2221 0 
+C 2886 0 3290 550 3290 1056 
+L 3290 3443 
+C 3290 3949 2886 4506 2221 4506 
+L 1344 4506 
+C 672 4506 269 3955 269 3443 
+L 269 1056 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#Neuromax-SemiBold-15"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(23.40625 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-6f" transform="translate(56.3125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(74.21875 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-29" transform="translate(107.125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-30" transform="translate(156.328125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(202.421875 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-31" transform="translate(235.328125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-25" transform="translate(322.921875 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-34" transform="translate(382.421875 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-25" transform="translate(432.421875 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(491.921875 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-3d" transform="translate(524.828125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(582.625 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-37" transform="translate(615.53125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-39" transform="translate(666.328125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(725.03125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-74" transform="translate(757.9375 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-36" transform="translate(817.4375 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-26" transform="translate(873.53125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-33" transform="translate(928.828125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-30" transform="translate(984.625 0)"/>
+   </g>
+  </g>
+  <g id="text_64">
+   <!-- El árbol se construye una vez. -->
+   <g style="fill: #4f5361" transform="translate(74.614164 44.116394) scale(0.083 -0.083)">
+    <defs>
+     <path id="Neuromax-Regular-29" d="M 832 3994 
+L 2867 3994 
+L 2867 4474 
+L 320 4474 
+L 320 0 
+L 2957 0 
+L 2957 486 
+L 832 486 
+L 832 1971 
+L 2618 1971 
+L 2618 2451 
+L 832 2451 
+L 832 3994 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-Regular-45" d="M 1901 3251 
+L 1120 3251 
+C 998 3251 883 3219 774 3174 
+L 774 4480 
+L 262 4480 
+L 262 851 
+C 262 384 646 0 1120 0 
+L 1901 0 
+C 2368 0 2752 384 2752 851 
+L 2752 2394 
+C 2752 2867 2368 3251 1901 3251 
+z
+M 2240 877 
+C 2240 672 2080 512 1875 512 
+L 1139 512 
+C 941 512 774 672 774 877 
+L 774 2368 
+C 774 2573 941 2733 1139 2733 
+L 1875 2733 
+C 2080 2733 2240 2573 2240 2368 
+L 2240 877 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-Regular-57" d="M 1037 4083 
+L 525 4083 
+L 525 3251 
+L 58 3251 
+L 58 2822 
+L 525 2822 
+L 525 787 
+C 525 352 877 0 1312 0 
+L 1882 0 
+L 1882 486 
+L 1350 486 
+C 1178 486 1037 627 1037 800 
+L 1037 2822 
+L 1779 2822 
+L 1779 3251 
+L 1037 3251 
+L 1037 4083 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-Regular-5c" d="M 2240 3245 
+L 2240 877 
+C 2240 672 2080 512 1875 512 
+L 1139 512 
+C 941 512 774 672 774 877 
+L 774 3245 
+L 262 3245 
+L 262 851 
+C 262 378 646 0 1120 0 
+L 1901 0 
+C 2022 0 2138 26 2240 70 
+L 2240 -358 
+C 2240 -621 2029 -832 1760 -832 
+L 262 -832 
+L 262 -1318 
+L 1798 -1318 
+C 2330 -1318 2752 -890 2752 -365 
+L 2752 3245 
+L 2240 3245 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-Regular-59" d="M 2470 3251 
+L 1670 512 
+L 1357 512 
+L 563 3251 
+L 38 3251 
+L 858 493 
+C 947 205 1210 6 1517 6 
+C 1818 6 2086 205 2170 493 
+L 2995 3251 
+L 2470 3251 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-Regular-12" d="M 819 32 
+L 819 659 
+L 192 659 
+L 192 32 
+L 819 32 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#Neuromax-Regular-29"/>
+    <use xlink:href="#Neuromax-Regular-4f" transform="translate(47.90625 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(65 0)"/>
+    <use xlink:href="#Neuromax-Regular-92" transform="translate(97.90625 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(143 0)"/>
+    <use xlink:href="#Neuromax-Regular-45" transform="translate(168.203125 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(215 0)"/>
+    <use xlink:href="#Neuromax-Regular-4f" transform="translate(261.40625 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(278.5 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(311.40625 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(357.203125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(402.5 0)"/>
+    <use xlink:href="#Neuromax-Regular-46" transform="translate(435.40625 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(474.609375 0)"/>
+    <use xlink:href="#Neuromax-Regular-51" transform="translate(521.015625 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(568.21875 0)"/>
+    <use xlink:href="#Neuromax-Regular-57" transform="translate(614.015625 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(644.609375 0)"/>
+    <use xlink:href="#Neuromax-Regular-58" transform="translate(669.8125 0)"/>
+    <use xlink:href="#Neuromax-Regular-5c" transform="translate(717.015625 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(764.609375 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(809.90625 0)"/>
+    <use xlink:href="#Neuromax-Regular-58" transform="translate(842.8125 0)"/>
+    <use xlink:href="#Neuromax-Regular-51" transform="translate(890.015625 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(937.21875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(982.3125 0)"/>
+    <use xlink:href="#Neuromax-Regular-59" transform="translate(1015.21875 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(1062.625 0)"/>
+    <use xlink:href="#Neuromax-Regular-5d" transform="translate(1107.328125 0)"/>
+    <use xlink:href="#Neuromax-Regular-12" transform="translate(1144.234375 0)"/>
+   </g>
+   <!-- La cámara está en la hoja G. -->
+   <g style="fill: #4f5361" transform="translate(76.654148 57.956644) scale(0.083 -0.083)">
+    <defs>
+     <path id="Neuromax-Regular-2b" d="M 3213 3219 
+L 3213 3450 
+C 3213 4019 2752 4480 2189 4480 
+L 1299 4480 
+C 730 4480 269 4019 269 3450 
+L 269 1024 
+C 269 461 730 0 1299 0 
+L 2189 0 
+C 2752 0 3213 461 3213 1024 
+L 3213 2323 
+L 2157 2323 
+L 2157 1843 
+L 2701 1843 
+L 2701 1050 
+C 2701 755 2458 512 2163 512 
+L 1318 512 
+C 1024 512 781 755 781 1050 
+L 781 3430 
+C 781 3725 1024 3968 1318 3968 
+L 2163 3968 
+C 2458 3968 2701 3725 2701 3430 
+L 2701 3219 
+L 3213 3219 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#Neuromax-Regular-30"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(44.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(89.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-46" transform="translate(122.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-92" transform="translate(161.90625 0)"/>
+    <use xlink:href="#Neuromax-Regular-50" transform="translate(207 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(285 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(330.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(353.890625 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(398.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(431.890625 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(477.1875 0)"/>
+    <use xlink:href="#Neuromax-Regular-57" transform="translate(522.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-92" transform="translate(553.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(598.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(631.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-51" transform="translate(676.875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(724.078125 0)"/>
+    <use xlink:href="#Neuromax-Regular-4f" transform="translate(756.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(774.078125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(819.171875 0)"/>
+    <use xlink:href="#Neuromax-Regular-4b" transform="translate(852.078125 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(899.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-4d" transform="translate(946.078125 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(963.078125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(1008.171875 0)"/>
+    <use xlink:href="#Neuromax-Regular-2b" transform="translate(1041.078125 0)"/>
+    <use xlink:href="#Neuromax-Regular-12" transform="translate(1095.078125 0)"/>
+   </g>
+  </g>
+  <g id="text_65">
+   <!-- 2 · CORTE L1 -->
+   <g style="fill: #2b293d" transform="translate(311.997672 26.3422) scale(0.106 -0.106)">
+    <defs>
+     <path id="Neuromax-SemiBold-38" d="M 1382 0 
+L 1997 0 
+L 1997 3936 
+L 3405 3936 
+L 3405 4506 
+L -32 4506 
+L -32 3936 
+L 1382 3936 
+L 1382 0 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#Neuromax-SemiBold-16"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(45.296875 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-6f" transform="translate(78.203125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(96.109375 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-27" transform="translate(129.015625 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-33" transform="translate(183.109375 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-36" transform="translate(238.90625 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-38" transform="translate(295 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-29" transform="translate(347.90625 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(397.109375 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-30" transform="translate(430.015625 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-15" transform="translate(476.109375 0)"/>
+   </g>
+  </g>
+  <g id="text_66">
+   <!-- La cámara está a la izquierda. -->
+   <g style="fill: #4f5361" transform="translate(290.827406 44.170214) scale(0.083 -0.083)">
+    <use xlink:href="#Neuromax-Regular-30"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(44.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(89.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-46" transform="translate(122.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-92" transform="translate(161.90625 0)"/>
+    <use xlink:href="#Neuromax-Regular-50" transform="translate(207 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(285 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(330.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(353.890625 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(398.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(431.890625 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(477.1875 0)"/>
+    <use xlink:href="#Neuromax-Regular-57" transform="translate(522.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-92" transform="translate(553.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(598.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(631.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(676.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-4f" transform="translate(709.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(726.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(771.765625 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(804.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-5d" transform="translate(821.765625 0)"/>
+    <use xlink:href="#Neuromax-Regular-54" transform="translate(858.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-58" transform="translate(905.46875 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(952.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(969.765625 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(1015.0625 0)"/>
+    <use xlink:href="#Neuromax-Regular-47" transform="translate(1040.265625 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(1087.0625 0)"/>
+    <use xlink:href="#Neuromax-Regular-12" transform="translate(1132.15625 0)"/>
+   </g>
+   <!-- Primero L2; C después. -->
+   <g style="fill: #4f5361" transform="translate(301.664742 58.010464) scale(0.083 -0.083)">
+    <defs>
+     <path id="Neuromax-Regular-34" d="M 832 0 
+L 832 1542 
+L 2426 1542 
+C 2893 1542 3264 1920 3264 2381 
+L 3264 3642 
+C 3264 4102 2893 4474 2426 4474 
+L 320 4474 
+L 320 0 
+L 832 0 
+z
+M 832 2061 
+L 832 3962 
+L 2406 3962 
+C 2598 3962 2752 3808 2752 3616 
+L 2752 2406 
+C 2752 2214 2598 2061 2406 2061 
+L 832 2061 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-Regular-1f" d="M 237 26 
+L 550 26 
+C 544 -160 512 -301 454 -397 
+C 403 -499 314 -576 198 -627 
+L 352 -864 
+C 742 -685 864 -390 864 26 
+L 864 653 
+L 237 653 
+L 237 26 
+z
+M 864 2656 
+L 864 3283 
+L 237 3283 
+L 237 2656 
+L 864 2656 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-Regular-27" d="M 3213 3219 
+L 3213 3450 
+C 3213 4019 2752 4480 2189 4480 
+L 1299 4480 
+C 730 4480 269 4019 269 3450 
+L 269 1024 
+C 269 461 730 0 1299 0 
+L 2189 0 
+C 2752 0 3213 461 3213 1024 
+L 3213 1395 
+L 2701 1395 
+L 2701 1050 
+C 2701 755 2458 512 2163 512 
+L 1318 512 
+C 1024 512 781 755 781 1050 
+L 781 3430 
+C 781 3725 1024 3968 1318 3968 
+L 2163 3968 
+C 2458 3968 2701 3725 2701 3430 
+L 2701 3219 
+L 3213 3219 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-Regular-9a" d="M 749 877 
+L 749 1459 
+L 2726 1459 
+L 2726 2394 
+C 2726 2867 2342 3251 1875 3251 
+L 1094 3251 
+C 621 3251 237 2867 237 2394 
+L 237 851 
+C 237 378 621 0 1094 0 
+L 2394 0 
+L 2394 512 
+L 1114 512 
+C 915 512 749 672 749 877 
+z
+M 749 1978 
+L 749 2368 
+C 749 2573 915 2733 1114 2733 
+L 1850 2733 
+C 2048 2733 2214 2573 2214 2368 
+L 2214 1978 
+L 749 1978 
+z
+M 1293 4698 
+L 883 3840 
+L 1338 3840 
+L 2016 4698 
+L 1293 4698 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#Neuromax-Regular-34"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(53.5 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(78.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-50" transform="translate(95.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(173.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(219.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(244.296875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(290.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-30" transform="translate(323.609375 0)"/>
+    <use xlink:href="#Neuromax-Regular-16" transform="translate(368.3125 0)"/>
+    <use xlink:href="#Neuromax-Regular-1f" transform="translate(412.21875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(429.421875 0)"/>
+    <use xlink:href="#Neuromax-Regular-27" transform="translate(462.328125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(515.125 0)"/>
+    <use xlink:href="#Neuromax-Regular-47" transform="translate(548.03125 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(594.828125 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(640.125 0)"/>
+    <use xlink:href="#Neuromax-Regular-53" transform="translate(685.921875 0)"/>
+    <use xlink:href="#Neuromax-Regular-58" transform="translate(732.71875 0)"/>
+    <use xlink:href="#Neuromax-Regular-9a" transform="translate(779.921875 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(825.21875 0)"/>
+    <use xlink:href="#Neuromax-Regular-12" transform="translate(871.015625 0)"/>
+   </g>
+  </g>
+  <g id="text_67">
+   <!-- 3 · CORTE L2 -->
+   <g style="fill: #2b293d" transform="translate(526.432703 26.3422) scale(0.106 -0.106)">
+    <use xlink:href="#Neuromax-SemiBold-17"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(47.5 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-6f" transform="translate(80.40625 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(98.3125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-27" transform="translate(131.21875 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-33" transform="translate(185.3125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-36" transform="translate(241.109375 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-38" transform="translate(297.203125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-29" transform="translate(350.109375 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(399.3125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-30" transform="translate(432.21875 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-16" transform="translate(478.3125 0)"/>
+   </g>
+  </g>
+  <g id="text_68">
+   <!-- La cámara está abajo. -->
+   <g style="fill: #4f5361" transform="translate(518.997188 44.116394) scale(0.083 -0.083)">
+    <use xlink:href="#Neuromax-Regular-30"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(44.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(89.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-46" transform="translate(122.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-92" transform="translate(161.90625 0)"/>
+    <use xlink:href="#Neuromax-Regular-50" transform="translate(207 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(285 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(330.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(353.890625 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(398.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(431.890625 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(477.1875 0)"/>
+    <use xlink:href="#Neuromax-Regular-57" transform="translate(522.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-92" transform="translate(553.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(598.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(631.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-45" transform="translate(676.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(723.46875 0)"/>
+    <use xlink:href="#Neuromax-Regular-4d" transform="translate(768.5625 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(785.5625 0)"/>
+    <use xlink:href="#Neuromax-Regular-12" transform="translate(831.96875 0)"/>
+   </g>
+   <!-- Primero L3; E después. -->
+   <g style="fill: #4f5361" transform="translate(517.488922 58.010464) scale(0.083 -0.083)">
+    <use xlink:href="#Neuromax-Regular-34"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(53.5 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(78.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-50" transform="translate(95.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(173.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(219.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(244.296875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(290.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-30" transform="translate(323.609375 0)"/>
+    <use xlink:href="#Neuromax-Regular-17" transform="translate(368.3125 0)"/>
+    <use xlink:href="#Neuromax-Regular-1f" transform="translate(414.40625 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(431.609375 0)"/>
+    <use xlink:href="#Neuromax-Regular-29" transform="translate(464.515625 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(512.421875 0)"/>
+    <use xlink:href="#Neuromax-Regular-47" transform="translate(545.328125 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(592.125 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(637.421875 0)"/>
+    <use xlink:href="#Neuromax-Regular-53" transform="translate(683.21875 0)"/>
+    <use xlink:href="#Neuromax-Regular-58" transform="translate(730.015625 0)"/>
+    <use xlink:href="#Neuromax-Regular-9a" transform="translate(777.21875 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(822.515625 0)"/>
+    <use xlink:href="#Neuromax-Regular-12" transform="translate(868.3125 0)"/>
+   </g>
+  </g>
+  <g id="text_69">
+   <!-- 4 · CORTE L3 -->
+   <g style="fill: #2b293d" transform="translate(741.926906 26.3422) scale(0.106 -0.106)">
+    <use xlink:href="#Neuromax-SemiBold-18"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(49.40625 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-6f" transform="translate(82.3125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(100.21875 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-27" transform="translate(133.125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-33" transform="translate(187.21875 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-36" transform="translate(243.015625 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-38" transform="translate(299.109375 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-29" transform="translate(352.015625 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-3" transform="translate(401.21875 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-30" transform="translate(434.125 0)"/>
+    <use xlink:href="#Neuromax-SemiBold-17" transform="translate(480.21875 0)"/>
+   </g>
+  </g>
+  <g id="text_70">
+   <!-- La cámara está a la izquierda. -->
+   <g style="fill: #4f5361" transform="translate(722.251406 44.170214) scale(0.083 -0.083)">
+    <use xlink:href="#Neuromax-Regular-30"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(44.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(89.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-46" transform="translate(122.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-92" transform="translate(161.90625 0)"/>
+    <use xlink:href="#Neuromax-Regular-50" transform="translate(207 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(285 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(330.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(353.890625 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(398.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(431.890625 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(477.1875 0)"/>
+    <use xlink:href="#Neuromax-Regular-57" transform="translate(522.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-92" transform="translate(553.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(598.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(631.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(676.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-4f" transform="translate(709.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(726.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(771.765625 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(804.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-5d" transform="translate(821.765625 0)"/>
+    <use xlink:href="#Neuromax-Regular-54" transform="translate(858.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-58" transform="translate(905.46875 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(952.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(969.765625 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(1015.0625 0)"/>
+    <use xlink:href="#Neuromax-Regular-47" transform="translate(1040.265625 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(1087.0625 0)"/>
+    <use xlink:href="#Neuromax-Regular-12" transform="translate(1132.15625 0)"/>
+   </g>
+   <!-- Primero G; F después. -->
+   <g style="fill: #4f5361" transform="translate(734.873242 58.010464) scale(0.083 -0.083)">
+    <defs>
+     <path id="Neuromax-Regular-2a" d="M 832 3994 
+L 2797 3994 
+L 2797 4474 
+L 320 4474 
+L 320 0 
+L 832 0 
+L 832 1971 
+L 2547 1971 
+L 2547 2451 
+L 832 2451 
+L 832 3994 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#Neuromax-Regular-34"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(53.5 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(78.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-50" transform="translate(95.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(173.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(219.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(244.296875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(290.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-2b" transform="translate(323.609375 0)"/>
+    <use xlink:href="#Neuromax-Regular-1f" transform="translate(377.609375 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(394.8125 0)"/>
+    <use xlink:href="#Neuromax-Regular-2a" transform="translate(427.71875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(472.125 0)"/>
+    <use xlink:href="#Neuromax-Regular-47" transform="translate(505.03125 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(551.828125 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(597.125 0)"/>
+    <use xlink:href="#Neuromax-Regular-53" transform="translate(642.921875 0)"/>
+    <use xlink:href="#Neuromax-Regular-58" transform="translate(689.71875 0)"/>
+    <use xlink:href="#Neuromax-Regular-9a" transform="translate(736.921875 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(782.21875 0)"/>
+    <use xlink:href="#Neuromax-Regular-12" transform="translate(828.015625 0)"/>
+   </g>
+  </g>
+  <g id="text_71">
+   <!-- 3 cortes, 4 hojas convexas. El árbol se construye una vez; el recorrido se repite en cada fotograma. -->
+   <g style="fill: #4f5361" transform="translate(258.854031 433.8662) scale(0.098 -0.098)">
+    <defs>
+     <path id="Neuromax-Regular-10" d="M 198 653 
+L 198 26 
+L 512 26 
+C 506 -160 474 -301 416 -397 
+C 365 -499 275 -576 160 -627 
+L 314 -864 
+C 704 -685 826 -390 826 26 
+L 826 653 
+L 198 653 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-Regular-18" d="M 2368 4525 
+L 1856 4525 
+L 192 1370 
+L 192 922 
+L 1850 922 
+L 1850 64 
+L 2368 64 
+L 2368 922 
+L 2848 922 
+L 2848 1402 
+L 2368 1402 
+L 2368 4525 
+z
+M 730 1395 
+L 1850 3507 
+L 1850 1395 
+L 730 1395 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-Regular-5b" d="M 2656 3251 
+L 2106 3251 
+L 1350 1971 
+L 589 3251 
+L 38 3251 
+L 1101 1568 
+L 38 0 
+L 608 0 
+L 1350 1190 
+L 2086 0 
+L 2656 0 
+L 1594 1568 
+L 2656 3251 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-Regular-49" d="M 1043 3686 
+C 1043 3859 1184 4000 1357 4000 
+L 1958 4000 
+L 1958 4480 
+L 1318 4480 
+C 883 4480 531 4128 531 3699 
+L 531 3251 
+L 64 3251 
+L 64 2822 
+L 531 2822 
+L 531 0 
+L 1043 0 
+L 1043 2822 
+L 1715 2822 
+L 1715 3251 
+L 1043 3251 
+L 1043 3686 
+z
+" transform="scale(0.015625)"/>
+     <path id="Neuromax-Regular-4a" d="M 1875 3251 
+L 1094 3251 
+C 621 3251 237 2867 237 2394 
+L 237 858 
+C 237 384 621 0 1094 0 
+L 1875 0 
+C 1997 0 2112 26 2214 70 
+L 2214 -352 
+C 2214 -621 1997 -832 1734 -832 
+L 467 -832 
+L 467 -1318 
+L 1754 -1318 
+C 2291 -1318 2726 -883 2726 -346 
+L 2726 2400 
+C 2726 2867 2342 3251 1875 3251 
+z
+M 2214 877 
+C 2214 678 2048 512 1850 512 
+L 1114 512 
+C 915 512 749 678 749 877 
+L 749 2374 
+C 749 2573 915 2739 1114 2739 
+L 1850 2739 
+C 2048 2739 2214 2573 2214 2374 
+L 2214 877 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#Neuromax-Regular-17"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(46.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-46" transform="translate(79 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(118.203125 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(164.609375 0)"/>
+    <use xlink:href="#Neuromax-Regular-57" transform="translate(189.8125 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(220.40625 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(265.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-10" transform="translate(311.5 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(327.5 0)"/>
+    <use xlink:href="#Neuromax-Regular-18" transform="translate(360.40625 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(408.5 0)"/>
+    <use xlink:href="#Neuromax-Regular-4b" transform="translate(441.40625 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(489 0)"/>
+    <use xlink:href="#Neuromax-Regular-4d" transform="translate(535.40625 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(552.40625 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(597.5 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(643.296875 0)"/>
+    <use xlink:href="#Neuromax-Regular-46" transform="translate(676.203125 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(715.40625 0)"/>
+    <use xlink:href="#Neuromax-Regular-51" transform="translate(761.8125 0)"/>
+    <use xlink:href="#Neuromax-Regular-59" transform="translate(808.421875 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(855.828125 0)"/>
+    <use xlink:href="#Neuromax-Regular-5b" transform="translate(900.125 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(941.421875 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(986.515625 0)"/>
+    <use xlink:href="#Neuromax-Regular-12" transform="translate(1032.3125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(1048.21875 0)"/>
+    <use xlink:href="#Neuromax-Regular-29" transform="translate(1081.125 0)"/>
+    <use xlink:href="#Neuromax-Regular-4f" transform="translate(1129.03125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(1146.125 0)"/>
+    <use xlink:href="#Neuromax-Regular-92" transform="translate(1179.03125 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(1224.125 0)"/>
+    <use xlink:href="#Neuromax-Regular-45" transform="translate(1249.328125 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(1296.125 0)"/>
+    <use xlink:href="#Neuromax-Regular-4f" transform="translate(1342.53125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(1359.625 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(1392.53125 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(1438.328125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(1483.625 0)"/>
+    <use xlink:href="#Neuromax-Regular-46" transform="translate(1516.53125 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(1555.734375 0)"/>
+    <use xlink:href="#Neuromax-Regular-51" transform="translate(1602.140625 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(1649.34375 0)"/>
+    <use xlink:href="#Neuromax-Regular-57" transform="translate(1695.140625 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(1725.734375 0)"/>
+    <use xlink:href="#Neuromax-Regular-58" transform="translate(1750.9375 0)"/>
+    <use xlink:href="#Neuromax-Regular-5c" transform="translate(1798.140625 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(1845.734375 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(1891.03125 0)"/>
+    <use xlink:href="#Neuromax-Regular-58" transform="translate(1923.9375 0)"/>
+    <use xlink:href="#Neuromax-Regular-51" transform="translate(1971.140625 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(2018.34375 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(2063.4375 0)"/>
+    <use xlink:href="#Neuromax-Regular-59" transform="translate(2096.34375 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(2143.75 0)"/>
+    <use xlink:href="#Neuromax-Regular-5d" transform="translate(2188.453125 0)"/>
+    <use xlink:href="#Neuromax-Regular-1f" transform="translate(2225.359375 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(2242.5625 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(2275.46875 0)"/>
+    <use xlink:href="#Neuromax-Regular-4f" transform="translate(2320.765625 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(2337.859375 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(2370.765625 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(2395.96875 0)"/>
+    <use xlink:href="#Neuromax-Regular-46" transform="translate(2441.265625 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(2480.46875 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(2526.875 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(2552.078125 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(2577.28125 0)"/>
+    <use xlink:href="#Neuromax-Regular-47" transform="translate(2594.375 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(2641.171875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(2687.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(2720.484375 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(2766.28125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(2811.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(2844.484375 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(2869.6875 0)"/>
+    <use xlink:href="#Neuromax-Regular-53" transform="translate(2914.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(2961.78125 0)"/>
+    <use xlink:href="#Neuromax-Regular-57" transform="translate(2978.875 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(3009.46875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(3054.765625 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(3087.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-51" transform="translate(3132.96875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(3180.171875 0)"/>
+    <use xlink:href="#Neuromax-Regular-46" transform="translate(3213.078125 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(3252.28125 0)"/>
+    <use xlink:href="#Neuromax-Regular-47" transform="translate(3297.375 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(3344.171875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(3389.265625 0)"/>
+    <use xlink:href="#Neuromax-Regular-49" transform="translate(3422.171875 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(3449.375 0)"/>
+    <use xlink:href="#Neuromax-Regular-57" transform="translate(3495.78125 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(3526.375 0)"/>
+    <use xlink:href="#Neuromax-Regular-4a" transform="translate(3572.78125 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(3619.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(3643.375 0)"/>
+    <use xlink:href="#Neuromax-Regular-50" transform="translate(3688.46875 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(3766.46875 0)"/>
+    <use xlink:href="#Neuromax-Regular-12" transform="translate(3811.5625 0)"/>
+   </g>
+  </g>
+  <g id="text_72">
+   <!-- La posición de la cámara decide el orden; su orientación y lo ya dibujado, qué paredes se ven. -->
+   <g style="fill: #4f5361" transform="translate(268.2605 451.3766) scale(0.098 -0.098)">
+    <defs>
+     <path id="Neuromax-Regular-a3" d="M 1875 3251 
+L 1094 3251 
+C 621 3251 237 2867 237 2394 
+L 237 858 
+C 237 384 621 0 1094 0 
+L 1875 0 
+C 2342 0 2726 384 2726 858 
+L 2726 2394 
+C 2726 2867 2342 3251 1875 3251 
+z
+M 2214 877 
+C 2214 678 2048 512 1850 512 
+L 1114 512 
+C 915 512 749 678 749 877 
+L 749 2374 
+C 749 2573 915 2739 1114 2739 
+L 1850 2739 
+C 2048 2739 2214 2573 2214 2374 
+L 2214 877 
+z
+M 1331 4698 
+L 922 3840 
+L 1376 3840 
+L 2054 4698 
+L 1331 4698 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#Neuromax-Regular-30"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(44.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(89.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-53" transform="translate(122.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(169.5 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(215.90625 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(261.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-46" transform="translate(278.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(318 0)"/>
+    <use xlink:href="#Neuromax-Regular-a3" transform="translate(335.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-51" transform="translate(381.5 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(428.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-47" transform="translate(461.609375 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(508.40625 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(553.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-4f" transform="translate(586.609375 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(603.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(648.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-46" transform="translate(681.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-92" transform="translate(720.90625 0)"/>
+    <use xlink:href="#Neuromax-Regular-50" transform="translate(766 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(844 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(889.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(912.890625 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(957.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-47" transform="translate(990.890625 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(1037.6875 0)"/>
+    <use xlink:href="#Neuromax-Regular-46" transform="translate(1082.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(1122.1875 0)"/>
+    <use xlink:href="#Neuromax-Regular-47" transform="translate(1139.28125 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(1186.078125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(1231.375 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(1264.28125 0)"/>
+    <use xlink:href="#Neuromax-Regular-4f" transform="translate(1309.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(1326.671875 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(1359.578125 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(1405.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-47" transform="translate(1431.1875 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(1477.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-51" transform="translate(1523.28125 0)"/>
+    <use xlink:href="#Neuromax-Regular-1f" transform="translate(1570.484375 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(1587.6875 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(1620.59375 0)"/>
+    <use xlink:href="#Neuromax-Regular-58" transform="translate(1666.390625 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(1713.59375 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(1746.5 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(1792.90625 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(1818.109375 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(1835.203125 0)"/>
+    <use xlink:href="#Neuromax-Regular-51" transform="translate(1880.5 0)"/>
+    <use xlink:href="#Neuromax-Regular-57" transform="translate(1927.203125 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(1957.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-46" transform="translate(2002.890625 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(2042.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-a3" transform="translate(2059.1875 0)"/>
+    <use xlink:href="#Neuromax-Regular-51" transform="translate(2105.59375 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(2152.796875 0)"/>
+    <use xlink:href="#Neuromax-Regular-5c" transform="translate(2185.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(2233.296875 0)"/>
+    <use xlink:href="#Neuromax-Regular-4f" transform="translate(2266.203125 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(2283.296875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(2329.703125 0)"/>
+    <use xlink:href="#Neuromax-Regular-5c" transform="translate(2362.609375 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(2410.203125 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(2455.296875 0)"/>
+    <use xlink:href="#Neuromax-Regular-47" transform="translate(2488.203125 0)"/>
+    <use xlink:href="#Neuromax-Regular-4c" transform="translate(2535 0)"/>
+    <use xlink:href="#Neuromax-Regular-45" transform="translate(2552.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-58" transform="translate(2598.890625 0)"/>
+    <use xlink:href="#Neuromax-Regular-4d" transform="translate(2646.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(2663.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-47" transform="translate(2708.1875 0)"/>
+    <use xlink:href="#Neuromax-Regular-52" transform="translate(2754.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-10" transform="translate(2801.390625 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(2817.390625 0)"/>
+    <use xlink:href="#Neuromax-Regular-54" transform="translate(2850.296875 0)"/>
+    <use xlink:href="#Neuromax-Regular-58" transform="translate(2897.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-9a" transform="translate(2944.296875 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(2989.59375 0)"/>
+    <use xlink:href="#Neuromax-Regular-53" transform="translate(3022.5 0)"/>
+    <use xlink:href="#Neuromax-Regular-44" transform="translate(3069.296875 0)"/>
+    <use xlink:href="#Neuromax-Regular-55" transform="translate(3114.390625 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(3139.59375 0)"/>
+    <use xlink:href="#Neuromax-Regular-47" transform="translate(3184.890625 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(3231.6875 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(3276.984375 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(3322.78125 0)"/>
+    <use xlink:href="#Neuromax-Regular-56" transform="translate(3355.6875 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(3401.484375 0)"/>
+    <use xlink:href="#Neuromax-Regular-3" transform="translate(3446.78125 0)"/>
+    <use xlink:href="#Neuromax-Regular-59" transform="translate(3479.6875 0)"/>
+    <use xlink:href="#Neuromax-Regular-48" transform="translate(3527.09375 0)"/>
+    <use xlink:href="#Neuromax-Regular-51" transform="translate(3572.390625 0)"/>
+    <use xlink:href="#Neuromax-Regular-12" transform="translate(3619.59375 0)"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pabeb403160">
+   <rect x="28.08" y="70.992" width="189.36" height="189.36"/>
+  </clipPath>
+  <clipPath id="p02e059b97e">
+   <rect x="31.635" y="281.952" width="182.25" height="116.64"/>
+  </clipPath>
+  <clipPath id="pc4aec411d9">
+   <rect x="243.792" y="70.992" width="189.36" height="189.36"/>
+  </clipPath>
+  <clipPath id="p160e313d06">
+   <rect x="237.920276" y="281.952" width="201.103448" height="116.64"/>
+  </clipPath>
+  <clipPath id="pb029a86ef3">
+   <rect x="459.504" y="70.992" width="189.36" height="189.36"/>
+  </clipPath>
+  <clipPath id="p231fb5ba1f">
+   <rect x="453.632276" y="281.952" width="201.103448" height="116.64"/>
+  </clipPath>
+  <clipPath id="p8edf5f4a18">
+   <rect x="675.216" y="70.992" width="189.36" height="189.36"/>
+  </clipPath>
+  <clipPath id="p02738d5f54">
+   <rect x="669.344276" y="281.952" width="201.103448" height="116.64"/>
+  </clipPath>
+ </defs>
+</svg>
