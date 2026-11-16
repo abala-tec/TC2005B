@@ -98,6 +98,8 @@ public class S7_VelmaWalk_3D : MonoBehaviour
             sprite_animator.SetTrigger("kick");  // trigerea la animacion del kick (trigger se ejecuta una sola vez)
 
             // extra la direcion normalizada del velma en ese momento
+            // si el input NO es cero dir es el input normalizado
+            // si el input Si es cero toma la direcion hacia donde esta mirando el sprite
             Vector2 dir = input != Vector2.zero ? input.normalized : new Vector2(sprite_render.flipX ? -1f : 1f, 0f);
             horizontal = horizontal + (dir * kickImpulse);  // horizontal + el impulso del kick en esa direccion
         }
