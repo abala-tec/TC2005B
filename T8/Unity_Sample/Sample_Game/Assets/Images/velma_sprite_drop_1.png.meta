@@ -5,6 +5,21 @@ TextureImporter:
   - first:
       213: -8181077113892254561
     second: velma_sprite_drop_1_0
+  - first:
+      213: -1751550622604386379
+    second: velma_sprite_drop_1_1
+  - first:
+      213: -9156126541832461161
+    second: velma_sprite_drop_1_2
+  - first:
+      213: 1664986287648906924
+    second: velma_sprite_drop_1_3
+  - first:
+      213: -2493373315422710559
+    second: velma_sprite_drop_1_4
+  - first:
+      213: -4459457949278904738
+    second: velma_sprite_drop_1_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -105,10 +120,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 530
+        width: 88
         height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -117,6 +132,116 @@ TextureImporter:
       bones: []
       spriteID: f9ccf5ac5b9f67e80800000000000000
       internalID: -8181077113892254561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: velma_sprite_drop_1_1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 88
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf1d852dfd31b7e0800000000000000
+      internalID: -1751550622604386379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: velma_sprite_drop_1_2
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 89
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 794ec83eb67eee080800000000000000
+      internalID: -9156126541832461161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: velma_sprite_drop_1_3
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 0
+        width: 88
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cae953705383b1710800000000000000
+      internalID: 1664986287648906924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: velma_sprite_drop_1_4
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 0
+        width: 88
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e49ac91e22c56dd0800000000000000
+      internalID: -2493373315422710559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: velma_sprite_drop_1_5
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 0
+        width: 89
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5e50725f92dc12c0800000000000000
+      internalID: -4459457949278904738
       vertices: []
       indices: 
       edges: []
@@ -136,6 +261,11 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       velma_sprite_drop_1_0: -8181077113892254561
+      velma_sprite_drop_1_1: -1751550622604386379
+      velma_sprite_drop_1_2: -9156126541832461161
+      velma_sprite_drop_1_3: 1664986287648906924
+      velma_sprite_drop_1_4: -2493373315422710559
+      velma_sprite_drop_1_5: -4459457949278904738
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

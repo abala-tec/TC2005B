@@ -21,6 +21,7 @@ public class S8_VelmaWalk_3D : MonoBehaviour
     public float maxFallSpeed = 15f;          // $40 = 4 px/frame
     public float maxHorizontalSpeed = 15f;    // $40 = 4 px/frame
     public float kickImpulse = 6f;            // velocidad extra al patear (se frena sola con braking)
+    public float kickBack = 10f;               // la velocidad de empuje cuando el enemigo toca a velma
     
 
     private Rigidbody rb;
@@ -31,6 +32,8 @@ public class S8_VelmaWalk_3D : MonoBehaviour
     private SpriteRenderer sprite_render = null;
     private Animator sprite_animator = null;
     private bool controls_disabled = false;
+    private Vector2 empuje_dir;   // bandera para darle el empujon a velma
+    private bool velma_empujada = false;
 
 
     void Start()
@@ -110,9 +113,19 @@ public class S8_VelmaWalk_3D : MonoBehaviour
         {
             sprite_animator.SetTrigger("kick");  // trigerea la animacion del kick (trigger se ejecuta una sola vez)
 
-            // extra la direcion normalizada del velma en ese momento
+            // dir es la direcion normalizada del velma en ese momento
             Vector2 dir = input != Vector2.zero ? input.normalized : new Vector2(sprite_render.flipX ? -1f : 1f, 0f);
             horizontal = horizontal + (dir * kickImpulse);  // horizontal + el impulso del kick en esa direccion
+            S8_SoundControl.play_airWush();  // play velma kick sound
+        }
+
+        if (grounded && velma_empujada)  // cuando el enemigo empuja  a velma 
+        {
+            sprite_animator.SetTrigger("push");  // trigerea la animacion de velma cuando cae (trigger se ejecuta una sola vez)
+
+            horizontal += empuje_dir * kickBack;   // suma: empuje_dir ya apunta lejos del enemigo
+            velma_empujada = false;
+            S8_SoundControl.play_hit();  // plays the hit sound
         }
 
         // si se presiono AWSD o arrows
@@ -187,14 +200,14 @@ public class S8_VelmaWalk_3D : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         CheckGround(collision);
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemigos")) S8_SoundControl.play_hit();
-        CheckEnemyHit(collision);
+        if (CheckEnemyHit(collision) == true) {return;}
+        CheckVelmaKick(collision);
     }
 
     void OnCollisionStay(Collision collision)
     {
         CheckGround(collision);
-        CheckEnemyHit(collision);
+        CheckVelmaKick(collision);
     }
 
     void FixedUpdate()
@@ -220,13 +233,39 @@ public class S8_VelmaWalk_3D : MonoBehaviour
     }
 
     // revisa si velma pateo a un enemigo y envia el evento al enemigo
-    void CheckEnemyHit(Collision collision)
+    void CheckVelmaKick(Collision collision)
     {
         if (collision.gameObject.layer != LayerMask.NameToLayer("Enemigos")) return;
         bool pateando = sprite_animator.GetCurrentAnimatorStateInfo(0).IsName("VelmaKick");
 
         // la patada pega en cualquier direccion, el enemigo decide por donde le llego
-        if (pateando)
-            collision.gameObject.GetComponent<S8_EnemigoCilindro>()?.RecibirPatada(transform.position);
+        if (pateando){
+            bool hit = collision.gameObject.GetComponent<S8_EnemigoCilindro>().RecibirPatada(transform.position);
+            if (hit) { S8_SoundControl.play_kick(); }
+        }
+    }
+
+    // revisamos si velma fue tocada por el enemigo
+    bool CheckEnemyHit(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemigos")) 
+        { 
+            // el cono de vision del enemigo decide si hubo golpe
+            bool huboGolpe = collision.gameObject.GetComponent<S8_EnemigoCilindro>().GolpeVelma(transform.position);
+
+            if (huboGolpe)
+            {
+                Vector3 away = transform.position - collision.transform.position;  // vector entre el enemigo y el jugador
+                away.y = 0f;  // y is not important here
+
+                if (away.sqrMagnitude > 0.0001f)  // evita normalizar un vector zero (intestable por punto floante)
+                {
+                    empuje_dir = new Vector2(away.x, away.z).normalized;
+                    velma_empujada = true;
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

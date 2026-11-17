@@ -65,6 +65,8 @@ public class S8_EPerseguirState : S8_IEnemyState
         S8_Grid grid = S8_Grid.Instancia;
         if (grid == null) return;
 
+        enemy.ConoVisionGizmo();
+
         if (camino == null || camino.Count == 0) return;
         for (int i = 0; i < camino.Count - 1; i++)
         {

@@ -1633,8 +1633,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90f69a2d98f4dfe886c7ba7ca2e6761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::S8_VelmaWalk_3D
-  walkSpeed: 5.625
-  runSpeed: 9.375
+  walkSpeed: 6.625
+  runSpeed: 8.375
   acceleration: 12.3046875
   braking: 12.3046875
   jumpSpeed: 13.125
@@ -1643,7 +1643,8 @@ MonoBehaviour:
   jumpHoldLimit: 7.5
   maxFallSpeed: 15
   maxHorizontalSpeed: 15
-  kickImpulse: 6
+  kickImpulse: 4
+  kickBack: 10
 --- !u!1 &1476891737
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,7 +2218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::S8_EnemigoCilindro
   jugador: {fileID: 1274197755}
-  chace_vel: 5
+  chace_vel: 1
   chace_check_time: 0.25
   vision_rango: 8
   vision_angulo: 90
@@ -2588,6 +2589,8 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: fb8a5d74ed7a0744a8404b997c6125a3, type: 3}
   hit: {fileID: 8300000, guid: 0e4b71c7a317f2878a2fa8a8f3cb4a68, type: 3}
   won: {fileID: 8300000, guid: 261d820dee2d7a114841e082cebd0428, type: 3}
+  kick: {fileID: 8300000, guid: f7b55c927717f9f22a7b4d9ba6ca56d2, type: 3}
+  airWush: {fileID: 8300000, guid: 69a72709d1bd355d8bbdfb4fa28485d4, type: 3}
 --- !u!82 &2072925806
 AudioSource:
   m_ObjectHideFlags: 0

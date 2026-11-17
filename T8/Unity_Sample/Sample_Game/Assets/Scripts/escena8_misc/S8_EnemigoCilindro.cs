@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityPipeline.Microsoft.CodeAnalysis.Operations;
 
 // La clase S8_EnemigoCilindro usa una maquina de estados para definir el behaviour del enemigo.
 // Estados: Patrullar (BFS Random), Perseguir (BFS al jugador) y Muerto (collision off).
@@ -29,15 +30,38 @@ public class S8_EnemigoCilindro : MonoBehaviour
     }
 
     // detecta de donde vino la patada: si no la recibe al frente, se muere
-    public void RecibirPatada(Vector3 origenPatada)
+    public bool RecibirPatada(Vector3 origenPatada)
     {
-        if (muerto) return;   // ya esta muerto: no vuelve a entrar al estado
+        if (muerto) return false;   // ya esta muerto: no vuelve a entrar al estado
 
-        // patada fuera del cono de vision mata al enemigo
-        Vector3 haciaVelma = origenPatada - transform.position;
-        haciaVelma.y = 0;
-        if (Vector3.Angle(transform.forward, haciaVelma) > vision_angulo / 2)
+        if (InsideConeCheck(origenPatada) == false)  // deteccion de la patada en cono de vision
+        {
             esm.Initialize(new S8_EMuertoState(this, esm));
+            return true;
+        }
+        return false;
+    }
+
+    public bool GolpeVelma(Vector3 puntoContacto)
+    {
+        if (muerto) return false;   // ya esta muerto: no vuelve a entrar al estado
+
+        if (InsideConeCheck(puntoContacto) == true) // si toca a velma de frente
+        {
+            return true;
+        }
+        return false;
+    }
+
+    // revisa si el contacto (se una patada o un golpe a Velma esta dentro del cono)
+    private bool InsideConeCheck(Vector3 origenContacto)
+    {
+        // revisa de donde vino el contacto
+        Vector3 haciaVelma = origenContacto - transform.position;
+        haciaVelma.y = 0;
+        if (Vector3.Angle(transform.forward, haciaVelma) > vision_angulo / 2) {return false;}
+        
+        return true;
     }
 
     // cono de vision: el jugador se ve si esta dentro del rango, dentro del angulo frente al enemigo y sin pared en medio
