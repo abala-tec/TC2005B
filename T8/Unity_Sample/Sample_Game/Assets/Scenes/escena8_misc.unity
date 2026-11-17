@@ -2591,6 +2591,7 @@ MonoBehaviour:
   won: {fileID: 8300000, guid: 261d820dee2d7a114841e082cebd0428, type: 3}
   kick: {fileID: 8300000, guid: f7b55c927717f9f22a7b4d9ba6ca56d2, type: 3}
   airWush: {fileID: 8300000, guid: 69a72709d1bd355d8bbdfb4fa28485d4, type: 3}
+  background: {fileID: 8300000, guid: a14187e2b6cc8baf9b919c6e6ffffc6e, type: 3}
 --- !u!82 &2072925806
 AudioSource:
   m_ObjectHideFlags: 0

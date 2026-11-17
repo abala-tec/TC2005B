@@ -9,6 +9,7 @@ public class S8_SoundControl : MonoBehaviour
     public AudioClip won;
     public AudioClip kick;  // when velma kicks an enemy and hits
     public AudioClip airWush;  // everytime velma kicks 
+    public AudioClip background;  // musica de background 
 
     private AudioSource asource;
     private static S8_SoundControl instancia;
@@ -17,6 +18,13 @@ public class S8_SoundControl : MonoBehaviour
     {
         instancia = this;
         asource = GetComponent<AudioSource>();
+
+        if (background != null)
+        {
+            asource.clip = background;
+            asource.loop = true;
+            asource.Play();
+        }
     }
 
     public static void play_jump() 
