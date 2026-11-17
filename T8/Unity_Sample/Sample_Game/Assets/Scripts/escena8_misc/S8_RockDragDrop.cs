@@ -86,9 +86,19 @@ public class S8_RockDragDrop : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (dropped == true && collision.gameObject.layer == LayerMask.NameToLayer("Piso")) // toco el piso
+        // toco el piso u otra piedra/pared: se vuelve a congelar
+        int piso = LayerMask.NameToLayer("Piso");
+        int paredes = LayerMask.NameToLayer("Paredes");
+
+        if (dropped == true && (collision.gameObject.layer == piso || collision.gameObject.layer == paredes))
         {
             dropped = false;
+
+            // frena cualquier resto de caida antes de congelarla
+            rigdbody.linearVelocity = Vector3.zero;
+            rigdbody.angularVelocity = Vector3.zero;
+            rigdbody.isKinematic = true;
+
             S8_Grid.Instancia.calculaGrid();
         }
     }

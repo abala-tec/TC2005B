@@ -1,71 +1,77 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using UnityEditor;
 
+// La clase S8_EnemigoCilindro usa una maquina de estados para definir el behaviour del enemigo.
+// Estados: Patrullar (BFS Random), Perseguir (BFS al jugador) y Muerto (collision off).
 public class S8_EnemigoCilindro : MonoBehaviour
 {
-    public Transform cubo;
-    public float velocidad = 5.0f;
-    private List<Vector2Int> camino;       // casillas por recorrer
-    private float tiempoRecalculo = 0f;
-    public float cadaCuanto = 0.25f;       // cada cuántos segundos recalcula el camino
+    public Transform jugador;                    // a que jugador se persigue (gameobject de velma)
+    public float chace_vel = 5.0f;               // velocidad de persecucion
+    public float chace_check_time = 0.25f;       // cada cuantos segundos recalcula el camino (BFS)
+    public float vision_rango = 8.0f;            // alcance del cono de vision
+    public float vision_angulo = 90.0f;          // apertura total del cono (grados)
+    public bool muerto = false;                  // pa cuando se muera el
+    private S8_EnemyStateMachine esm;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        esm = new S8_EnemyStateMachine();
+        esm.Initialize(new S8_EPatrolState(this, esm));   // Iniciamos en Patrullar
     }
 
-
-    void Perseguir()
-    {
-        S8_Grid grid = S8_Grid.Instancia;
-
-        // recalcular el camino cada 0.25 s (no en cada frame: es innecesario)
-        tiempoRecalculo -= Time.deltaTime;
-        if (tiempoRecalculo <= 0f)
-        {
-            tiempoRecalculo = cadaCuanto;
-            camino = grid.BuscarCamino(grid.MundoACelda(transform.position),
-                                       grid.MundoACelda(cubo.position));
-        }
-
-        // UnityEngine.Debug.Log(camino);
-        if (camino == null || camino.Count == 0) return;   // sin camino: se queda quieto
-
-        
-        // caminar hacia la PRIMERA casilla del camino (camino[0])
-        Vector3 objetivo = grid.CeldaAMundo(camino[0]);
-        objetivo.y = transform.position.y;                  // la altura no cambia
-        transform.position = Vector3.MoveTowards(transform.position, objetivo, velocidad * Time.deltaTime);
-        // if (transform.position == objetivo) camino.RemoveAt(0);   // TODO REGALADO. esta linea arregla el avanze chopeado del enemigo
-    }
-
-
-    // Update is called once per frame
     void Update()
     {
-        Perseguir();
+        esm.Update();
     }
 
     void OnDrawGizmos()
     {
-        S8_Grid grid = S8_Grid.Instancia;
-
-        if (camino == null || camino.Count == 0) return;
-        for (int i = 0; i < camino.Count - 1; i++)
-        {
-            Gizmos.color = new Color(1, 1, 0, 0.9f);
-            Gizmos.DrawLine(
-                grid.CeldaAMundo(camino[i]) + Vector3.up,
-                grid.CeldaAMundo(camino[i + 1]) + Vector3.up
-            );
-        }
+        esm?.DibujarGizmos();
     }
 
-    
-    
+    // detecta de donde vino la patada: si no la recibe al frente, se muere
+    public void RecibirPatada(Vector3 origenPatada)
+    {
+        if (muerto) return;   // ya esta muerto: no vuelve a entrar al estado
+
+        // patada fuera del cono de vision mata al enemigo
+        Vector3 haciaVelma = origenPatada - transform.position;
+        haciaVelma.y = 0;
+        if (Vector3.Angle(transform.forward, haciaVelma) > vision_angulo / 2)
+            esm.Initialize(new S8_EMuertoState(this, esm));
+    }
+
+    // cono de vision: el jugador se ve si esta dentro del rango, dentro del angulo frente al enemigo y sin pared en medio
+    public bool VeJugador()
+    {
+        // si no hay jugador no hace nada
+        if (jugador == null)
+        {
+            return false;
+        }
+
+        Vector3 origen = transform.position + Vector3.up;      // ojos del enemigo
+        Vector3 dir = jugador.position + Vector3.up - origen;  // direcion de los ojos del enemigo a velma
+        Vector3 plano = new Vector3(dir.x, 0, dir.z);          // lo mismo que direccion pero en el suelo para detectar el rango
+
+        // checa si velma esta dentro del rango de vision
+        if (dir.magnitude > vision_rango || Vector3.Angle(transform.forward, plano) > vision_angulo / 2)
+        {
+            return false;
+        }
+
+        // saca un rayo de enemigo a velma, si el rayo pega algo que no es el jugador, hay una pared en medio
+        return !Physics.Raycast(origen, dir.normalized, out RaycastHit hit, dir.magnitude) || hit.transform.IsChildOf(jugador);
+    }
+
+    // dibuja el cono (verde = nada, rojo = jugador detectado)
+    public void ConoVisionGizmo()
+    {
+        Gizmos.color = VeJugador() ? Color.red : Color.green;
+        Vector3 o = transform.position + Vector3.up;
+        Vector3 izq = o + Quaternion.AngleAxis(-vision_angulo / 2, Vector3.up) * transform.forward * vision_rango;
+        Vector3 der = o + Quaternion.AngleAxis(vision_angulo / 2, Vector3.up) * transform.forward * vision_rango;
+        Gizmos.DrawLine(o, izq);
+        Gizmos.DrawLine(izq, der);
+        Gizmos.DrawLine(der, o);
+    }
 }

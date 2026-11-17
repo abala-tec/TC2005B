@@ -20,6 +20,7 @@ public class S8_VelmaWalk_3D : MonoBehaviour
     public float jumpHoldLimit = 7.5f;        // $20 = 2 px/frame
     public float maxFallSpeed = 15f;          // $40 = 4 px/frame
     public float maxHorizontalSpeed = 15f;    // $40 = 4 px/frame
+    public float kickImpulse = 6f;            // velocidad extra al patear (se frena sola con braking)
     
 
     private Rigidbody rb;
@@ -105,6 +106,15 @@ public class S8_VelmaWalk_3D : MonoBehaviour
         sprite_animator.SetBool("isRunning", runHeld && input != Vector2.zero);
         sprite_animator.SetBool("isJumping", !grounded);
 
+        if (grounded && kb.fKey.wasPressedThisFrame)
+        {
+            sprite_animator.SetTrigger("kick");  // trigerea la animacion del kick (trigger se ejecuta una sola vez)
+
+            // extra la direcion normalizada del velma en ese momento
+            Vector2 dir = input != Vector2.zero ? input.normalized : new Vector2(sprite_render.flipX ? -1f : 1f, 0f);
+            horizontal = horizontal + (dir * kickImpulse);  // horizontal + el impulso del kick en esa direccion
+        }
+
         // si se presiono AWSD o arrows
         if (input != Vector2.zero)  // si el Vector de movimiento NO es zero
         {
@@ -177,17 +187,19 @@ public class S8_VelmaWalk_3D : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         CheckGround(collision);
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemigos")) S8_SoundControl.play_hit();
         CheckEnemyHit(collision);
     }
 
     void OnCollisionStay(Collision collision)
     {
         CheckGround(collision);
+        CheckEnemyHit(collision);
     }
 
-    void OnCollisionExit(Collision collision)
+    void FixedUpdate()
     {
-        grounded = false;
+        grounded = false;   // Enter/Stay lo vuelven a poner en true si sigue tocando el piso
     }
 
     // funcion que checa si hay colision con el suelo.
@@ -207,12 +219,14 @@ public class S8_VelmaWalk_3D : MonoBehaviour
         }
     }
 
+    // revisa si velma pateo a un enemigo y envia el evento al enemigo
     void CheckEnemyHit(Collision collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemigos"))
-        {
-            S8_SoundControl.play_hit();
-            return;
-        }   
+        if (collision.gameObject.layer != LayerMask.NameToLayer("Enemigos")) return;
+        bool pateando = sprite_animator.GetCurrentAnimatorStateInfo(0).IsName("VelmaKick");
+
+        // la patada pega en cualquier direccion, el enemigo decide por donde le llego
+        if (pateando)
+            collision.gameObject.GetComponent<S8_EnemigoCilindro>()?.RecibirPatada(transform.position);
     }
 }

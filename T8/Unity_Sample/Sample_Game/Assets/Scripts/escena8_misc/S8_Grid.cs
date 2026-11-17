@@ -50,6 +50,18 @@ public class S8_Grid : MonoBehaviour
         return new Vector3(origen.x + (c.x + 0.5f) * celda, 0.5f, origen.z + (c.y + 0.5f) * celda);
     }
 
+    // regresa una celda random libre para el estado de patrullar
+    public Vector2Int GetRandomCelda()
+    {
+        // libres = bloqueada al reves: lista de las casillas sin objetos ni paredes
+        List<Vector2Int> libres = new List<Vector2Int>();
+        for (int x = 0; x < ancho; x++)
+            for (int z = 0; z < alto; z++)
+                if (!bloqueada[x, z]) libres.Add(new Vector2Int(x, z));
+
+        return libres[UnityEngine.Random.Range(0, libres.Count)];   // el maximo es exclusivo
+    }
+
     // ---------- Consultas ----------
     public bool Libre(Vector2Int c)
     {
