@@ -56,6 +56,7 @@
   - 8.1 Enemigos
     - 8.8.1 BFS pathfinding para enemigos 
     - 8.8.2 Finite State Machines - Maquinas de estados finitos para controlar los estados de los enemigos
+  - 8.8.3 Misccelanous - Audio control, Mouse click (Piedras arrastrables), Animations and Unity Animation Controller (Finite state machine).  
 
   - 8.10 Generacion de assets. 
     - 8.10.1 Generacion de modelos 3d con herramientas de IA. (meshy.ai - Mixamo) (taller)
