@@ -11,6 +11,7 @@ public class S8_Grid : MonoBehaviour
     public int alto = 50;                  // casillas en Z
     public float celda = 0.5f;             // tamaño de cada casilla
     public float margen = 0.25f;           // "engorda" las paredes para que quepa el enemigo
+    public int version = 0;                // sirve para notificar a los enemigos que se actualizo el grid
 
     Vector3 origen;                        // esquina inferior izquierda del grid
     bool[,] bloqueada;                     // true = hay pared
@@ -29,12 +30,14 @@ public class S8_Grid : MonoBehaviour
         // marcamos las casillas con pared
         bloqueada = new bool[ancho, alto];
         Vector3 mitad = new Vector3(celda / 2f + margen, 0.5f, celda / 2f + margen);
-        for (int x = 0; x < ancho; x++)
+        for (int x = 0; x < ancho; x++) {
             for (int z = 0; z < alto; z++)
             {
                 Vector3 centro = CeldaAMundo(new Vector2Int(x, z)) + Vector3.up * 0.75f;
                 bloqueada[x, z] = Physics.CheckBox(centro, mitad, Quaternion.identity, capaParedes);
             }
+        }
+        version++;
     }
 
     // ---------- Conversiones ----------

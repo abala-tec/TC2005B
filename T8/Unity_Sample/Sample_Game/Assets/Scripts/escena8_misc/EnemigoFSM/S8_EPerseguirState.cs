@@ -9,6 +9,7 @@ public class S8_EPerseguirState : S8_IEnemyState
     private readonly S8_EnemyStateMachine esm;
     private float tiempoRecalculo = 0f;
     private List<Vector2Int> camino;       // casillas por recorrer
+    private int versionGrid;    // para determinar si el grid se actualizo 
 
     // constructor necesita la clase ligada al GameObject que esta en la escena. (S8_EnemigoCilindro)
     public S8_EPerseguirState(S8_EnemigoCilindro enemy, S8_EnemyStateMachine esm)
@@ -30,14 +31,15 @@ public class S8_EPerseguirState : S8_IEnemyState
 
         // recalcular el camino cada chace_check_time (no en cada frame: es innecesario)
         tiempoRecalculo -= Time.deltaTime;
-        if (tiempoRecalculo <= 0f)
+        if (tiempoRecalculo <= 0f || versionGrid != grid.version)
         {
             tiempoRecalculo = enemy.chace_check_time;
+            versionGrid = grid.version;
             camino = grid.BuscarCamino(grid.MundoACelda(enemy.transform.position),
                                        grid.MundoACelda(enemy.jugador.position));
         }
 
-        if (camino == null || camino.Count == 0)
+        if (camino == null || camino.Count == 0 )
         {   // sin camino: cambia de estado a patrulla y termina
             esm.ChangeState(new S8_EPatrolState(enemy, esm));
             return;

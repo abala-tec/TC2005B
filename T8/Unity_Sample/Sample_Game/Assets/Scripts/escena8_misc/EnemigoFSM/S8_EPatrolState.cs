@@ -9,6 +9,7 @@ public class S8_EPatrolState : S8_IEnemyState
     private readonly S8_EnemyStateMachine esm;
     private Vector2Int patrullaGoal;
     private List<Vector2Int> camino;       // casillas por recorrer
+     private int versionGrid;              // para saber si el grid se actualizo
 
     // constructor necesita la clase ligada al GameObject que esta en la escena. (S8_EnemigoCilindro)
     public S8_EPatrolState(S8_EnemigoCilindro enemy, S8_EnemyStateMachine esm)
@@ -31,7 +32,8 @@ public class S8_EPatrolState : S8_IEnemyState
         patrullaGoal = grid.MundoACelda(enemy.transform.position);
         camino = grid.BuscarCamino(patrullaGoal, grid.GetRandomCelda());
 
-        Debug.Log($"Estado: Patrullando celda {patrullaGoal}");
+        versionGrid = grid.version;
+        Debug.Log($"Estado: Patrullando celda {patrullaGoal} Grid version: {versionGrid}");
     }
 
     // revisa si el jugador esta dentro del cono de vision del enemigo (ver S8_EnemigoCilindro.VeJugador)
@@ -52,7 +54,7 @@ public class S8_EPatrolState : S8_IEnemyState
         BuscarJugador();  // revisa si el jugador esta en campo de vision
 
         // sin camino: busca otra vez (llego a destino)
-        if (camino == null || camino.Count == 0)
+        if (camino == null || camino.Count == 0 || versionGrid != grid.version)
         {
             BuscarCamino();
             if (camino == null || camino.Count == 0) return;  // no hay ruta disponible
