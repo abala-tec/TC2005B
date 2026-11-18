@@ -1,0 +1,67 @@
+{
+  "fig_anim_code_map.png": {
+    "height": 520,
+    "min_font": 22,
+    "width": 1500
+  },
+  "fig_anim_concepto.png": {
+    "height": 700,
+    "min_font": 29,
+    "width": 1200
+  },
+  "fig_anim_exit.png": {
+    "height": 500,
+    "min_font": 34,
+    "width": 1200
+  },
+  "fig_anim_velma.png": {
+    "height": 800,
+    "min_font": 31,
+    "width": 1600
+  },
+  "fig_audio_mezcla.png": {
+    "height": 520,
+    "min_font": 34,
+    "width": 1200
+  },
+  "fig_audio_piezas.png": {
+    "height": 760,
+    "min_font": 31,
+    "width": 1200
+  },
+  "fig_audio_setup.png": {
+    "height": 760,
+    "min_font": 30,
+    "width": 1000
+  },
+  "fig_kickback_flujo.png": {
+    "height": 800,
+    "min_font": 32,
+    "width": 1200
+  },
+  "fig_kickback_timeline.png": {
+    "height": 700,
+    "min_font": 31,
+    "width": 1400
+  },
+  "fig_kickback_vector.png": {
+    "height": 650,
+    "min_font": 33,
+    "width": 1200
+  },
+  "fig_rock_estados.png": {
+    "height": 700,
+    "min_font": 35,
+    "width": 1200
+  },
+  "fig_rock_grid.png": {
+    "height": 680,
+    "min_font": 27,
+    "width": 1200
+  },
+  "fig_rock_raycast.png": {
+    "height": 700,
+    "min_font": 32,
+    "width": 1200
+  }
+}

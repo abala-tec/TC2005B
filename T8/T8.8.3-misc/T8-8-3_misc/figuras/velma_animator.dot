@@ -1,0 +1,32 @@
+
+digraph FSM {
+  rankdir=TB;
+  bgcolor="white";
+  splines=true;
+  nodesep=0.38;
+  ranksep=0.45;
+  size="8.2,4.7";
+  node [shape=box, style="rounded,filled", fontname="/home/poncho/tec/materias/TC2005B_videojuegos/T8/T8.8.3-misc/T8-8-3_misc/fonts/Neuromax-Regular.otf",
+        fontsize=18, color="#D9DEE8", penwidth=1.5, margin="0.16,0.08"];
+  edge [fontname="/home/poncho/tec/materias/TC2005B_videojuegos/T8/T8.8.3-misc/T8-8-3_misc/fonts/Neuromax-Regular.otf", fontsize=14, color="#6B7280",
+        penwidth=1.8, arrowsize=0.75];
+
+  Walking [label="VelmaWalking\ndefault", fillcolor="#FFF3E8", color="#F08A3C"];
+  Run     [label="VelmaRun\nisRunning = true", fillcolor="#EAF1FD", color="#3B6FD4"];
+  Jump    [label="VelmaJump\nisJumping = true", fillcolor="#FDEBF1", color="#E8386D"];
+  Duck    [label="VelmaDuck\nisDucking = true", fillcolor="#EAF6EF", color="#2E8B57"];
+  Kick    [label="VelmaKick\ntrigger kick", fillcolor="#FFF3E8", color="#F08A3C"];
+  Any     [label="Any State", style="rounded,dashed,filled",
+           fillcolor="#F4F7FA", color="#6B7280", fontcolor="#6B7280"];
+
+  Any -> Kick      [label="kick (trigger)", style=dashed, color="#6B7280", fontcolor="#6B7280"];
+  Kick -> Walking  [label="Exit Time", color="#B45309", fontcolor="#B45309"];
+  Walking -> Run   [label="isRunning = true", color="#3B6FD4", fontcolor="#3B6FD4"];
+  Run -> Walking   [label="isRunning = false", color="#B45309", fontcolor="#B45309"];
+  Walking -> Jump  [label="isJumping = true", color="#E8386D", fontcolor="#E8386D"];
+  Run -> Jump      [label="isJumping = true", color="#E8386D", fontcolor="#E8386D"];
+  Jump -> Walking  [label="isJumping = false", color="#B45309", fontcolor="#B45309"];
+  Jump -> Run      [label="isJumping = false\n& isRunning = true", color="#3B6FD4", fontcolor="#3B6FD4"];
+  Walking -> Duck  [label="isDucking = true", color="#2E8B57", fontcolor="#2E8B57"];
+  Duck -> Walking  [label="isDucking = false\n(Exit Time)", color="#B45309", fontcolor="#B45309"];
+}

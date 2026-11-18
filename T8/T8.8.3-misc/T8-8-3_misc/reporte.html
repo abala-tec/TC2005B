@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>T8.8.3 · Reporte de implementación</title>
+<style>
+  @page { size: A4; margin: 18mm 18mm 16mm 18mm; }
+  body { font-family: "DejaVu Sans", sans-serif; color: #131315; font-size: 10.5pt; line-height: 1.45; }
+  h1 { font-size: 23pt; margin: 0 0 2mm 0; letter-spacing: -0.4pt; }
+  h2 { font-size: 13pt; margin: 7mm 0 2mm 0; color: #131315; border-bottom: 1.5pt solid #F08A3C; padding-bottom: 1.2mm; }
+  h3 { font-size: 11pt; margin: 4mm 0 1mm 0; }
+  p { margin: 0 0 2.4mm 0; }
+  .kicker { font-size: 8.5pt; letter-spacing: 1.3pt; color: #B45309; font-weight: bold; }
+  .sub { color: #4F5361; font-size: 11pt; margin-bottom: 5mm; }
+  .meta { color: #6B7280; font-size: 9pt; }
+  ul { margin: 0 0 3mm 5mm; padding: 0; }
+  li { margin-bottom: 1.2mm; }
+  table { width: 100%; border-collapse: collapse; margin: 2mm 0 4mm 0; font-size: 9pt; }
+  th { background: #2B293D; color: white; text-align: left; padding: 2mm; }
+  td { border-bottom: 0.5pt solid #D9DEE8; padding: 1.8mm 2mm; vertical-align: top; }
+  tr:nth-child(even) td { background: #F4F7FA; }
+  .box { background: #F4F7FA; border-left: 3pt solid #3B6FD4; padding: 3mm 4mm; margin: 3mm 0; }
+  .ok { background: #EAF6EF; border-left: 3pt solid #2E8B57; padding: 3mm 4mm; margin: 3mm 0; }
+  .footer { position: fixed; bottom: 0; width: 100%; color: #6B7280; font-size: 8pt; border-top: 0.5pt solid #D9DEE8; padding-top: 1.5mm; }
+  .pagebreak { page-break-before: always; }
+  code { font-family: "DejaVu Sans Mono", monospace; font-size: 8.8pt; background: #F4F7FA; padding: 0.4mm 1mm; }
+</style>
+</head>
+<body>
+<div class="kicker">TC2005B · CONSTRUCCIÓN DE SOFTWARE · TEMA 8.8.3</div>
+<h1>Misceláneos: audio, clic y Animator</h1>
+<div class="sub">Reporte de implementación del deck <b>T8.8.3-Miscelaneos.pptx</b> y de sus assets.</div>
+
+<h2>1. Resultado</h2>
+<p>Se generó un deck de <b>26 diapositivas totales</b>: portada, <b>24 diapositivas de contenido</b> y cierre de preguntas. El límite solicitado era de 25 diapositivas de contenido, sin contar portadas. El deck pasó la validación estricta de la plantilla del curso.</p>
+<div class="ok">
+<b>Validación:</b> <code>PASS</code> con <code>validate_deck.py --strict</code>. 26 diapositivas, 293 runs, 0 errores. Tipografía, tamaños, proporción 13.333 × 7.5 y cajas dentro de la diapositiva verificados.
+</div>
+
+<h2>2. Estructura del contenido</h2>
+<table>
+  <tr><th style="width:22%">Bloque</th><th style="width:12%">Diapositivas</th><th>Contenido</th></tr>
+  <tr><td><b>Audio</b></td><td>2–7</td><td>Retroalimentación sonora, GameObject <code>Sonidos</code>, AudioSource, asignación de seis clips, singleton, <code>PlayOneShot</code> y explicación del bug de <code>playOnAwake</code>.</td></tr>
+  <tr><td><b>Clic y piedras</b></td><td>8–13</td><td>Prefab con Rigidbody/BoxCollider/layer <code>Paredes</code>, raycast desde cámara, estados de la piedra, arrastre con WASD, liberación, aterrizaje con <code>isKinematic</code> y recálculo de <code>S8_Grid</code>.</td></tr>
+  <tr><td><b>Animator</b></td><td>14–17</td><td>Animator como FSM, grafo real de <code>velma_sprite_walk_2_0</code>, tabla de parámetros y código que escribe <code>isRunning</code>, <code>isJumping</code>, <code>isDucking</code> y <code>kick</code>.</td></tr>
+  <tr><td><b>Patada y kickback</b></td><td>18–24</td><td>Clip <code>VelmaKick</code> de seis frames, detección de patada, <code>GolpeVelma</code>, bloque actual del impulso, corrección de dirección enemigo → Velma, comparación de signos y checklist de errores.</td></tr>
+  <tr><td><b>Cierre</b></td><td>25–26</td><td>Resumen de los tres sistemas y diapositiva de preguntas.</td></tr>
+</table>
+
+<h2>3. Qué se implementó</h2>
+<ul>
+  <li><b>Audio:</b> se documentó el GameObject <code>Sonidos</code> con <code>AudioSource</code> y <code>S8_SoundControl</code>, los seis slots de clips y los métodos estáticos <code>play_jump</code>, <code>play_hit</code>, <code>play_kick</code> y <code>play_airWush</code>. Se dedicó una diapositiva al problema de <code>playOnAwake = background</code>: la propiedad es <code>bool</code>, no un <code>AudioClip</code>, y la configuración correcta es <code>clip + loop + Play()</code>.</li>
+  <li><b>Piedras arrastrables:</b> se explicó el raycast de <code>ScreenPointToRay</code> + <code>Physics.Raycast</code>, el filtro <code>hit.transform == transform</code>, el levantamiento a <code>alturaArrastre</code>, el movimiento discreto con <code>rockStep = 2</code>, el bloqueo de Velma con <code>DisableControls</code>, la caída con <code>isKinematic = false</code> y el congelado al tocar <code>Piso</code> o <code>Paredes</code>, con recálculo del grid.</li>
+  <li><b>Animator:</b> se leyó el controlador real <code>velma_sprite_walk_2_0.controller</code> y se dibujó su grafo: <code>VelmaWalking</code>, <code>VelmaRun</code>, <code>VelmaJump</code>, <code>VelmaDuck</code>, <code>VelmaKick</code> y <code>Any State</code>. Se explicó la diferencia entre <code>bool</code> y <code>trigger</code>, y cómo el código escribe los parámetros.</li>
+  <li><b>Kickback:</b> se documentó <code>GolpeVelma</code> y el cono de visión, el flag <code>velma_empujada</code>, el bloque actual en <code>Update</code> y su fallo de dirección cuando el enemigo llega por detrás. Se incluyó la corrección con <code>away = player - enemy</code> y suma del impulso.</li>
+</ul>
+
+<div class="pagebreak"></div>
+
+<h2>4. Assets generados</h2>
+<table>
+  <tr><th style="width:28%">Ruta</th><th>Contenido</th></tr>
+  <tr><td><code>T8.8.3-Miscelaneos.pptx</code></td><td>Deck final de 26 diapositivas.</td></tr>
+  <tr><td><code>T8-8-3_misc/csharp/</code></td><td>Copia exacta de <code>S8_SoundControl.cs</code>, <code>S8_RockDragDrop.cs</code>, <code>S8_VelmaWalk_3D.cs</code>, <code>S8_EnemigoCilindro.cs</code> y <code>S8_Grid.cs</code>.</td></tr>
+  <tr><td><code>T8-8-3_misc/codigo/</code></td><td>Imágenes del código que aparecen en las diapositivas. El mismo fragmento está en las notas de cada diapositiva.</td></tr>
+  <tr><td><code>T8-8-3_misc/figuras/</code></td><td>Diagramas de audio, raycast, estados de la piedra, capas, grid, FSM de animación, frames de patada y kickback.</td></tr>
+  <tr><td><code>T8-8-3_misc/img/</code></td><td>Capturas del Inspector de la piedra y de la capa <code>Paredes</code>.</td></tr>
+  <tr><td><code>T8-8-3_misc/animator/</code></td><td>Copia del controlador <code>velma_sprite_walk_2_0.controller</code>.</td></tr>
+  <tr><td><code>T8-8-3_misc/build_deck.py</code></td><td>Script reproducible: genera el PPTX y ejecuta la validación estricta.</td></tr>
+</table>
+
+<h2>5. Decisiones de diseño</h2>
+<ul>
+  <li>El código se muestra como imagen, con la indentación y el resaltado usados en los decks anteriores del curso; el texto completo se copia en las notas de cada diapositiva.</li>
+  <li>Las explicaciones que requerían muchos pasos se resolvieron con diagramas: flujo de audio, raycast, estados de la piedra, capas, grid antes/después, FSM de animación y flujo del golpe.</li>
+  <li>No se agregó código nuevo a la escena. Los fragmentos de la corrección de kickback se identifican como propuesta; el archivo actual conserva la versión con input/facing.</li>
+  <li>Se respetaron los tamaños de fuente de la plantilla: roles <code>label</code>, <code>body</code>, <code>note</code>, <code>card_title_sm</code>, <code>title</code> y <code>section</code>.</li>
+</ul>
+
+<h2>6. Verificación y riesgos</h2>
+<div class="box">
+<b>Verificado:</b> compilación estricta del PPTX, render a PNG de las 26 diapositivas y revisión visual de la composición. La hoja de contacto se generó en <code>T8.8.3-misc/review/</code>.
+</div>
+<p><b>Riesgo conocido:</b> la captura de la piedra se tomó de una configuración inicial del Inspector; el estado final de <code>isKinematic</code> lo controla el script en tiempo de ejecución. El deck lo explica en las diapositivas de estados y aterrizaje.</p>
+
+<div class="footer">TC2005B · T8.8.3 · Reporte generado a partir de <code>docs/TC2005B-T8_editado.md</code> y del código de <code>Assets/Scripts/escena8_misc</code>.</div>
+</body>
+</html>

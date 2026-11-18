@@ -1,0 +1,72 @@
+{
+  "code_anim_check": {
+    "height": 540,
+    "min_font": 22,
+    "width": 803
+  },
+  "code_anim_duck": {
+    "height": 298,
+    "min_font": 26,
+    "width": 761
+  },
+  "code_anim_kick": {
+    "height": 420,
+    "min_font": 22,
+    "width": 856
+  },
+  "code_anim_set": {
+    "height": 124,
+    "min_font": 24,
+    "width": 1229
+  },
+  "code_audio_awake": {
+    "height": 468,
+    "min_font": 26,
+    "width": 808
+  },
+  "code_audio_fields": {
+    "height": 468,
+    "min_font": 26,
+    "width": 792
+  },
+  "code_audio_methods": {
+    "height": 476,
+    "min_font": 24,
+    "width": 637
+  },
+  "code_enemy_hit": {
+    "height": 412,
+    "min_font": 24,
+    "width": 825
+  },
+  "code_kick_away": {
+    "height": 412,
+    "min_font": 24,
+    "width": 767
+  },
+  "code_push": {
+    "height": 366,
+    "min_font": 26,
+    "width": 698
+  },
+  "code_rock_click": {
+    "height": 540,
+    "min_font": 24,
+    "width": 796
+  },
+  "code_rock_collision": {
+    "height": 604,
+    "min_font": 24,
+    "width": 882
+  },
+  "code_rock_move": {
+    "height": 573,
+    "min_font": 22,
+    "width": 790
+  },
+  "code_rock_release": {
+    "height": 316,
+    "min_font": 24,
+    "width": 796
+  }
+}
