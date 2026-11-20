@@ -19,14 +19,14 @@ public class S9_Grid : MonoBehaviour
     void Awake()
     {
         Instancia = this;
-
-        // centramos el grid sobre el Plane
-        origen = plano.position - new Vector3(ancho * celda / 2f, 0f, alto * celda / 2f);
         calculaGrid();
     }
 
     public void calculaGrid()
     {
+        // centramos el grid sobre el Plane (aqui y no en Awake: el plano cambia al cambiar de manzana)
+        origen = plano.position - new Vector3(ancho * celda / 2f, 0f, alto * celda / 2f);
+
         // marcamos las casillas con pared
         bloqueada = new bool[ancho, alto];
         Vector3 mitad = new Vector3(celda / 2f + margen, 0.5f, celda / 2f + margen);

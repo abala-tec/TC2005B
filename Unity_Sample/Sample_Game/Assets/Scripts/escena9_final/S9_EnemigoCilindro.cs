@@ -29,12 +29,12 @@ public class S9_EnemigoCilindro : MonoBehaviour
         esm?.DibujarGizmos();
     }
 
-    // detecta de donde vino la patada: si no la recibe al frente, se muere
+    // detecta de donde vino la patada: solo se muere si se la dan por detras
     public bool RecibirPatada(Vector3 origenPatada)
     {
         if (muerto) return false;   // ya esta muerto: no vuelve a entrar al estado
 
-        if (InsideConeCheck(origenPatada) == false)  // deteccion de la patada en cono de vision
+        if (PorDetras(origenPatada))
         {
             esm.Initialize(new S9_EMuertoState(this, esm));
             return true;
@@ -51,6 +51,14 @@ public class S9_EnemigoCilindro : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    // la patada cuenta solo si Velma esta detras del enemigo (en la mitad opuesta a donde mira)
+    private bool PorDetras(Vector3 origenPatada)
+    {
+        Vector3 haciaVelma = origenPatada - transform.position;
+        haciaVelma.y = 0;
+        return Vector3.Dot(transform.forward, haciaVelma) < 0;   // negativo = esta a sus espaldas
     }
 
     // revisa si el contacto (se una patada o un golpe a Velma esta dentro del cono)
