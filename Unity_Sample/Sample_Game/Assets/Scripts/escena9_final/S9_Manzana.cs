@@ -22,15 +22,24 @@ public class S9_Manzana : MonoBehaviour
 
     [Header("Animacion de aparicion")]
     public float duracion = 1.2f;
-    public float alturaCaida = 10f;             // de que altura caen los enemigos
     public float temblor = 0.08f;               // cuanto tiemblan las paredes al salir del suelo
 
     private int actual = 0;                     // indice de la manzana donde esta el jugador
     private bool abierta = false;               // ya se mataron todos y la puerta esta abierta
     private List<S9_EnemigoCilindro> enemigos = new List<S9_EnemigoCilindro>();
+    private Vector3 mitadPiedra;                // medio tamano de la piedra ya escalada (para CheckBox)
 
     void Start()
     {
+        // la piedra mide lo mismo que su paso (rockStep): al moverla sigue ocupando casillas completas del grid
+        float paso = moldePiedra.GetComponent<S9_RockDragDrop>().rockStep;
+        Bounds b = moldePiedra.GetComponentInChildren<Renderer>().bounds;   // antes de apagarla: apagada mide 0
+        float k = paso / Mathf.Max(b.size.x, b.size.z);
+        moldePiedra.transform.localScale *= k;
+        Vector3 pp = moldePiedra.transform.position;
+        moldePiedra.transform.position = new Vector3(pp.x, b.extents.y * k, pp.z);   // apoyada en el piso (y = 0)
+        mitadPiedra = b.extents * k * 0.95f;    // 0.95: tocar el borde de una pared no cuenta como encimarse
+
         moldePared.SetActive(false);
         moldePiedra.SetActive(false);
         moldeEnemigo.SetActive(false);
@@ -89,10 +98,20 @@ public class S9_Manzana : MonoBehaviour
                 pared.localScale = new Vector3(largo, altoPared, moldePared.transform.lossyScale.z);
                 paredes.Add(pared);
             }
+            Physics.SyncTransforms();           // CheckBox debe ver las paredes recien creadas
             for (int i = 0; i < numPiedras; i++)
             {
-                Vector3 p = m.position + new Vector3(Random.Range(3f, tamano - 3f), moldePiedra.transform.position.y, Random.Range(2f, tamano - 2f));
-                Crear(moldePiedra, p, moldePiedra.transform.rotation, contenido);
+                for (int intentoP = 0; intentoP < 30; intentoP++)
+                {
+                    // centro en multiplos de 0.5 (la celda) + lado entero = bordes alineados al grid, igual que las paredes
+                    float x = Mathf.Round(Random.Range(3f, tamano - 3f) * 2f) / 2f;
+                    float z = Mathf.Round(Random.Range(2f, tamano - 2f) * 2f) / 2f;
+                    Vector3 p = m.position + new Vector3(x, moldePiedra.transform.position.y, z);
+                    if (Physics.CheckBox(p, mitadPiedra, moldePiedra.transform.rotation, grid.capaParedes)) continue;   // encima de pared/piedra
+                    Crear(moldePiedra, p, moldePiedra.transform.rotation, contenido);
+                    Physics.SyncTransforms();   // la siguiente piedra tampoco debe caer sobre esta
+                    break;
+                }
             }
 
             Physics.SyncTransforms();           // sin esto CheckBox no ve los objetos recien creados
@@ -122,7 +141,7 @@ public class S9_Manzana : MonoBehaviour
                 p.y = moldeEnemigo.transform.position.y;
                 GameObject g = Instantiate(moldeEnemigo, p, moldeEnemigo.transform.rotation, m.Find("contenido"));
                 S9_EnemigoCilindro e = g.GetComponent<S9_EnemigoCilindro>();
-                e.enabled = false;              // apagado mientras cae: su FSM arranca (Start) ya en el suelo
+                e.enabled = false;              // apagado mientras sale del suelo: su FSM arranca (Start) ya afuera
                 g.SetActive(true);
                 enemigos.Add(e);
                 break;
@@ -176,31 +195,29 @@ public class S9_Manzana : MonoBehaviour
     // solo visual: las posiciones finales ya las valido el BFS
     IEnumerator Aparecer(List<Transform> paredes, List<S9_EnemigoCilindro> nuevos)
     {
-        Vector3[] finParedes = new Vector3[paredes.Count];
-        Vector3[] finEnemigos = new Vector3[nuevos.Count];
-        for (int i = 0; i < paredes.Count; i++) finParedes[i] = paredes[i].position;
-        for (int i = 0; i < nuevos.Count; i++) finEnemigos[i] = nuevos[i].transform.position;
-        float alto = altoPared;
+        StartCoroutine(SalirDelSuelo(paredes, temblor));                              // paredes tiemblan
+        yield return SalirDelSuelo(nuevos.ConvertAll(e => e.transform), 0f);         // enemigos no
+        foreach (S9_EnemigoCilindro e in nuevos) e.enabled = true;                   // su FSM arranca ya afuera
+    }
+
+    // sube los objetos desde abajo del piso hasta su posicion final; temblor = 0 para que no tiemblen
+    IEnumerator SalirDelSuelo(List<Transform> objs, float temblor)
+    {
+        Vector3[] fin = new Vector3[objs.Count];
+        for (int i = 0; i < objs.Count; i++) fin[i] = objs[i].position;
 
         for (float t = 0f; t < duracion; t += Time.deltaTime)
         {
             float k = t / duracion;
-            for (int i = 0; i < paredes.Count; i++)
+            for (int i = 0; i < objs.Count; i++)
             {
                 Vector3 tiembla = Random.insideUnitSphere * temblor;
                 tiembla.y = 0f;
-                paredes[i].position = finParedes[i] + Vector3.down * alto * (1f - k) + tiembla;   // sale del suelo temblando
+                objs[i].position = fin[i] + Vector3.down * altoPared * (1f - k) + tiembla;
             }
-            for (int i = 0; i < nuevos.Count; i++)
-                nuevos[i].transform.position = finEnemigos[i] + Vector3.up * alturaCaida * (1f - k) * (1f - k);  // cae acelerando
             yield return null;
         }
 
-        for (int i = 0; i < paredes.Count; i++) paredes[i].position = finParedes[i];
-        for (int i = 0; i < nuevos.Count; i++)
-        {
-            nuevos[i].transform.position = finEnemigos[i];
-            nuevos[i].enabled = true;
-        }
+        for (int i = 0; i < objs.Count; i++) objs[i].position = fin[i];
     }
 }

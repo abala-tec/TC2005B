@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::S9_CameraFollower
   target: {fileID: 1274197755}
-  offset: {x: 0, y: 5, z: -10}
+  offset: {x: 0, y: 13, z: -20}
   followspeed: 0.2
 --- !u!1 &410087039
 GameObject:
@@ -1210,7 +1210,6 @@ MonoBehaviour:
   tamano: 25
   margenJugador: 0.35
   duracion: 1.2
-  alturaCaida: 10
   temblor: 0.08
 --- !u!4 &926228990
 Transform:
@@ -1401,7 +1400,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266459028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1628,8 +1627,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1dbe2d202441c4af2b4089ea010996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::S9_VelmaWalk_3D
-  walkSpeed: 2.5
-  runSpeed: 4.5
+  walkSpeed: 3.5
+  runSpeed: 5.5
   acceleration: 18
   braking: 30
   gravity: 70.3125
@@ -1812,7 +1811,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609647582}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2102,6 +2101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::S9_EnemigoCilindro
   jugador: {fileID: 1274197755}
+  patrol_vel: 1
   chace_vel: 1
   chace_check_time: 0.25
   vision_rango: 10

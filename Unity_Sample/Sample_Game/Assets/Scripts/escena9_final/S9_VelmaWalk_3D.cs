@@ -105,7 +105,7 @@ public class S9_VelmaWalk_3D : MonoBehaviour
 
         if (grounded && kb.fKey.wasPressedThisFrame)
         {
-            sprite_animator.SetTrigger("kick");  // trigerea la animacion del kick (trigger se ejecuta una sola vez)
+            sprite_animator.SetTrigger("hack");  // trigerea la animacion del hack (trigger se ejecuta una sola vez)
 
             // dir es la direcion normalizada del velma en ese momento
             Vector2 dir = input != Vector2.zero ? input.normalized : new Vector2(sprite_render.flipX ? -1f : 1f, 0f);
@@ -215,7 +215,7 @@ public class S9_VelmaWalk_3D : MonoBehaviour
     void CheckVelmaKick(Collision collision)
     {
         if (collision.gameObject.layer != LayerMask.NameToLayer("Enemigos")) return;
-        bool pateando = sprite_animator.GetCurrentAnimatorStateInfo(0).IsName("VelmaKick");
+        bool pateando = sprite_animator.GetCurrentAnimatorStateInfo(0).IsName("VelmaHack");
 
         // la patada pega en cualquier direccion, el enemigo decide por donde le llego
         if (pateando){
@@ -229,7 +229,7 @@ public class S9_VelmaWalk_3D : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemigos")) 
         { 
-            // el cono de vision del enemigo decide si hubo golpe
+            // el enemigo decide si hubo golpe: solo si Velma esta enfrente de el
             bool huboGolpe = collision.gameObject.GetComponent<S9_EnemigoCilindro>().GolpeVelma(transform.position);
 
             if (huboGolpe)

@@ -6,6 +6,7 @@ using UnityPipeline.Microsoft.CodeAnalysis.Operations;
 public class S9_EnemigoCilindro : MonoBehaviour
 {
     public Transform jugador;                    // a que jugador se persigue (gameobject de velma)
+    public float patrol_vel = 1.0f;              // velocidad normal (patrullar)
     public float chace_vel = 5.0f;               // velocidad de persecucion
     public float chace_check_time = 0.25f;       // cada cuantos segundos recalcula el camino (BFS)
     public float vision_rango = 8.0f;            // alcance del cono de vision
@@ -46,11 +47,7 @@ public class S9_EnemigoCilindro : MonoBehaviour
     {
         if (muerto) return false;   // ya esta muerto: no vuelve a entrar al estado
 
-        if (InsideConeCheck(puntoContacto) == true) // si toca a velma de frente
-        {
-            return true;
-        }
-        return false;
+        return !PorDetras(puntoContacto);   // golpea solo si Velma esta enfrente (la mitad hacia donde mira)
     }
 
     // la patada cuenta solo si Velma esta detras del enemigo (en la mitad opuesta a donde mira)
@@ -59,17 +56,6 @@ public class S9_EnemigoCilindro : MonoBehaviour
         Vector3 haciaVelma = origenPatada - transform.position;
         haciaVelma.y = 0;
         return Vector3.Dot(transform.forward, haciaVelma) < 0;   // negativo = esta a sus espaldas
-    }
-
-    // revisa si el contacto (se una patada o un golpe a Velma esta dentro del cono)
-    private bool InsideConeCheck(Vector3 origenContacto)
-    {
-        // revisa de donde vino el contacto
-        Vector3 haciaVelma = origenContacto - transform.position;
-        haciaVelma.y = 0;
-        if (Vector3.Angle(transform.forward, haciaVelma) > vision_angulo / 2) {return false;}
-        
-        return true;
     }
 
     // cono de vision: el jugador se ve si esta dentro del rango, dentro del angulo frente al enemigo y sin pared en medio

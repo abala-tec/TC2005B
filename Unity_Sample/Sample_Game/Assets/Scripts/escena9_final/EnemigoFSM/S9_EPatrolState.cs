@@ -67,7 +67,7 @@ public class S9_EPatrolState : S9_IEnemyState
         // avanza mirando al objetivo (el cono mira hacia el objetivo)
         Vector3 haciaObjetivo = objetivo - enemy.transform.position;
         if (haciaObjetivo.sqrMagnitude > 0.0001f) enemy.transform.rotation = Quaternion.LookRotation(haciaObjetivo);
-        enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, objetivo, enemy.chace_vel * Time.deltaTime);
+        enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, objetivo, enemy.patrol_vel * Time.deltaTime);
 
         // va quitando el primer elemento de la lista al caminar.
         if (enemy.transform.position == objetivo) camino.RemoveAt(0);
