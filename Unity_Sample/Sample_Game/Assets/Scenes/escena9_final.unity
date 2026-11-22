@@ -838,8 +838,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bfc448f69e3444991a82b862d3fedf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::S9_RockDragDrop
-  rockStep: 2
+  rockStep: 0.5
+  rockSize: 2
+  rockRepeat: 0.15
   player: {fileID: 1274197749}
+  outlineMaterial: {fileID: 2100000, guid: f351b5a16aaa45b181c15c54a5f2dbe1, type: 2}
 --- !u!54 &668406008
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1637,6 +1640,7 @@ MonoBehaviour:
   maxHorizontalSpeed: 6
   kickImpulse: 1.5
   kickBack: 5
+  atrapada: 0
 --- !u!114 &1274197757
 MonoBehaviour:
   m_ObjectHideFlags: 0

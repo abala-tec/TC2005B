@@ -31,10 +31,10 @@ public class S9_Manzana : MonoBehaviour
 
     void Start()
     {
-        // la piedra mide lo mismo que su paso (rockStep): al moverla sigue ocupando casillas completas del grid
-        float paso = moldePiedra.GetComponent<S9_RockDragDrop>().rockStep;
+        // escala la piedra a su tamano (rockSize). El paso al moverla (rockStep) es independiente
+        float tamanoPiedra = moldePiedra.GetComponent<S9_RockDragDrop>().rockSize;
         Bounds b = moldePiedra.GetComponentInChildren<Renderer>().bounds;   // antes de apagarla: apagada mide 0
-        float k = paso / Mathf.Max(b.size.x, b.size.z);
+        float k = tamanoPiedra / Mathf.Max(b.size.x, b.size.z);
         moldePiedra.transform.localScale *= k;
         Vector3 pp = moldePiedra.transform.position;
         moldePiedra.transform.position = new Vector3(pp.x, b.extents.y * k, pp.z);   // apoyada en el piso (y = 0)

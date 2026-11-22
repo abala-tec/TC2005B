@@ -31,6 +31,7 @@ public class S9_VelmaWalk_3D : MonoBehaviour
     private bool controls_disabled = false;
     private Vector2 empuje_dir;   // bandera para darle el empujon a velma
     private bool velma_empujada = false;
+    public bool atrapada = false;  // true = tiene una piedra encima (no se mueve hasta que se la quiten)
 
 
     void Start()
@@ -57,6 +58,9 @@ public class S9_VelmaWalk_3D : MonoBehaviour
 
     void Update()
     {
+        // con la piedra encima: agachada y quieta (el rigidbody esta en kinematic, no se calcula fisica)
+        if (atrapada) return;
+
         Keyboard kb = Keyboard.current;
         if (kb == null) return;
 
@@ -171,8 +175,27 @@ public class S9_VelmaWalk_3D : MonoBehaviour
 
     public void DisableControls(bool value)
     {
+        if (atrapada) value = true;   // con una piedra encima nadie le regresa los controles
         controls_disabled = value;
         sprite_animator.SetBool("isDucking", value);
+    }
+
+    // la piedra cae encima de Velma (true) o se la quitan de encima (false).
+    // Atrapada: sin collider (la piedra la atraviesa y toca el suelo), congelada y agachada (isDucking).
+    public void Atrapar(bool value)
+    {
+        atrapada = value;
+
+        horizontal = Vector2.zero;
+        vy = 0f;
+        rb.isKinematic = value;   // sin collider caeria por el piso: la congelamos
+        if (!value) rb.linearVelocity = Vector3.zero;   // al salir empieza quieta
+
+        foreach (Collider c in GetComponents<Collider>()) c.enabled = !value;
+
+        controls_disabled = true;                    // al salir sigue agachada hasta que suelten la piedra
+        sprite_animator.SetBool("isDucking", true);
+        sprite_animator.SetBool("isRunning", false);
     }
 
     void OnCollisionEnter(Collision collision)
