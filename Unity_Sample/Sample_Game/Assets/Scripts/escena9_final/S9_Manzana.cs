@@ -26,6 +26,7 @@ public class S9_Manzana : MonoBehaviour
 
     private int actual = 0;                     // indice de la manzana donde esta el jugador
     private bool abierta = false;               // ya se mataron todos y la puerta esta abierta
+    private bool abriendo = false;              // la puerta se esta hundiendo en el suelo
     private List<S9_EnemigoCilindro> enemigos = new List<S9_EnemigoCilindro>();
     private Vector3 mitadPiedra;                // medio tamano de la piedra ya escalada (para CheckBox)
 
@@ -53,11 +54,8 @@ public class S9_Manzana : MonoBehaviour
         Transform siguiente = manzanas[1 - actual];
 
         // todos muertos: se abre la entrada de la siguiente manzana
-        if (!abierta && enemigos.TrueForAll(e => e.muerto))
-        {
-            siguiente.Find("entrada").gameObject.SetActive(false);
-            abierta = true;
-        }
+        if (!abierta && !abriendo && enemigos.TrueForAll(e => e.muerto))
+            StartCoroutine(Abrir(siguiente.Find("entrada")));
 
         // el jugador ya cruzo (con el cuerpo completo) a la siguiente manzana
         if (abierta && jugador.position.x > siguiente.position.x + 2f)
@@ -192,6 +190,20 @@ public class S9_Manzana : MonoBehaviour
         Destroy(c.gameObject);
     }
 
+    // la puerta se hunde en el suelo (misma animacion que al aparecer, al reves) y luego se apaga
+    IEnumerator Abrir(Transform entrada)
+    {
+        abriendo = true;
+        Vector3 pos = entrada.position;
+        Renderer r = entrada.GetComponentInChildren<Renderer>();
+        float alto = r != null ? r.bounds.size.y : altoPared;
+        yield return SalirDelSuelo(new List<Transform> { entrada }, temblor, alto, true);
+        entrada.gameObject.SetActive(false);
+        entrada.position = pos;                 // lista para cerrarse detras del jugador
+        abriendo = false;
+        abierta = true;
+    }
+
     // solo visual: las posiciones finales ya las valido el BFS
     IEnumerator Aparecer(List<Transform> paredes, List<S9_EnemigoCilindro> nuevos)
     {
@@ -201,8 +213,10 @@ public class S9_Manzana : MonoBehaviour
     }
 
     // sube los objetos desde abajo del piso hasta su posicion final; temblor = 0 para que no tiemblen
-    IEnumerator SalirDelSuelo(List<Transform> objs, float temblor)
+    // hundir = true hace lo contrario: de su posicion actual baja 'alto' hasta quedar bajo el piso
+    IEnumerator SalirDelSuelo(List<Transform> objs, float temblor, float alto = -1f, bool hundir = false)
     {
+        if (alto < 0f) alto = altoPared;
         Vector3[] fin = new Vector3[objs.Count];
         for (int i = 0; i < objs.Count; i++) fin[i] = objs[i].position;
 
@@ -213,11 +227,11 @@ public class S9_Manzana : MonoBehaviour
             {
                 Vector3 tiembla = Random.insideUnitSphere * temblor;
                 tiembla.y = 0f;
-                objs[i].position = fin[i] + Vector3.down * altoPared * (1f - k) + tiembla;
+                objs[i].position = fin[i] + Vector3.down * alto * (hundir ? k : 1f - k) + tiembla;
             }
             yield return null;
         }
 
-        for (int i = 0; i < objs.Count; i++) objs[i].position = fin[i];
+        for (int i = 0; i < objs.Count; i++) objs[i].position = fin[i] + (hundir ? Vector3.down * alto : Vector3.zero);
     }
 }
