@@ -171,7 +171,6 @@ public class S9_VelmaWalk_3D : MonoBehaviour
 
     public void DisableControls(bool value)
     {
-        Debug.Log($"duck {value}");
         controls_disabled = value;
         sprite_animator.SetBool("isDucking", value);
     }

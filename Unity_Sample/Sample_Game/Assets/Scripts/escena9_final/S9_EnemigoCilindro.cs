@@ -11,11 +11,13 @@ public class S9_EnemigoCilindro : MonoBehaviour
     public float chace_check_time = 0.25f;       // cada cuantos segundos recalcula el camino (BFS)
     public float vision_rango = 8.0f;            // alcance del cono de vision
     public float vision_angulo = 90.0f;          // apertura total del cono (grados)
-    public bool muerto = false;                  // pa cuando se muera el
-    private S9_EnemyStateMachine esm;
+    public bool muerto = false;                  // pa cuando que no se puera 2 pinches veces
+    public SpriteRenderer sprender;               // sprite render para controlar la orientacion del sprite cuando el enemigo camina
+    private S9_EnemyStateMachine esm;           // la estate machine que cambia los estados del enemigo (perseguir, patrullar, muerto)
 
     void Start()
     {
+        sprender = GetComponent<SpriteRenderer>(); 
         esm = new S9_EnemyStateMachine();
         esm.Initialize(new S9_EPatrolState(this, esm));   // Iniciamos en Patrullar
     }

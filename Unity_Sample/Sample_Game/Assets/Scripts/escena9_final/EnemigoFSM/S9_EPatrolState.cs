@@ -9,7 +9,7 @@ public class S9_EPatrolState : S9_IEnemyState
     private readonly S9_EnemyStateMachine esm;
     private Vector2Int patrullaGoal;
     private List<Vector2Int> camino;       // casillas por recorrer
-     private int versionGrid;              // para saber si el grid se actualizo
+    private int versionGrid;              // para saber si el grid se actualizo
 
     // constructor necesita la clase ligada al GameObject que esta en la escena. (S9_EnemigoCilindro)
     public S9_EPatrolState(S9_EnemigoCilindro enemy, S9_EnemyStateMachine esm)
@@ -66,7 +66,11 @@ public class S9_EPatrolState : S9_IEnemyState
 
         // avanza mirando al objetivo (el cono mira hacia el objetivo)
         Vector3 haciaObjetivo = objetivo - enemy.transform.position;
-        if (haciaObjetivo.sqrMagnitude > 0.0001f) enemy.transform.rotation = Quaternion.LookRotation(haciaObjetivo);
+
+        // rota el sprite dependiendo de hacia donde va al zombie
+        float orientacion_h =  enemy.transform.position.x - objetivo.x;
+        enemy.sprender.flipX = (orientacion_h < 0) ?  false : true;  
+
         enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, objetivo, enemy.patrol_vel * Time.deltaTime);
 
         // va quitando el primer elemento de la lista al caminar.

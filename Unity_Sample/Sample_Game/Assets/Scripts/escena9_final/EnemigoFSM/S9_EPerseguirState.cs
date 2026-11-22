@@ -51,7 +51,11 @@ public class S9_EPerseguirState : S9_IEnemyState
 
         // avanza mirando hacia el objetivo (el cono mira hacia el objetivo)
         Vector3 haciaObjetivo = objetivo - enemy.transform.position;
-        if (haciaObjetivo.sqrMagnitude > 0.0001f) enemy.transform.rotation = Quaternion.LookRotation(haciaObjetivo);
+        // if (haciaObjetivo.sqrMagnitude > 0.0001f) enemy.transform.rotation = Quaternion.LookRotation(haciaObjetivo);
+
+        // rota el sprite dependiendo de hacia donde va al zombie
+        float orientacion_h =  enemy.transform.position.x - objetivo.x;
+        enemy.sprender.flipX = (orientacion_h < 0) ?  false : true;  
 
         enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, objetivo, enemy.chace_vel * Time.deltaTime);
         if (enemy.transform.position == objetivo) camino.RemoveAt(0);
