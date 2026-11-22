@@ -107,7 +107,7 @@ public class S9_VelmaWalk_3D : MonoBehaviour
 
         sprite_animator.SetBool("isRunning", runHeld && input != Vector2.zero);
 
-        if (grounded && kb.fKey.wasPressedThisFrame)
+        if (grounded && kb.spaceKey.wasPressedThisFrame)
         {
             sprite_animator.SetTrigger("hack");  // trigerea la animacion del hack (trigger se ejecuta una sola vez)
 

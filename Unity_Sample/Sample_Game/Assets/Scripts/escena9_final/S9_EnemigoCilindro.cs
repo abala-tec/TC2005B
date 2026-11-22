@@ -13,11 +13,13 @@ public class S9_EnemigoCilindro : MonoBehaviour
     public float vision_angulo = 90.0f;          // apertura total del cono (grados)
     public bool muerto = false;                  // pa cuando que no se puera 2 pinches veces
     public SpriteRenderer sprender;               // sprite render para controlar la orientacion del sprite cuando el enemigo camina
+    [HideInInspector] public Vector3 mirada;    // hacia donde mira el cono (independiente de la rotacion del transform/sprite)
     private S9_EnemyStateMachine esm;           // la estate machine que cambia los estados del enemigo (perseguir, patrullar, muerto)
 
     void Start()
     {
         sprender = GetComponent<SpriteRenderer>(); 
+        mirada = transform.forward;             // arranca mirando hacia donde apunta el objeto en la escena
         esm = new S9_EnemyStateMachine();
         esm.Initialize(new S9_EPatrolState(this, esm));   // Iniciamos en Patrullar
     }
@@ -57,7 +59,7 @@ public class S9_EnemigoCilindro : MonoBehaviour
     {
         Vector3 haciaVelma = origenPatada - transform.position;
         haciaVelma.y = 0;
-        return Vector3.Dot(transform.forward, haciaVelma) < 0;   // negativo = esta a sus espaldas
+        return Vector3.Dot(mirada, haciaVelma) < 0;   // negativo = esta a sus espaldas
     }
 
     // cono de vision: el jugador se ve si esta dentro del rango, dentro del angulo frente al enemigo y sin pared en medio
@@ -74,7 +76,7 @@ public class S9_EnemigoCilindro : MonoBehaviour
         Vector3 plano = new Vector3(dir.x, 0, dir.z);          // lo mismo que direccion pero en el suelo para detectar el rango
 
         // checa si velma esta dentro del rango de vision
-        if (dir.magnitude > vision_rango || Vector3.Angle(transform.forward, plano) > vision_angulo / 2)
+        if (dir.magnitude > vision_rango || Vector3.Angle(mirada, plano) > vision_angulo / 2)
         {
             return false;
         }
@@ -88,8 +90,8 @@ public class S9_EnemigoCilindro : MonoBehaviour
     {
         Gizmos.color = VeJugador() ? Color.red : Color.green;
         Vector3 o = transform.position + Vector3.up;
-        Vector3 izq = o + Quaternion.AngleAxis(-vision_angulo / 2, Vector3.up) * transform.forward * vision_rango;
-        Vector3 der = o + Quaternion.AngleAxis(vision_angulo / 2, Vector3.up) * transform.forward * vision_rango;
+        Vector3 izq = o + Quaternion.AngleAxis(-vision_angulo / 2, Vector3.up) * mirada * vision_rango;
+        Vector3 der = o + Quaternion.AngleAxis(vision_angulo / 2, Vector3.up) * mirada * vision_rango;
         Gizmos.DrawLine(o, izq);
         Gizmos.DrawLine(izq, der);
         Gizmos.DrawLine(der, o);

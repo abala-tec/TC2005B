@@ -51,7 +51,8 @@ public class S9_EPerseguirState : S9_IEnemyState
 
         // avanza mirando hacia el objetivo (el cono mira hacia el objetivo)
         Vector3 haciaObjetivo = objetivo - enemy.transform.position;
-        // if (haciaObjetivo.sqrMagnitude > 0.0001f) enemy.transform.rotation = Quaternion.LookRotation(haciaObjetivo);
+        // solo gira el cono (enemy.mirada), no el transform: asi el sprite no rota, solo se voltea con flipX
+        if (haciaObjetivo.sqrMagnitude > 0.0001f) enemy.mirada = haciaObjetivo.normalized;
 
         // rota el sprite dependiendo de hacia donde va al zombie
         float orientacion_h =  enemy.transform.position.x - objetivo.x;
