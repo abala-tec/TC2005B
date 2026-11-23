@@ -80,7 +80,7 @@ def fig_fsm():
 
     state(pat, "Patrullar", "elige una celda libre\ny camina con BFS", ORANGE, ORANGE_D)
     state(per, "Perseguir", "recalcula el camino\na Velma cada 0.25 s", BLUE, BLUE)
-    state(mue, "Muerto", "se acuesta en el suelo\ny ya no se mueve", PINK, PINK)
+    state(mue, "Muerto", "se acuesta en el suelo\nsin collider ni Rigidbody", PINK, PINK)
 
     text(d, (34, 160), "Start()", F(SEM, 20), MUTED)
     arrow(d, (90, 175), (145, 175), MUTED, 3, 12)
@@ -93,7 +93,7 @@ def fig_fsm():
 
     arrow(d, (330, 255), (450, 385), PINK, 4, 14)
     arrow(d, (850, 255), (735, 385), PINK, 4, 14)
-    text(d, (570, 325), "RecibirPatada()\ndesde fuera del cono", F(SEM, 18), PINK,
+    text(d, (570, 325), "RecibirHachazo()\npatrulla: 1 golpe · persigue: 3", F(SEM, 18), PINK,
          anchor="ma", spacing=5)
 
     rrect(d, (150, 540, 1050, 585), 12, SOFT, LINE, 1)

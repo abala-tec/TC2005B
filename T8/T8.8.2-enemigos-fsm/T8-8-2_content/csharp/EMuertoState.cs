@@ -1,7 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
-using UnityEditor.Callbacks;
-using UnityEngine.Assertions.Must;
 
 // Enemigo Muerto
 public class EMuertoState: IEnemyState
@@ -28,6 +25,7 @@ public class EMuertoState: IEnemyState
             t.Rotate(t.right, -90f, Space.World); // rotar 
             t.position += Vector3.down * (t.localScale.y - t.localScale.x / 2f);  // acostar sobre el suelo
             enemy.muerto = true;
+            enemy.DesactivarFisica();   // sin collider ni rigidbody: solo queda el cuerpo en el suelo
         }
     }
 

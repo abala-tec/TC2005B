@@ -97,6 +97,7 @@ enemy.transform.position = Vector3.MoveTowards(
         t.position += Vector3.down *
             (t.localScale.y - t.localScale.x / 2f);
         enemy.muerto = true;
+        enemy.DesactivarFisica();
     }
 }""", 30, 44),
 
@@ -133,26 +134,31 @@ enemy.transform.position = Vector3.MoveTowards(
 
     "code_patada_trigger": ("""if (grounded && kb.fKey.wasPressedThisFrame)
 {
-    sprite_animator.SetTrigger("kick");
+    sprite_animator.SetTrigger("hack");
 
     Vector2 dir = input != Vector2.zero
         ? input.normalized
         : new Vector2(sprite_render.flipX ? -1f : 1f, 0f);
 
-    horizontal = horizontal + (dir * kickImpulse);
+    hachazoTimer = hachazoDuracion;
+    hachazoDir = new Vector3(dir.x, 0f, dir.y);
+    golpeadosPorHachazo.Clear();
 }""", 28, 41),
 
-    "code_check_hit": ("""void CheckEnemyHit(Collision collision)
+    "code_check_hit": ("""void RevisarHachazo()
 {
-    if (collision.gameObject.layer !=
-        LayerMask.NameToLayer("Enemigos")) return;
+    Collider[] golpeados = Physics.OverlapSphere(CentroHachazo(),
+        hachazoRadio, LayerMask.GetMask("Enemigos"));
 
-    bool pateando = sprite_animator
-        .GetCurrentAnimatorStateInfo(0).IsName("VelmaKick");
+    foreach (Collider c in golpeados)
+    {
+        EnemigoCilindro enemigo = c.GetComponent<EnemigoCilindro>();
+        if (enemigo == null || golpeadosPorHachazo.Contains(enemigo))
+            continue;   // una sola vez por hachazo
+        golpeadosPorHachazo.Add(enemigo);
 
-    if (pateando)
-        collision.gameObject.GetComponent<EnemigoCilindro>()
-            ?.RecibirPatada(transform.position);
+        enemigo.RecibirHachazo(transform.position);
+    }
 }""", 28, 41),
 
     "code_oncollision": ("""void OnCollisionEnter(Collision collision)
@@ -167,15 +173,21 @@ void OnCollisionStay(Collision collision)
     CheckEnemyHit(collision);
 }""", 28, 41),
 
-    "code_recibir_patada": ("""public void RecibirPatada(Vector3 origenPatada)
+    "code_recibir_patada": ("""public bool RecibirHachazo(Vector3 origenHachazo)
 {
-    Vector3 haciaVelma = origenPatada - transform.position;
-    haciaVelma.y = 0;
+    if (muerto) return false;
 
-    if (Vector3.Angle(transform.forward, haciaVelma) >
-        vision_angulo / 2)
-        esm.Initialize(new EMuertoState(this, esm));
-}""", 30, 44),
+    bool persiguiendo = esm.EstadoActual is EPerseguirState;
+    golpes_recibidos++;
+
+    if (!persiguiendo || golpes_recibidos >= golpes_persiguiendo)
+    {
+        esm.ChangeState(new EMuertoState(this, esm));
+        return true;
+    }
+    // ... no murio: retrocede (codigo completo en las notas)
+    return true;
+}""", 28, 41),
 
     "code_player_start": ("""rb = GetComponent<Rigidbody>();
 sprite_render = GetComponent<SpriteRenderer>();

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;   // para leer el input del teclados
 using TMPro;
-using UnityEditor.U2D;
+using System.Collections.Generic;
 
 public class S7_VelmaWalk_3D : MonoBehaviour
 {
@@ -18,7 +18,15 @@ public class S7_VelmaWalk_3D : MonoBehaviour
     public float jumpHoldLimit = 7.5f;        // $20 = 2 px/frame
     public float maxFallSpeed = 15f;          // $40 = 4 px/frame maxima vel al caer
     public float maxHorizontalSpeed = 15f;    // $40 = 4 px/frame maxima velocidad en x,y en el suelo
-    public float kickImpulse = 6f;            // velocidad extra al patear (se frena sola con braking)
+
+    [Header("Combate")]
+    public float hachazoDuracion = 0.25f;     // cuanto tiempo el hachazo esta "activo" (puede pegar)
+    public float hachazoAlcance = 0.8f;       // que tan enfrente de Velma esta la esfera del hachazo
+    public float hachazoRadio = 0.6f;         // tamaño de la esfera del hachazo
+
+    private float hachazoTimer = 0f;          // > 0 = el hachazo esta activo
+    private Vector3 hachazoDir;               // direccion del hachazo (en el suelo XZ)
+    private HashSet<EnemigoCilindro> golpeadosPorHachazo = new HashSet<EnemigoCilindro>();  // a quien ya le pego este hachazo
     
 
     private Rigidbody rb;
@@ -95,11 +103,24 @@ public class S7_VelmaWalk_3D : MonoBehaviour
         sprite_animator.SetBool("isRunning", runHeld && input != Vector2.zero);
 
         if (grounded && kb.fKey.wasPressedThisFrame){
-            sprite_animator.SetTrigger("kick");  // trigerea la animacion del kick (trigger se ejecuta una sola vez)
+            sprite_animator.SetTrigger("hack");  // trigerea la animacion del hachazo (trigger "hack" del controller, se ejecuta una sola vez)
 
             // extra la direcion normalizada del velma en ese momento
+            // si el input NO es cero dir es el input normalizado
+            // si el input Si es cero toma la direcion hacia donde esta mirando el sprite
             Vector2 dir = input != Vector2.zero ? input.normalized : new Vector2(sprite_render.flipX ? -1f : 1f, 0f);
-            horizontal = horizontal + (dir * kickImpulse);  // horizontal + el impulso del kick en esa direccion
+
+            // activa el hachazo: durante hachazoDuracion la esfera enfrente de Velma puede pegarle a enemigos
+            hachazoTimer = hachazoDuracion;
+            hachazoDir = new Vector3(dir.x, 0f, dir.y);
+            golpeadosPorHachazo.Clear();
+        }
+
+        // mientras el hachazo este activo, revisa si hay enemigos dentro de la esfera
+        if (hachazoTimer > 0f)
+        {
+            hachazoTimer -= Time.deltaTime;
+            RevisarHachazo();
         }
 
         // si se presiono AWSD o arrows
@@ -166,13 +187,11 @@ public class S7_VelmaWalk_3D : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         CheckGround(collision);
-        CheckEnemyHit(collision);  
     }
 
     void OnCollisionStay(Collision collision)
     {
         CheckGround(collision);
-        CheckEnemyHit(collision);   
     }
 
     void FixedUpdate()
@@ -197,14 +216,32 @@ public class S7_VelmaWalk_3D : MonoBehaviour
         }
     }
 
-    // revisa si velma pateo a un enemigo y envia el evento al enemigo
-    void CheckEnemyHit(Collision collision)
+    // centro de la esfera del hachazo: enfrente de Velma, en la direccion del hachazo
+    Vector3 CentroHachazo()
     {
-        if (collision.gameObject.layer != LayerMask.NameToLayer("Enemigos")) return;
-        bool pateando = sprite_animator.GetCurrentAnimatorStateInfo(0).IsName("VelmaKick");
+        return transform.position + hachazoDir * hachazoAlcance;
+    }
 
-        // la patada pega en cualquier direccion, el enemigo decide por donde le llego
-        if (pateando)
-            collision.gameObject.GetComponent<EnemigoCilindro>()?.RecibirPatada(transform.position);
+    // el hachazo es una esfera invisible enfrente de Velma (como el filo del hacha).
+    // si un enemigo esta dentro, se le avisa. El enemigo decide si muere (segun su estado).
+    void RevisarHachazo()
+    {
+        Collider[] golpeados = Physics.OverlapSphere(CentroHachazo(), hachazoRadio, LayerMask.GetMask("Enemigos"));
+        foreach (Collider c in golpeados)
+        {
+            EnemigoCilindro enemigo = c.GetComponent<EnemigoCilindro>();
+            if (enemigo == null || golpeadosPorHachazo.Contains(enemigo)) continue;   // una sola vez por hachazo
+            golpeadosPorHachazo.Add(enemigo);
+
+            enemigo.RecibirHachazo(transform.position);
+        }
+    }
+
+    // dibuja la esfera del hachazo en la escena (seleccionar a Velma) para ajustar alcance y radio
+    void OnDrawGizmosSelected()
+    {
+        Vector3 dir = hachazoDir != Vector3.zero ? hachazoDir : Vector3.right;
+        Gizmos.color = hachazoTimer > 0f ? Color.red : Color.yellow;
+        Gizmos.DrawWireSphere(transform.position + dir * hachazoAlcance, hachazoRadio);
     }
 }

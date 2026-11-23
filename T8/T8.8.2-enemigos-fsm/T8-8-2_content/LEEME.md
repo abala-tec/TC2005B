@@ -3,8 +3,15 @@
 Presentación `../T8.8.2-Enemigos-FSM.pptx` (portada + 25 diapositivas de contenido).
 
 El tema explica la FSM del enemigo de `escena7_fsm`: los estados Patrullar,
-Perseguir y Muerto; la visión con cono y raycast; la animación y detección de la
-patada de Velma; y el material físico sin fricción de las paredes.
+Perseguir y Muerto; la visión con cono y raycast; la animación y detección del
+hachazo de Velma; y el material físico sin fricción de las paredes.
+
+> **Actualización (combate con hachazo):** las diapositivas 2, 3, 4, 5, 11, 21, 22,
+> 23, 26 y 27 (y sus notas) se editaron directamente en el PPTX, sin regenerar el
+> deck. `snippets.py`, `make_figures.py`, `codigo/`, `figuras/fsm_diagrama.png` y
+> `csharp/` ya tienen la versión nueva. **`build_deck.py` NO está actualizado**:
+> si se corre, vuelve a generar el deck con el texto viejo (patada / cono).
+> Ver `Unity_Sample/Sample_Game/Assets/Scripts/escena9_final/CAMBIOS_COMBATE.md`.
 
 ## Contenido
 
@@ -38,7 +45,7 @@ patada de Velma; y el material físico sin fricción de las paredes.
 cd T8/T8.8.2-enemigos-fsm/T8-8-2_content
 python3 make_code_images.py
 python3 make_figures.py
-python3 build_deck.py
+python3 build_deck.py   # ¡ojo! build_deck.py tiene el texto viejo (ver arriba)
 ```
 
 El build usa `video-juegos/template/deck_style.py` y
@@ -51,7 +58,11 @@ reemplaza el PPTX final.
 - El enemigo usa `EnemigoCilindro`; la FSM no es un componente, se crea en
   `Start()`.
 - La visión usa `vision_rango = 8`, `vision_angulo = 90` y un `Physics.Raycast`.
-- La patada se dispara con el trigger `kick` y se detecta con la capa
-  `Enemigos` y el estado `VelmaKick` del Animator.
+- El hachazo (tecla F) dispara el trigger `hack` del Animator y activa una
+  esfera (`Physics.OverlapSphere`) enfrente de Velma durante 0.25 s; solo
+  cuenta la capa `Enemigos`. Ya no hay impulso hacia adelante.
+- El enemigo muere de 1 hachazo si patrulla y de 3 (`golpes_persiguiendo`) si
+  persigue; si no muere, retrocede. Al morir se apagan su collider y su
+  Rigidbody.
 - Las paredes usan `ParedesMaterial` con fricción dinámica y estática en 0 y
   `Friction Combine = Minimum`.
