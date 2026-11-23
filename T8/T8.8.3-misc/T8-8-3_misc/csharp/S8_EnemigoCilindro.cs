@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityPipeline.Microsoft.CodeAnalysis.Operations;
 
 // La clase S8_EnemigoCilindro usa una maquina de estados para definir el behaviour del enemigo.
 // Estados: Patrullar (BFS Random), Perseguir (BFS al jugador) y Muerto (collision off).
@@ -10,18 +9,54 @@ public class S8_EnemigoCilindro : MonoBehaviour
     public float chace_check_time = 0.25f;       // cada cuantos segundos recalcula el camino (BFS)
     public float vision_rango = 8.0f;            // alcance del cono de vision
     public float vision_angulo = 90.0f;          // apertura total del cono (grados)
+    public float golpe_angulo = 120.0f;          // que tan ancho es "enfrente" para golpear a Velma (180 = toda la mitad delantera)
+    public int golpes_persiguiendo = 3;          // hachazos que necesita para morir si esta persiguiendo a Velma (patrullando muere de 1)
+    public float retroceso_distancia = 1.0f;     // cuanto retrocede al recibir un hachazo (unidades = tiles)
+    public float retroceso_tiempo = 0.25f;       // cuanto dura el retroceso (no camina ni golpea mientras retrocede)
     public bool muerto = false;                  // pa cuando se muera el
+    private int golpes_recibidos = 0;            // hachazos que lleva
+    private Vector3 retroceso_vel;               // velocidad del retroceso (direccion lejos de Velma)
+    private float retroceso_timer = 0f;          // > 0 = esta retrocediendo
     private S8_EnemyStateMachine esm;
 
     void Start()
     {
+        // Rigidbody kinematic: se sigue moviendo por transform, pero Unity detecta bien sus choques con Velma
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb == null) rb = gameObject.AddComponent<Rigidbody>();
+        rb.isKinematic = true;
+        rb.useGravity = false;
+
         esm = new S8_EnemyStateMachine();
         esm.Initialize(new S8_EPatrolState(this, esm));   // Iniciamos en Patrullar
     }
 
     void Update()
     {
+        // mientras retrocede no camina (la FSM espera)
+        if (retroceso_timer > 0f)
+        {
+            Retroceder();
+            return;
+        }
         esm.Update();
+    }
+
+    // empuja al zombie lejos de Velma, sin atravesar paredes (revisa el grid)
+    private void Retroceder()
+    {
+        retroceso_timer -= Time.deltaTime;
+
+        Vector3 siguiente = transform.position + retroceso_vel * Time.deltaTime;
+        S8_Grid grid = S8_Grid.Instancia;
+        if (grid == null || grid.Libre(grid.MundoACelda(siguiente)))
+        {
+            transform.position = siguiente;
+        }
+        else
+        {
+            retroceso_timer = 0f;   // choco con una pared: deja de retroceder
+        }
     }
 
     void OnDrawGizmos()
@@ -29,39 +64,57 @@ public class S8_EnemigoCilindro : MonoBehaviour
         esm?.DibujarGizmos();
     }
 
-    // detecta de donde vino la patada: si no la recibe al frente, se muere
-    public bool RecibirPatada(Vector3 origenPatada)
+    // Velma le dio un hachazo.
+    // Patrullando (no la ha visto): muere de 1 golpe.
+    // Persiguiendo: muere al llegar a golpes_persiguiendo.
+    // Si no muere, retrocede un poco para darle chance a Velma del siguiente golpe.
+    // Regresa true si el hachazo conecto (para el sonido).
+    public bool RecibirHachazo(Vector3 origenHachazo)
     {
         if (muerto) return false;   // ya esta muerto: no vuelve a entrar al estado
 
-        if (InsideConeCheck(origenPatada) == false)  // deteccion de la patada en cono de vision
+        bool persiguiendo = esm.EstadoActual is S8_EPerseguirState;
+        golpes_recibidos++;
+
+        if (!persiguiendo || golpes_recibidos >= golpes_persiguiendo)
         {
-            esm.Initialize(new S8_EMuertoState(this, esm));
+            retroceso_timer = 0f;
+            esm.ChangeState(new S8_EMuertoState(this, esm));
             return true;
         }
-        return false;
+
+        // retroceso: lejos de Velma, en el suelo (XZ)
+        Vector3 lejos = transform.position - origenHachazo;
+        lejos.y = 0f;
+        if (lejos.sqrMagnitude < 0.0001f) lejos = -transform.forward;   // Velma justo encima: retrocede hacia atras
+        retroceso_vel = lejos.normalized * (retroceso_distancia / retroceso_tiempo);
+        retroceso_timer = retroceso_tiempo;
+        return true;
+    }
+
+    // apaga la fisica del zombie muerto: solo queda el cuerpo en el suelo
+    public void DesactivarFisica()
+    {
+        foreach (Collider c in GetComponents<Collider>()) c.enabled = false;
+
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null) Destroy(rb);   // un Rigidbody no se puede "apagar": se quita
     }
 
     public bool GolpeVelma(Vector3 puntoContacto)
     {
-        if (muerto) return false;   // ya esta muerto: no vuelve a entrar al estado
+        if (muerto) return false;                 // ya esta muerto: no golpea
+        if (retroceso_timer > 0f) return false;   // mientras retrocede no golpea
 
-        if (InsideConeCheck(puntoContacto) == true) // si toca a velma de frente
-        {
-            return true;
-        }
-        return false;
+        return EnFrente(puntoContacto);   // golpea solo si Velma esta enfrente (dentro de golpe_angulo)
     }
 
-    // revisa si el contacto (se una patada o un golpe a Velma esta dentro del cono)
-    private bool InsideConeCheck(Vector3 origenContacto)
+    // Velma esta enfrente si el angulo entre el frente del zombie y Velma es menor a la mitad de golpe_angulo
+    private bool EnFrente(Vector3 posVelma)
     {
-        // revisa de donde vino el contacto
-        Vector3 haciaVelma = origenContacto - transform.position;
+        Vector3 haciaVelma = posVelma - transform.position;
         haciaVelma.y = 0;
-        if (Vector3.Angle(transform.forward, haciaVelma) > vision_angulo / 2) {return false;}
-        
-        return true;
+        return Vector3.Angle(transform.forward, haciaVelma) <= golpe_angulo / 2;
     }
 
     // cono de vision: el jugador se ve si esta dentro del rango, dentro del angulo frente al enemigo y sin pared en medio

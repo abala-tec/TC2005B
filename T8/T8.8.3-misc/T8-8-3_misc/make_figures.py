@@ -197,12 +197,12 @@ def fig_audio_mezcla():
     box(d, 40, 60, 1120, 80, fill=(255, 240, 224), outline=ORANGE, width=2)
     txt(d, 65, 82, "Moog City  ·  loop", F(SEM, 34), ORANGE_D)
 
-    events = [(150, "jump", ORANGE), (400, "air", BLUE),
-              (650, "kick", PINK), (900, "hit", GREEN)]
-    for x, name, color in events:
-        box(d, x, 195, 130, 65, fill=color, outline=color)
-        txt(d, x + 65, 227, name, F(SEM, 34), WHITE, anchor="mm")
-        d.line([(x + 65) * S, 165 * S, (x + 65) * S, 192 * S],
+    events = [(150, "jump", ORANGE, 130), (400, "air", BLUE, 130),
+              (630, "hachazo", PINK, 170), (900, "hit", GREEN, 130)]
+    for x, name, color, bw in events:
+        box(d, x, 195, bw, 65, fill=color, outline=color)
+        txt(d, x + bw / 2, 227, name, F(SEM, 34), WHITE, anchor="mm")
+        d.line([(x + bw / 2) * S, 165 * S, (x + bw / 2) * S, 192 * S],
                fill=color, width=2 * S)
 
     txt(d, 600, 286, "PlayOneShot", F(SEM, 34), MUTED, anchor="ma")
@@ -381,7 +381,7 @@ def fig_anim_velma():
 
     arrow(d, 220, 470, 646, 440, GREEN, width=3, head=14)
     arrow(d, 260, 260, 296, 130, TEAL, width=3, head=14)
-    chip(d, 258, 170, "kick", F(MONO, 31), PINK)
+    chip(d, 258, 170, "hack", F(MONO, 31), PINK)
     arrow(d, 260, 280, 296, 320, TEAL, width=3, head=14)
     chip(d, 245, 370, "push", F(MONO, 31), RED)
     arrow(d, 540, 130, 646, 420, PINK, width=3, head=14)
@@ -404,7 +404,7 @@ def fig_anim_velma():
 
     state(d, *entry, "Entry", outline=GREEN, accent=GREEN, size=32)
     state(d, *any_s, "Any State", outline=TEAL, accent=TEAL, size=31)
-    state(d, *kick, "VelmaKick", outline=PINK, accent=PINK, size=32)
+    state(d, *kick, "VelmaHack", outline=PINK, accent=PINK, size=32)
     state(d, *drop, "VelmaDrop", outline=RED, accent=RED, size=32)
     state(d, *walk, "VelmaWalking", fill=(255, 240, 224), outline=ORANGE,
           accent=ORANGE, size=32)
@@ -420,13 +420,13 @@ def fig_anim_exit():
     W, H = 1200, 500
     im, d = canvas(W, H)
 
-    txt(d, 40, 18, "CLIP VELMAKICK", F(SEM, 34), PINK)
+    txt(d, 40, 18, "CLIP VELMAHACK", F(SEM, 34), PINK)
 
     x0, x1, y = 60, 930, 130
     box(d, x0, y, x1 - x0, 100, fill=(255, 232, 238), outline=PINK, width=3)
-    txt(d, (x0 + x1) / 2, y + 32, "VelmaKick", F(SEM, 36), PINK, anchor="ma")
-    for i in range(7):
-        x = x0 + (x1 - x0) * i / 6
+    txt(d, (x0 + x1) / 2, y + 32, "VelmaHack", F(SEM, 36), PINK, anchor="ma")
+    for i in range(8):   # 7 sprites a 12 fps = 0.58 s
+        x = x0 + (x1 - x0) * i / 7
         d.line([(x * S, y * S), (x * S, (y + 100) * S)], fill=PINK,
                width=1 * S)
 
@@ -437,13 +437,17 @@ def fig_anim_exit():
     state(d, 1020, 110, 160, 90, "Walking", outline=GREEN, accent=GREEN,
           size=34)
 
+    # el golpe ya no depende del clip: lo decide hachazoTimer (0.25 s desde que se presiona F)
     by = 330
-    d.line([(x0 * S, by * S), (x1 * S, by * S)], fill=TEAL, width=3 * S)
+    xt = x0 + (x1 - x0) * 0.25 / 0.5833
+    d.line([(x0 * S, by * S), (xt * S, by * S)], fill=TEAL, width=3 * S)
     d.line([(x0 * S, (by - 12) * S), (x0 * S, (by + 12) * S)],
            fill=TEAL, width=3 * S)
-    d.line([(x1 * S, (by - 12) * S), (x1 * S, (by + 12) * S)],
+    d.line([(xt * S, (by - 12) * S), (xt * S, (by + 12) * S)],
            fill=TEAL, width=3 * S)
-    chip(d, (x0 + x1) / 2, by, "IsName = true", F(MONO, 34), TEAL)
+    txt(d, xt + 24, by, "hachazoTimer = 0.25 s", F(MONO, 34), TEAL, anchor="lm")
+    txt(d, x0, by + 50, "mientras dura, la esfera del hachazo puede pegar",
+        F(SEM, 34), BODY)
 
     save(im, W, H, "fig_anim_exit.png")
 
@@ -461,7 +465,7 @@ def fig_anim_code_map():
          "Walking <-> Run", BLUE),
         ('SetBool("isJumping", !grounded)', "VelmaJump", BLUE),
         ('SetBool("isDucking", value)', "VelmaDuck", GREEN),
-        ('SetTrigger("kick")', "Any State -> Kick", PINK),
+        ('SetTrigger("hack")', "Any State -> Hack", PINK),
         ('SetTrigger("push")', "Any State -> Drop", RED),
     ]
     for i, (code, state_name, color) in enumerate(rows):
@@ -484,27 +488,30 @@ def fig_kickback_flujo():
         box(d, x, y, w, h, fill=fill, outline=outline)
         txt(d, x + w / 2, y + h / 2, title, F(SEM, 32), INK, anchor="mm")
 
-    box(d, 350, 20, 500, 70, fill=DARK, outline=DARK)
-    txt(d, 600, 55, "OnCollisionEnter", F(SEM, 32), WHITE, anchor="mm")
-    arrow(d, 600, 90, 600, 118, BODY, width=3, head=13)
+    box(d, 300, 20, 600, 70, fill=DARK, outline=DARK)
+    txt(d, 600, 55, "Enter / Stay -> CheckEnemyHit", F(SEM, 32), WHITE,
+        anchor="mm")
+    arrow(d, 600, 90, 600, 106, BODY, width=3, head=13)
 
-    node(350, 120, 500, 70, "CheckEnemyHit")
-    arrow(d, 600, 190, 600, 218, BODY, width=3, head=13)
+    diamond(d, 600, 150, 440, 84, "invulnerable?", F(SEM, 32))
+    arrow(d, 820, 150, 890, 150, RED, width=3, head=13)
+    node(890, 115, 280, 70, "return false", (255, 240, 240), RED)
+
+    arrow(d, 600, 192, 600, 216, BODY, width=3, head=13)
     diamond(d, 600, 260, 440, 84, "layer Enemigos?", F(SEM, 32))
-
     arrow(d, 820, 260, 890, 260, RED, width=3, head=13)
     node(890, 225, 280, 70, "return false", (255, 240, 240), RED)
 
     arrow(d, 600, 302, 600, 330, BODY, width=3, head=13)
     node(350, 330, 500, 70, "GolpeVelma")
     arrow(d, 600, 400, 600, 428, BODY, width=3, head=13)
-    diamond(d, 600, 470, 440, 84, "dentro del cono?", F(SEM, 32))
+    diamond(d, 600, 470, 440, 84, "en golpe_angulo?", F(SEM, 32))
 
     arrow(d, 820, 470, 890, 470, RED, width=3, head=13)
     node(890, 435, 280, 70, "return false", (255, 240, 240), RED)
 
     arrow(d, 600, 512, 600, 540, GREEN, width=3, head=13)
-    node(350, 540, 500, 70, "away + normalize", (240, 255, 246), GREEN)
+    node(350, 540, 500, 70, "away + invulnerable 1 s", (240, 255, 246), GREEN)
     arrow(d, 600, 610, 600, 638, GREEN, width=3, head=13)
     node(350, 638, 500, 70, "return true", (240, 255, 246), GREEN)
 
@@ -600,8 +607,8 @@ def fig_kickback_timeline():
     txt(d, 660, 620, "hit", F(SEM, 31), GREEN, anchor="mm")
 
     box(d, 1000, 220, 360, 110, fill=(255, 248, 235), outline=ORANGE, width=2)
-    txt(d, 1020, 240, "en el aire", F(SEM, 31), ORANGE_D)
-    txt(d, 1020, 285, "espera", F(REG, 31), BODY)
+    txt(d, 1020, 240, "invulnerable", F(SEM, 31), ORANGE_D)
+    txt(d, 1020, 285, "1 s sin golpes", F(REG, 31), BODY)
 
     save(im, W, H, "fig_kickback_timeline.png")
 

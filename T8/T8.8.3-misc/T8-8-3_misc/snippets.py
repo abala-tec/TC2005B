@@ -12,7 +12,8 @@ public class S8_SoundControl : MonoBehaviour
     public AudioClip jump;
     public AudioClip hit;
     public AudioClip won;
-    public AudioClip kick;
+    [FormerlySerializedAs("kick")]
+    public AudioClip hachazo;
     public AudioClip airWush;
     public AudioClip background;
 
@@ -21,7 +22,7 @@ public class S8_SoundControl : MonoBehaviour
         "size": 26,
         "line": 34,
         "file": "S8_SoundControl.cs",
-        "note": "lineas 4-15, sin comentarios",
+        "note": "lineas 5-17, sin comentarios",
     },
     "code_audio_awake": {
         "code": """    void Awake()
@@ -58,7 +59,7 @@ public class S8_SoundControl : MonoBehaviour
         "size": 24,
         "line": 32,
         "file": "S8_SoundControl.cs",
-        "note": "lineas 30-33 y 44-47; hit y kick omitidos",
+        "note": "lineas 30-33 y 46-49; hit y hachazo omitidos",
     },
     "code_rock_click": {
         "code": """        if (mouse.leftButton.wasPressedThisFrame)
@@ -167,46 +168,50 @@ public class S8_SoundControl : MonoBehaviour
     "code_anim_kick": {
         "code": """        if (grounded && kb.fKey.wasPressedThisFrame)
         {
-            sprite_animator.SetTrigger("kick");
+            sprite_animator.SetTrigger("hack");
 
             Vector2 dir = input != Vector2.zero
                 ? input.normalized
                 : new Vector2(
                     sprite_render.flipX ? -1f : 1f, 0f);
-
-            horizontal = horizontal + (dir * kickImpulse);
             S8_SoundControl.play_airWush();
+
+            hachazoTimer = hachazoDuracion;
+            hachazoDir = new Vector3(dir.x, 0f, dir.y);
+            golpeadosPorHachazo.Clear();
         }""",
         "size": 22,
         "line": 30,
         "file": "S8_VelmaWalk_3D.cs",
-        "note": "lineas 112-120, sin comentarios",
+        "note": "lineas 122-134, sin comentarios",
     },
     "code_anim_check": {
-        "code": """    void CheckVelmaKick(Collision collision)
+        "code": """void RevisarHachazo()
+{
+    Collider[] golpeados = Physics.OverlapSphere(
+        CentroHachazo(), hachazoRadio,
+        LayerMask.GetMask("Enemigos"));
+    foreach (Collider c in golpeados)
     {
-        if (collision.gameObject.layer !=
-            LayerMask.NameToLayer("Enemigos")) return;
-
-        bool pateando = sprite_animator
-            .GetCurrentAnimatorStateInfo(0)
-            .IsName("VelmaKick");
-
-        if (pateando){
-            bool hit = collision.gameObject
-                .GetComponent<S8_EnemigoCilindro>()
-                .RecibirPatada(transform.position);
-            if (hit) { S8_SoundControl.play_kick(); }
-        }
-    }""",
+        S8_EnemigoCilindro enemigo =
+            c.GetComponent<S8_EnemigoCilindro>();
+        if (enemigo == null ||
+            golpeadosPorHachazo.Contains(enemigo))
+            continue;
+        golpeadosPorHachazo.Add(enemigo);
+        if (enemigo.RecibirHachazo(transform.position))
+            S8_SoundControl.play_hachazo();
+    }
+}""",
         "size": 22,
-        "line": 30,
+        "line": 28,
         "file": "S8_VelmaWalk_3D.cs",
-        "note": "lineas 235-246, sin comentario",
+        "note": "lineas 265-276, sin comentarios",
     },
     "code_enemy_hit": {
         "code": """    bool CheckEnemyHit(Collision collision)
     {
+        if (invulnerableTimer > 0f) return false;
         if (collision.gameObject.layer ==
             LayerMask.NameToLayer("Enemigos")) 
         { 
@@ -219,7 +224,7 @@ public class S8_SoundControl : MonoBehaviour
         "size": 24,
         "line": 32,
         "file": "S8_VelmaWalk_3D.cs",
-        "note": "lineas 249-257, sin comentario",
+        "note": "lineas 287-297, sin comentarios",
     },
     "code_kick_away": {
         "code": """            Vector3 away = transform.position
@@ -231,26 +236,27 @@ public class S8_SoundControl : MonoBehaviour
                 empuje_dir = new Vector2(
                     away.x, away.z).normalized;
                 velma_empujada = true;
+                invulnerableTimer = invulnerableTiempo;
                 return true;
             }""",
         "size": 24,
         "line": 32,
         "file": "S8_VelmaWalk_3D.cs",
-        "note": "lineas 258-266, sin comentarios",
+        "note": "lineas 298-307, sin comentarios",
     },
     "code_push": {
-        "code": """        if (grounded && velma_empujada)
+        "code": """        if (velma_empujada)
         {
             sprite_animator.SetTrigger(
                 "push");
             horizontal +=
-                empuje_dir * kickBack;
+                empuje_dir * knockBack;
             velma_empujada = false;
             S8_SoundControl.play_hit();
         }""",
         "size": 26,
         "line": 34,
         "file": "S8_VelmaWalk_3D.cs",
-        "note": "lineas 122-129, sin comentarios",
+        "note": "lineas 145-153, sin comentarios",
     },
 }

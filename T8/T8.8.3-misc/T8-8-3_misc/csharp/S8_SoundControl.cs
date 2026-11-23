@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.Serialization;   // FormerlySerializedAs: renombrar variables sin perder su valor en el Inspector
 
 [RequireComponent(typeof(AudioSource))]
 public class S8_SoundControl : MonoBehaviour
@@ -7,8 +8,9 @@ public class S8_SoundControl : MonoBehaviour
     public AudioClip jump;   // sin static: asi salen en el Inspector
     public AudioClip hit;   // when velma gets git by the enemy
     public AudioClip won;
-    public AudioClip kick;  // when velma kicks an enemy and hits
-    public AudioClip airWush;  // everytime velma kicks 
+    [FormerlySerializedAs("kick")]
+    public AudioClip hachazo;  // cuando el hachazo de velma le pega a un enemigo
+    public AudioClip airWush;  // cada vez que velma tira un hachazo (aunque no pegue)
     public AudioClip background;  // musica de background 
 
     private AudioSource asource;
@@ -36,9 +38,9 @@ public class S8_SoundControl : MonoBehaviour
         instancia.asource.PlayOneShot(instancia.hit); 
     }
 
-    public static void play_kick()
+    public static void play_hachazo()
     {
-        instancia.asource.PlayOneShot(instancia.kick);
+        instancia.asource.PlayOneShot(instancia.hachazo);
     }
 
     public static void play_airWush()

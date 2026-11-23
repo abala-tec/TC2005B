@@ -9,9 +9,20 @@ El tema cubre tres sistemas de `Assets/Scripts/escena8_misc`:
 2. **Piedras arrastrables**: `Physics.Raycast` con `ScreenPointToRay`,
    `Rigidbody` kinematic mientras se arrastra, teclado para mover y
    recálculo de `S8_Grid` al caer.
-3. **Animator y kickback**: el Animator Controller como máquina de estados,
-   sus parámetros (`Bool` y `Trigger`), `Exit Time`, `IsName`, y el empuje
-   que recibe Velma cuando el enemigo la golpea.
+3. **Animator y knockback**: el Animator Controller como máquina de estados,
+   sus parámetros (`Bool` y `Trigger`), `Exit Time`, el hachazo de Velma
+   (timer + esfera) y el empuje que recibe Velma cuando el enemigo la golpea.
+
+> **Actualización (combate con hachazo):** las diapositivas 2, 6, 8, 17, 18,
+> 19, 20, 21, 22, 23, 24 y 25 (y sus notas) se editaron directamente en el
+> PPTX, sin regenerar el deck. Se respetaron los recortes y los textos que se
+> habían puesto encima de las figuras (por ejemplo "Background music" en la
+> diapositiva 8). `snippets.py`, `make_figures.py`, las imágenes afectadas de
+> `codigo/` y `figuras/`, y `csharp/` ya tienen la versión nueva.
+> **`build_deck.py` y los `manifest.json` NO están actualizados**: si se corre
+> el build, vuelve a generar el deck con el texto viejo (patada / cono /
+> kickBack) y se pierden las ediciones hechas a mano en el PPTX.
+> Ver `Unity_Sample/Sample_Game/Assets/Scripts/escena9_final/CAMBIOS_COMBATE.md`.
 
 ## Estructura
 
@@ -43,7 +54,7 @@ El tema cubre tres sistemas de `Assets/Scripts/escena8_misc`:
 cd T8/T8.8.3-misc/T8-8-3_misc
 python3 make_code_images.py
 python3 make_figures.py
-python3 build_deck.py
+python3 build_deck.py   # ¡ojo! sobrescribe el PPTX editado a mano (ver arriba)
 ```
 
 El build usa `video-juegos/template/deck_style.py` y
@@ -62,12 +73,22 @@ reemplaza el PPTX final.
   `BoxCollider`, `Rigidbody` kinematic y `S8_RockDragDrop`.
 - El grid usa celdas de `0.5`; `rockStep = 2.0` es un múltiplo de la celda.
 - Animator: capa `Base Layer`, estado por defecto `VelmaWalking`, parámetros
-  `isRunning`, `isJumping`, `isDucking` (Bool), `kick` y `push` (Trigger).
-- `VelmaKick` y `VelmaDrop` vuelven a `VelmaWalking` con `Exit Time = 1` y
+  `isRunning`, `isJumping`, `isDucking` (Bool), `hack` y `push` (Trigger).
+  (Antes el trigger era `kick` y el estado `VelmaKick`.)
+- `VelmaHack` y `VelmaDrop` vuelven a `VelmaWalking` con `Exit Time = 1` y
   sin condiciones.
-- Kickback: `CheckEnemyHit` calcula `away`, lo aplana en Y, lo normaliza y
-  activa `velma_empujada`. El `Update` aplica `empuje_dir * kickBack` y
-  dispara el trigger `push`.
+- Hachazo (tecla F): `SetTrigger("hack")` y `hachazoTimer = 0.25 s`; mientras
+  dura, `RevisarHachazo()` usa `Physics.OverlapSphere` enfrente de Velma
+  (capa `Enemigos`). Ya no se consulta el Animator con `IsName` y ya no hay
+  impulso hacia adelante. El enemigo muere de 1 hachazo si patrulla y de 3
+  si persigue; si no muere, retrocede. Al morir se apagan collider y
+  Rigidbody.
+- Knockback: `CheckEnemyHit` (en Enter y Stay) ignora golpes durante
+  `invulnerableTiempo = 1 s`; `GolpeVelma` usa `golpe_angulo = 120°` (ya no
+  el cono de visión). Velma calcula `away`, lo aplana en Y, lo normaliza,
+  activa `velma_empujada` y la invulnerabilidad. El `Update` aplica
+  `empuje_dir * knockBack` de inmediato (ya no espera el suelo) y dispara
+  el trigger `push`.
 
 ## Texto de los PNG
 
@@ -89,7 +110,7 @@ texto pertenece a la interfaz del editor.
 Las líneas largas se parten para que se lean en la diapositiva. Los
 comentarios largos se omiten de las imágenes y del fragmento de las notas.
 En `S8_SoundControl.cs` la imagen muestra `play_jump` y `play_airWush`; el
-marcador `// ...` indica que `play_hit` y `play_kick` se omitieron. La lógica
+marcador `// ...` indica que `play_hit` y `play_hachazo` se omitieron. La lógica
 y los tokens mostrados son los mismos. Los archivos completos y sin cambios
 están en `csharp/`.
 
