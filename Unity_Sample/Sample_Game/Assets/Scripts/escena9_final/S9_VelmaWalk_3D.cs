@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;   // para leer el input del teclados
 using TMPro;
-using UnityEditor.U2D;
-using UnityEngine.VFX;
-using UnityEditor;
+using System.Collections.Generic;
+using UnityEngine.Serialization;   // FormerlySerializedAs: renombrar variables sin perder su valor en el Inspector
 
 public class S9_VelmaWalk_3D : MonoBehaviour
 {
@@ -17,9 +16,22 @@ public class S9_VelmaWalk_3D : MonoBehaviour
     public float gravity = 70.3125f;          // 5/16 px/frame²
     public float maxFallSpeed = 15f;          // $40 = 4 px/frame
     public float maxHorizontalSpeed = 6f;     // tope bajo, ni los empujones la lanzan lejos
-    public float kickImpulse = 1.5f;          // empujon corto al patear (shove)
-    public float kickBack = 5f;               // retroceso al ser golpeada por un zombie
-    
+    [FormerlySerializedAs("kickImpulse")]
+    public float hachazoImpulso = 1.5f;       // empujon corto al dar el hachazo (shove)
+    [FormerlySerializedAs("kickBack")]
+    public float knockBack = 5f;              // retroceso al ser golpeada por un zombie
+
+    [Header("Combate")]
+    public float hachazoDuracion = 0.25f;     // cuanto tiempo el hachazo esta "activo" (puede pegar)
+    public float hachazoAlcance = 0.8f;       // que tan enfrente de Velma esta la esfera del hachazo
+    public float hachazoRadio = 0.6f;         // tamaño de la esfera del hachazo
+    public float invulnerableTiempo = 1f;     // segundos sin recibir golpes despues de un golpe
+
+    private float hachazoTimer = 0f;          // > 0 = el hachazo esta activo
+    private Vector3 hachazoDir;               // direccion del hachazo (en el suelo XZ)
+    private HashSet<S9_EnemigoCilindro> golpeadosPorHachazo = new HashSet<S9_EnemigoCilindro>();  // a quien ya le pego este hachazo
+    private float invulnerableTimer = 0f;     // > 0 = Velma no recibe golpes
+
 
     private Rigidbody rb;
     private Vector2 horizontal;
@@ -113,15 +125,29 @@ public class S9_VelmaWalk_3D : MonoBehaviour
 
             // dir es la direcion normalizada del velma en ese momento
             Vector2 dir = input != Vector2.zero ? input.normalized : new Vector2(sprite_render.flipX ? -1f : 1f, 0f);
-            horizontal = horizontal + (dir * kickImpulse);  // horizontal + el impulso del kick en esa direccion
-            S9_SoundControl.play_airWush();  // play velma kick sound
+            horizontal = horizontal + (dir * hachazoImpulso);  // horizontal + el impulso del hachazo en esa direccion
+            S9_SoundControl.play_airWush();  // sonido del hachazo al aire
+
+            // activa el hachazo: durante hachazoDuracion la esfera enfrente de Velma puede pegarle a enemigos
+            hachazoTimer = hachazoDuracion;
+            hachazoDir = new Vector3(dir.x, 0f, dir.y);
+            golpeadosPorHachazo.Clear();
         }
 
-        if (grounded && velma_empujada)  // cuando el enemigo empuja  a velma 
+        // el hachazo se revisa ANTES de las colisiones: si mata al zombie, el zombie ya no puede golpear
+        if (hachazoTimer > 0f)
+        {
+            hachazoTimer -= Time.deltaTime;
+            RevisarHachazo();
+        }
+
+        if (invulnerableTimer > 0f) invulnerableTimer -= Time.deltaTime;
+
+        if (velma_empujada)  // cuando el enemigo empuja  a velma
         {
             sprite_animator.SetTrigger("push");  // trigerea la animacion de velma cuando cae (trigger se ejecuta una sola vez)
 
-            horizontal += empuje_dir * kickBack;   // suma: empuje_dir ya apunta lejos del enemigo
+            horizontal += empuje_dir * knockBack;   // suma: empuje_dir ya apunta lejos del enemigo
             velma_empujada = false;
             S9_SoundControl.play_hit();  // plays the hit sound
         }
@@ -201,14 +227,13 @@ public class S9_VelmaWalk_3D : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         CheckGround(collision);
-        if (CheckEnemyHit(collision) == true) {return;}
-        CheckVelmaKick(collision);
+        CheckEnemyHit(collision);
     }
 
     void OnCollisionStay(Collision collision)
     {
         CheckGround(collision);
-        CheckVelmaKick(collision);
+        CheckEnemyHit(collision);   // si se queda pegada al zombie y ya paso la invulnerabilidad, vuelve a recibir golpe
     }
 
     void FixedUpdate()
@@ -233,24 +258,42 @@ public class S9_VelmaWalk_3D : MonoBehaviour
         }
     }
 
-    // revisa si velma pateo a un enemigo y envia el evento al enemigo
-    void CheckVelmaKick(Collision collision)
+    // centro de la esfera del hachazo: enfrente de Velma, en la direccion del hachazo
+    Vector3 CentroHachazo()
     {
-        if (collision.gameObject.layer != LayerMask.NameToLayer("Enemigos")) return;
-        bool pateando = sprite_animator.GetCurrentAnimatorStateInfo(0).IsName("VelmaHack");
+        return transform.position + hachazoDir * hachazoAlcance;
+    }
 
-        // la patada pega en cualquier direccion, el enemigo decide por donde le llego
-        if (pateando){
-            bool hit = collision.gameObject.GetComponent<S9_EnemigoCilindro>().RecibirPatada(transform.position);
-            if (hit) { S9_SoundControl.play_kick(); }
+    // el hachazo es una esfera invisible enfrente de Velma (como el filo del hacha).
+    // si un enemigo esta dentro, se le avisa. El enemigo decide si muere (segun su estado).
+    void RevisarHachazo()
+    {
+        Collider[] golpeados = Physics.OverlapSphere(CentroHachazo(), hachazoRadio, LayerMask.GetMask("Enemigos"));
+        foreach (Collider c in golpeados)
+        {
+            S9_EnemigoCilindro enemigo = c.GetComponent<S9_EnemigoCilindro>();
+            if (enemigo == null || golpeadosPorHachazo.Contains(enemigo)) continue;   // una sola vez por hachazo
+            golpeadosPorHachazo.Add(enemigo);
+
+            if (enemigo.RecibirHachazo(transform.position)) { S9_SoundControl.play_hachazo(); }
         }
+    }
+
+    // dibuja la esfera del hachazo en la escena (seleccionar a Velma) para ajustar alcance y radio
+    void OnDrawGizmosSelected()
+    {
+        Vector3 dir = hachazoDir != Vector3.zero ? hachazoDir : Vector3.right;
+        Gizmos.color = hachazoTimer > 0f ? Color.red : Color.yellow;
+        Gizmos.DrawWireSphere(transform.position + dir * hachazoAlcance, hachazoRadio);
     }
 
     // revisamos si velma fue tocada por el enemigo
     bool CheckEnemyHit(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemigos")) 
-        { 
+        if (invulnerableTimer > 0f) return false;   // recien golpeada: no recibe otro golpe
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemigos"))
+        {
             // el enemigo decide si hubo golpe: solo si Velma esta enfrente de el
             bool huboGolpe = collision.gameObject.GetComponent<S9_EnemigoCilindro>().GolpeVelma(transform.position);
 
@@ -263,6 +306,7 @@ public class S9_VelmaWalk_3D : MonoBehaviour
                 {
                     empuje_dir = new Vector2(away.x, away.z).normalized;
                     velma_empujada = true;
+                    invulnerableTimer = invulnerableTiempo;
                     return true;
                 }
             }

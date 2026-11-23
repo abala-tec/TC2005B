@@ -71,7 +71,8 @@ public class S9_EPatrolState : S9_IEnemyState
 
         // rota el sprite dependiendo de hacia donde va al zombie
         float orientacion_h =  enemy.transform.position.x - objetivo.x;
-        enemy.sprender.flipX = (orientacion_h < 0) ?  false : true;  
+        // solo voltea si de verdad se mueve en X (si camina solo en Z conserva hacia donde miraba)
+        if (Mathf.Abs(orientacion_h) > 0.01f) enemy.sprender.flipX = orientacion_h > 0;
 
         enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, objetivo, enemy.patrol_vel * Time.deltaTime);
 

@@ -4,6 +4,9 @@ public class S9_EnemyStateMachine
 {
     private S9_IEnemyState currentState;
 
+    // para saber en que estado esta el enemigo (ej. EstadoActual is S9_EPerseguirState)
+    public S9_IEnemyState EstadoActual => currentState;
+
     public void Initialize(S9_IEnemyState primerEstado)
     {
         currentState = primerEstado;

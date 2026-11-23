@@ -25,6 +25,7 @@ public class S9_EMuertoState : S9_IEnemyState
             t.Rotate(t.right, -90f, Space.World); // rotar
             t.position += Vector3.down * (t.localScale.y - t.localScale.x / 2f);  // acostar sobre el suelo
             enemy.muerto = true;
+            enemy.DesactivarFisica();   // sin collider ni rigidbody: solo queda el sprite en el suelo
         }
     }
 
