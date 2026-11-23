@@ -4,6 +4,10 @@
 public class EnemyStateMachine
 {
     private IEnemyState currentState;
+
+    // para saber en que estado esta el enemigo (ej. EstadoActual is EPerseguirState)
+    public IEnemyState EstadoActual => currentState;
+
     public void Initialize(IEnemyState primerEstado)
     {
         currentState = primerEstado;
