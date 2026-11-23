@@ -142,7 +142,7 @@ public class S8_VelmaWalk_3D : MonoBehaviour
 
         if (invulnerableTimer > 0f) invulnerableTimer -= Time.deltaTime;
 
-        if (velma_empujada)  // cuando el enemigo empuja a velma (se aplica de inmediato, no espera el suelo)
+        if (velma_empujada)  // cuando el enemigo empuja a velma (aunque velma no este en el suelo)
         {
             sprite_animator.SetTrigger("push");  // trigerea la animacion de velma cuando cae (trigger se ejecuta una sola vez)
 

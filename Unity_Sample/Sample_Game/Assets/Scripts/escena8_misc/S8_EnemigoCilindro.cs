@@ -42,7 +42,7 @@ public class S8_EnemigoCilindro : MonoBehaviour
         esm.Update();
     }
 
-    // empuja al zombie lejos de Velma, sin atravesar paredes (revisa el grid)
+    // el enemigo retrocede cuando lo atacan, revisa si por el empuje entra en colision con una pared
     private void Retroceder()
     {
         retroceso_timer -= Time.deltaTime;
@@ -59,15 +59,17 @@ public class S8_EnemigoCilindro : MonoBehaviour
         }
     }
 
+    // Esta es la funcion de unity (del gameobject) para dibujar gizmos de debugeo.
+    // manda a llamar a otra funcion, que es usada por los estados de enemigo para dibujar los gizmos
     void OnDrawGizmos()
     {
         esm?.DibujarGizmos();
     }
 
-    // Velma le dio un hachazo.
-    // Patrullando (no la ha visto): muere de 1 golpe.
-    // Persiguiendo: muere al llegar a golpes_persiguiendo.
-    // Si no muere, retrocede un poco para darle chance a Velma del siguiente golpe.
+    // Velma le dio un hachazo al enemigo (el script del jugador manda a llamar esta funcion)
+    // Si esta Patrullando (no la ha visto): muere de 1 golpe.
+    // si la esta Persiguiendo: muere al llegar a golpes_persiguiendo.
+    // Si no muere, retrocede un poco para darle chance a Velma del siguiente golpe. (ver Retroceder())
     // Regresa true si el hachazo conecto (para el sonido).
     public bool RecibirHachazo(Vector3 origenHachazo)
     {
@@ -92,7 +94,7 @@ public class S8_EnemigoCilindro : MonoBehaviour
         return true;
     }
 
-    // apaga la fisica del zombie muerto: solo queda el cuerpo en el suelo
+    // apaga la fisica del zombie muerto: solo queda el cuerpo en el suelo (sprite)
     public void DesactivarFisica()
     {
         foreach (Collider c in GetComponents<Collider>()) c.enabled = false;
