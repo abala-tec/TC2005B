@@ -32,6 +32,7 @@ public class S9_RockDragDrop : MonoBehaviour
         rigdbody = GetComponent<Rigidbody>();
         rockCollider = GetComponent<Collider>();
         rockRenderer = GetComponentInChildren<Renderer>();
+        rigdbody.isKinematic = true;
         if (outlineMaterial != null) outlineInstancia = new Material(outlineMaterial);
     }
 
