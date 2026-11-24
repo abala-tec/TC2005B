@@ -14,6 +14,11 @@ public class S9_RockDragDrop : MonoBehaviour
     public float rockStep = 2.0f;    // cuanto se mueve la piedra por el grid (con cada tecla)
     public float rockSize = 2.0f;    // tamano de la piedra (lado mas largo en X/Z), lo aplica S9_Manzana al iniciar
     public float rockRepeat = 0.15f; // segundos entre cada paso mientras la tecla siga presionada
+    public GameObject replacementPrefab;
+    public float hachazoFuerza = 0.3f;      // impulso de cada pieza hacia el lado opuesto al golpe (masa pieza = 0.1)
+    public float hachazoDispersion = 0.1f;  // impulso hacia afuera del centro de la caja (que se abra)
+    public float hachazoArriba = 0.15f;     // impulso hacia arriba
+    public float hachazoGiro = 0.01f;       // giro aleatorio de cada pieza
     private float tiempoPaso = 0f;   // cuenta regresiva para el siguiente paso
     [SerializeField] public GameObject player;
     private S9_VelmaWalk_3D velma3D;  // gameobject dle jugador para bloquear sus controles
@@ -66,6 +71,43 @@ public class S9_RockDragDrop : MonoBehaviour
         Bounds b = rockCollider.bounds;
         Vector3 p = player.transform.position;
         return p.x >= b.min.x && p.x <= b.max.x && p.z >= b.min.z && p.z <= b.max.z;
+    }
+
+    public bool RecibirHachazo(Vector3 pos)
+    {
+        if (replacementPrefab != null)
+        {
+            // spawn the new object in the same position as the last one. 
+            GameObject newObject = Instantiate(replacementPrefab, transform.position, transform.rotation);
+            
+            // que etnga el mismo hijo
+            newObject.transform.SetParent(transform.parent);
+            newObject.transform.localScale = transform.localScale;   // mismo tamano que la caja entera
+
+            // direccion del golpe: de Velma hacia la caja (en el suelo XZ), las piezas salen hacia el lado opuesto a Velma
+            Vector3 dirGolpe = transform.position - pos;
+            dirGolpe.y = 0f;
+            dirGolpe = dirGolpe.sqrMagnitude > 0.0001f ? dirGolpe.normalized : transform.forward;
+
+            // las piezas estan kinematic (la caja rota se queda armada); el hachazo las suelta para que caigan
+            foreach (Rigidbody pieza in newObject.GetComponentsInChildren<Rigidbody>())
+            {
+                pieza.isKinematic = false;
+
+                // cada pieza: empuje en la direccion del golpe + un poco hacia afuera del centro (se abre) + un poco hacia arriba
+                Vector3 haciaAfuera = (pieza.worldCenterOfMass - transform.position).normalized;
+                Vector3 impulso = dirGolpe * hachazoFuerza
+                                + haciaAfuera * hachazoDispersion
+                                + Vector3.up * hachazoArriba;
+                pieza.AddForce(impulso * Random.Range(0.8f, 1.2f), ForceMode.Impulse);
+                pieza.AddTorque(Random.insideUnitSphere * hachazoGiro, ForceMode.Impulse);   // que giren al salir
+            }
+        }
+
+        // destruye el model anterior
+        Destroy(gameObject);
+
+        return true;
     }
 
     void Update()

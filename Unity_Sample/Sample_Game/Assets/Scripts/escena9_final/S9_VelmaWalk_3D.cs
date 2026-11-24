@@ -268,6 +268,7 @@ public class S9_VelmaWalk_3D : MonoBehaviour
     // si un enemigo esta dentro, se le avisa. El enemigo decide si muere (segun su estado).
     void RevisarHachazo()
     {
+        // reviza hachazo a enemigos
         Collider[] golpeados = Physics.OverlapSphere(CentroHachazo(), hachazoRadio, LayerMask.GetMask("Enemigos"));
         foreach (Collider c in golpeados)
         {
@@ -276,6 +277,17 @@ public class S9_VelmaWalk_3D : MonoBehaviour
             golpeadosPorHachazo.Add(enemigo);
 
             if (enemigo.RecibirHachazo(transform.position)) { S9_SoundControl.play_hachazo(); }
+        }
+
+        // revis hachazo a caja
+        Collider[] cajas = Physics.OverlapSphere(CentroHachazo(), hachazoRadio, LayerMask.GetMask("Cajas"));
+        foreach (Collider c in cajas)
+        {
+            S9_RockDragDrop cajaGolpe = c.GetComponent<S9_RockDragDrop>();
+            if (cajaGolpe == null ) continue;   // una sola vez por hachazo
+            // golpeadosPorHachazo.Add(cajaGolpe);
+
+            if (cajaGolpe.RecibirHachazo(transform.position)) { S9_SoundControl.play_hachazo(); }
         }
     }
 
