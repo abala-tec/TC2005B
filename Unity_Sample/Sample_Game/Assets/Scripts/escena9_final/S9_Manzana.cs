@@ -13,7 +13,8 @@ public class S9_Manzana : MonoBehaviour
     public GameObject moldeEnemigo;
     public Transform jugador;
     public int numParedes = 8;
-    public Vector2 largoPared = new Vector2(4f, 10f);   // largo minimo y maximo de cada pared (al azar)
+    public Vector2 largoPared = new Vector2(2f, 5f);    // largo minimo y maximo de cada pared (al azar)
+    public float separacionParedes = 2f;        // hueco minimo entre paredes: Velma (1.2 + 2*margenJugador) siempre pasa
     public float altoPared = 3f;                // mas alta que los ojos del enemigo (y=2): tapa su cono de vision
     public int numPiedras = 3;
     public int numEnemigos = 3;
@@ -92,11 +93,19 @@ public class S9_Manzana : MonoBehaviour
             for (int i = 0; i < numParedes; i++)
             {
                 float largo = Mathf.Round(Random.Range(largoPared.x, largoPared.y));   // entero: los bordes caen en lineas del grid
-                Transform pared = Crear(moldePared, PosPared(m, largo, out Quaternion rot), rot, contenido).transform;
-                pared.localScale = new Vector3(largo, altoPared, moldePared.transform.lossyScale.z);
-                paredes.Add(pared);
+                Vector3 mitad = new Vector3(largo, altoPared, moldePared.transform.lossyScale.z) / 2f;
+                // como lapidas en un cementerio: separada de las demas; si no cabe en 30 intentos, se omite
+                for (int intentoW = 0; intentoW < 30; intentoW++)
+                {
+                    Vector3 p = PosPared(m, largo, out Quaternion rot);
+                    if (Physics.CheckBox(p, mitad + Vector3.one * separacionParedes, rot, grid.capaParedes)) continue;
+                    Transform pared = Crear(moldePared, p, rot, contenido).transform;
+                    pared.localScale = mitad * 2f;
+                    paredes.Add(pared);
+                    Physics.SyncTransforms();   // la siguiente pared debe ver esta
+                    break;
+                }
             }
-            Physics.SyncTransforms();           // CheckBox debe ver las paredes recien creadas
             for (int i = 0; i < numPiedras; i++)
             {
                 for (int intentoP = 0; intentoP < 30; intentoP++)

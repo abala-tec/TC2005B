@@ -2268,7 +2268,7 @@ MonoBehaviour:
   moldeEnemigo: {fileID: 1729922967}
   jugador: {fileID: 1274197755}
   numParedes: 8
-  largoPared: {x: 4, y: 10}
+  largoPared: {x: 2, y: 5}
   altoPared: 2
   numPiedras: 2
   numEnemigos: 1
