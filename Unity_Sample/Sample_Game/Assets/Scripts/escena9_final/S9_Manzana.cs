@@ -29,18 +29,19 @@ public class S9_Manzana : MonoBehaviour
     private bool abierta = false;               // ya se mataron todos y la puerta esta abierta
     private bool abriendo = false;              // la puerta se esta hundiendo en el suelo
     private List<S9_EnemigoCilindro> enemigos = new List<S9_EnemigoCilindro>();
-    private Vector3 mitadPiedra;                // medio tamano de la piedra ya escalada (para CheckBox)
+    private Vector3 mitadPiedra;                // medio tamano de la piedra (para CheckBox)
+    private Vector3 centroPiedra;               // centro de su malla respecto a su pivote (el gltf tiene el pivote abajo)
+    private Vector3 centroCollider;             // centro de su collider respecto a su pivote (lo que ve el grid)
 
     void Start()
     {
-        // escala la piedra a su tamano (rockSize). El paso al moverla (rockStep) es independiente
-        float tamanoPiedra = moldePiedra.GetComponent<S9_RockDragDrop>().rockSize;
-        Bounds b = moldePiedra.GetComponentInChildren<Renderer>().bounds;   // antes de apagarla: apagada mide 0
-        float k = tamanoPiedra / Mathf.Max(b.size.x, b.size.z);
-        moldePiedra.transform.localScale *= k;
+        // la piedra/caja conserva el tamano que tiene en la escena; solo se apoya en el piso (y = 0)
+        Bounds b = Medidas(moldePiedra);        // antes de apagarla: apagada mide 0
         Vector3 pp = moldePiedra.transform.position;
-        moldePiedra.transform.position = new Vector3(pp.x, b.extents.y * k, pp.z);   // apoyada en el piso (y = 0)
-        mitadPiedra = b.extents * k * 0.95f;    // 0.95: tocar el borde de una pared no cuenta como encimarse
+        moldePiedra.transform.position = new Vector3(pp.x, pp.y - b.min.y, pp.z);
+        mitadPiedra = b.extents * 0.95f;        // 0.95: tocar el borde de una pared no cuenta como encimarse
+        centroPiedra = b.center - pp;
+        centroCollider = moldePiedra.GetComponent<Collider>().bounds.center - pp;
 
         moldePared.SetActive(false);
         moldePiedra.SetActive(false);
@@ -114,8 +115,14 @@ public class S9_Manzana : MonoBehaviour
                     float x = Mathf.Round(Random.Range(3f, tamano - 3f) * 2f) / 2f;
                     float z = Mathf.Round(Random.Range(2f, tamano - 2f) * 2f) / 2f;
                     Vector3 p = m.position + new Vector3(x, moldePiedra.transform.position.y, z);
-                    if (Physics.CheckBox(p, mitadPiedra, moldePiedra.transform.rotation, grid.capaParedes)) continue;   // encima de pared/piedra
-                    Crear(moldePiedra, p, moldePiedra.transform.rotation, contenido);
+                    p = grid.Alinear(p + centroCollider) - centroCollider;   // el collider queda en medio de sus casillas
+                    if (Physics.CheckBox(p + centroPiedra, mitadPiedra, moldePiedra.transform.rotation, grid.capaParedes)) continue;   // encima de pared/piedra
+                    Transform piedra = Crear(moldePiedra, p, moldePiedra.transform.rotation, contenido).transform;
+                    piedra.position += Vector3.up * -Medidas(piedra.gameObject).min.y;   // su parte mas baja justo en y = 0
+                    // en medio de sus casillas, medido con el collider del clon (el que ve el grid)
+                    Physics.SyncTransforms();
+                    Vector3 cc = piedra.GetComponent<Collider>().bounds.center;
+                    piedra.position += grid.Alinear(cc) - cc;
                     Physics.SyncTransforms();   // la siguiente piedra tampoco debe caer sobre esta
                     break;
                 }
@@ -172,6 +179,15 @@ public class S9_Manzana : MonoBehaviour
         float x = Mathf.Round(Random.Range(3f + medioX, tamano - 3f - medioX) * 2f) / 2f;
         float z = Mathf.Round(Random.Range(1f + medioZ, tamano - 1f - medioZ) * 2f) / 2f;
         return m.position + new Vector3(x, altoPared / 2f, z);   // apoyada en el piso (y = 0)
+    }
+
+    // caja que envuelve todas las mallas del objeto (un modelo gltf puede tener varias, ej. Coffin2: madera + cruz)
+    static Bounds Medidas(GameObject g)
+    {
+        MeshRenderer[] rs = g.GetComponentsInChildren<MeshRenderer>();   // solo mallas: sin lineas/indicadores
+        Bounds b = rs[0].bounds;
+        foreach (Renderer r in rs) b.Encapsulate(r.bounds);
+        return b;
     }
 
     GameObject Crear(GameObject molde, Vector3 pos, Quaternion rot, Transform padre)

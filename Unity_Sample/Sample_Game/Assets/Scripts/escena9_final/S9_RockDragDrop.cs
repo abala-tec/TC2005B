@@ -12,7 +12,6 @@ public class S9_RockDragDrop : MonoBehaviour
     private float alturaArrastre;         // Distancia de profundidad desde la cámara
     private bool arrastrando;  // cuando la piedra se esta moviendo (flag)
     public float rockStep = 2.0f;    // cuanto se mueve la piedra por el grid (con cada tecla)
-    public float rockSize = 2.0f;    // tamano de la piedra (lado mas largo en X/Z), lo aplica S9_Manzana al iniciar
     public float rockRepeat = 0.15f; // segundos entre cada paso mientras la tecla siga presionada
     public GameObject replacementPrefab;
     public float hachazoFuerza = 0.3f;      // impulso de cada pieza hacia el lado opuesto al golpe (masa pieza = 0.1)
@@ -28,7 +27,16 @@ public class S9_RockDragDrop : MonoBehaviour
     private bool velmaDebajo = false; // true = esta piedra tiene a Velma atrapada debajo
     public Material outlineMaterial;  // RockOutline_Rojo: contorno palpitante cuando Velma esta debajo
     private Material outlineInstancia; // copia propia (cada piedra tiene su centro)
-    private Renderer rockRenderer;
+    private MeshRenderer[] rockRenderers;  // solo las mallas de la caja (un gltf como Coffin2 trae varias: madera + cruz)
+    public Color colorDestino = new Color(0.2f, 0.5f, 1f, 1f);   // contorno de las casillas donde va a caer
+    private LineRenderer destino;      // se ve en el juego (no es gizmo): indicador para el jugador
+
+    // un gltf trae sus mallas como hijos en la capa Default: toda la caja en la capa del padre (Cajas)
+    // para que el grid (CheckBox) y el hachazo la vean aunque el collider este en un hijo
+    void Awake()
+    {
+        foreach (Transform t in GetComponentsInChildren<Transform>(true)) t.gameObject.layer = gameObject.layer;
+    }
 
     void Start()
     {
@@ -36,33 +44,67 @@ public class S9_RockDragDrop : MonoBehaviour
         velma3D = player.GetComponent<S9_VelmaWalk_3D>();
         rigdbody = GetComponent<Rigidbody>();
         rockCollider = GetComponent<Collider>();
-        rockRenderer = GetComponentInChildren<Renderer>();
+        rockRenderers = GetComponentsInChildren<MeshRenderer>();
         rigdbody.isKinematic = true;
         if (outlineMaterial != null) outlineInstancia = new Material(outlineMaterial);
+
+        // si la version rota es un molde dentro de la escena, se esconde (solo se clona al hachazo)
+        if (replacementPrefab != null && replacementPrefab.scene.IsValid()) replacementPrefab.SetActive(false);
+
+        // NO es hijo de la caja: si lo fuera, se copiaria al clonar el molde y contaria como malla de la caja
+        // (descuadra el contorno rojo y la medida para apoyarla en el piso)
+        destino = new GameObject(name + "_destino").AddComponent<LineRenderer>();
+        destino.useWorldSpace = true;
+        destino.loop = true;
+        destino.positionCount = 4;
+        destino.widthMultiplier = 0.06f;
+        destino.material = new Material(Shader.Find("Sprites/Default"));   // unlit, usa el color de la linea
+        destino.startColor = destino.endColor = colorDestino;
+        destino.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        destino.enabled = false;
+    }
+
+    // contorno de las casillas del grid que va a ocupar la caja al caer (cae recto: misma huella en X,Z)
+    private void MostrarDestino()
+    {
+        S9_Grid g = S9_Grid.Instancia;
+        Physics.SyncTransforms();         // la caja se movio por transform: que el collider este donde se ve
+        g.RectBloqueado(rockCollider, out Vector3 a, out Vector3 c);   // las mismas casillas que se pintan de rojo
+        float y = 0.03f;                  // apenas sobre el piso
+        destino.SetPositions(new[] { new Vector3(a.x, y, a.z), new Vector3(c.x, y, a.z), new Vector3(c.x, y, c.z), new Vector3(a.x, y, c.z) });
     }
 
     // prende/apaga el contorno: agrega o quita el material extra del renderer de la piedra
     // (un material extra vuelve a dibujar la misma malla con el shader del contorno)
     private void MostrarContorno(bool value)
     {
-        if (outlineInstancia == null || rockRenderer == null) return;
+        if (outlineInstancia == null) return;
 
-        var mats = new System.Collections.Generic.List<Material>(rockRenderer.sharedMaterials);
-        mats.Remove(outlineInstancia);
-        if (value) mats.Add(outlineInstancia);
-        rockRenderer.sharedMaterials = mats.ToArray();
+        foreach (Renderer r in rockRenderers)
+        {
+            var mats = new System.Collections.Generic.List<Material>(r.sharedMaterials);
+            mats.Remove(outlineInstancia);
+            if (value) mats.Add(outlineInstancia);
+            r.sharedMaterials = mats.ToArray();
+        }
     }
 
     void LateUpdate()
     {
         // el shader agranda la malla desde su centro: se lo pasamos (cambia mientras la piedra cae)
         if (velmaDebajo && outlineInstancia != null)
-            outlineInstancia.SetVector("_Center", rockRenderer.bounds.center);
+        {
+            // un solo centro para todas las mallas: el contorno crece parejo alrededor de toda la caja
+            Bounds b = rockRenderers[0].bounds;
+            foreach (Renderer r in rockRenderers) b.Encapsulate(r.bounds);
+            outlineInstancia.SetVector("_Center", b.center);
+        }
     }
 
     void OnDestroy()
     {
         if (outlineInstancia != null) Destroy(outlineInstancia);
+        if (destino != null) { Destroy(destino.material); Destroy(destino.gameObject); }
     }
 
     // la piedra esta encima de Velma si la posicion de Velma (en X,Z) cae dentro de la huella de la piedra
@@ -73,16 +115,28 @@ public class S9_RockDragDrop : MonoBehaviour
         return p.x >= b.min.x && p.x <= b.max.x && p.z >= b.min.z && p.z <= b.max.z;
     }
 
+    static Vector3 CentroMallas(GameObject g)
+    {
+        MeshRenderer[] rs = g.GetComponentsInChildren<MeshRenderer>();
+        if (rs.Length == 0) return g.transform.position;
+        Bounds b = rs[0].bounds;
+        foreach (MeshRenderer r in rs) b.Encapsulate(r.bounds);
+        return b.center;
+    }
+
     public bool RecibirHachazo(Vector3 pos)
     {
         if (replacementPrefab != null)
         {
-            // spawn the new object in the same position as the last one. 
-            GameObject newObject = Instantiate(replacementPrefab, transform.position, transform.rotation);
-            
-            // que etnga el mismo hijo
-            newObject.transform.SetParent(transform.parent);
-            newObject.transform.localScale = transform.localScale;   // mismo tamano que la caja entera
+            // la version rota conserva SU rotacion y escala (ajustadas en la escena para verse igual a la caja):
+            // la caja y su version rota pueden venir de modelos con escalas distintas (Coffin2 0.023 vs Coffin2_roto 2.34)
+            GameObject newObject = Instantiate(replacementPrefab, transform.position, replacementPrefab.transform.rotation);
+            newObject.transform.SetParent(transform.parent, true);
+            newObject.transform.localScale = replacementPrefab.transform.lossyScale;
+            newObject.SetActive(true);   // el molde de la version rota esta apagado en la escena
+
+            // encimada exacto sobre la caja: mismo centro de sus mallas
+            newObject.transform.position += CentroMallas(gameObject) - CentroMallas(newObject);
 
             // direccion del golpe: de Velma hacia la caja (en el suelo XZ), las piezas salen hacia el lado opuesto a Velma
             Vector3 dirGolpe = transform.position - pos;
@@ -149,6 +203,7 @@ public class S9_RockDragDrop : MonoBehaviour
 
             velma3D.DisableControls(false); arrastrando = false; dropped = true;  // si esta atrapada sigue agachada
             rigdbody.isKinematic = false;      // suelta: la gravedad la hace caer
+            destino.enabled = false;
         }
 
         // una vez en el aire el bloque se mueve con las teclas aswd y flechas
@@ -189,6 +244,10 @@ public class S9_RockDragDrop : MonoBehaviour
                     tiempoPaso = rockRepeat;
                 }
             }
+
+            // en el aire: marca en azul las casillas donde va a caer
+            MostrarDestino();
+            destino.enabled = true;
         }
     }
 
@@ -206,6 +265,12 @@ public class S9_RockDragDrop : MonoBehaviour
             rigdbody.linearVelocity = Vector3.zero;
             rigdbody.angularVelocity = Vector3.zero;
             rigdbody.isKinematic = true;
+
+            // al caer el choque la puede correr un poco: vuelve a quedar en medio de sus casillas
+            Physics.SyncTransforms();
+            Vector3 centro = rockCollider.bounds.center;
+            transform.position += S9_Grid.Instancia.Alinear(centro) - centro;
+            Physics.SyncTransforms();
 
             S9_Grid.Instancia.calculaGrid();
         }
