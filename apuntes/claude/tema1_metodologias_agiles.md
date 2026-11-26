@@ -240,7 +240,9 @@ Un **requerimiento** son descripciones sobre lo que **qué debe** hacer un siste
 
 - **Requerimientos de usuario:** descripciones en lenguaje natural y diagramas simples, para el cliente, entienda lo que se las funciones que el servicio va a prestar y sus restricciones.
 - **Requerimientos de sistema:** es una descripcion mucho mas detallada y precisa de las funciones, servicios, operaciones y sus restricciones, hecha para los desarrolladores.
- 
+
+> 🟡 NOTA PERSONAL. La persona que esta a cargo de administrar los requerimientos (pasar de requerimientos de usuario a requerimientos del sistema) [Scrum Master], tendria que ser una alguien con perspicacia en el manejo de personas. Hay que tener mucho tacto tanto al tratar al cliente, como para delegar tareas. Scrum ayuda, por que asume que todo el equipo de trabajo esta imbolucrado en el proyecto, incluyendo el cliente; esto hace un poco mas facil para llegar a acuerdos. 
+
 ![Figura 4.1 Requerimiento de usuario y sus requerimientos de sistema](figuras/fig_4_1_req_usuario_sistema.png)x
 
 ### Tipos de requerimientos del sistema (p. 84–91)
@@ -259,7 +261,7 @@ Se dividen en: **de producto** (velocidad, memoria, confiabilidad, seguridad, us
 
 > 🟡 **Requerimientos de información:** Son los **datos** que el sistema debe guardar y manejar. Ej.: *"El sistema debe guardar de cada jugador: nombre de usuario, correo, fecha de registro y puntaje máximo."* Sirven después para diseñar la base de datos.
 
-### Cómo redactar requerimientos (p. 95–96)  ME QUEDE AQUI
+### Cómo redactar requerimientos (p. 95–96) 
 
 1. Usa un **formato estándar** para todos.
 2. Distingue obligatorio (**"debe"**, en inglés *shall*) de deseable (**"debería"**, *should*).
@@ -267,13 +269,11 @@ Se dividen en: **de producto** (velocidad, memoria, confiabilidad, seguridad, us
 4. Evita la jerga técnica.
 5. Agrega la **razón** (por qué existe el requerimiento) y quién lo pidió.
 
-### Estructura del documento (Fig. 4.7, p. 93)
+![Figura 4.10 Especificación estructurada de un requerimiento (bomba de insulina)](figuras/fig_4_10_especificacion_estructurada.png) 
 
-Prefacio · Introducción · Glosario · Requerimientos de usuario · Arquitectura del sistema · Requerimientos de sistema · Modelos del sistema · Evolución del sistema · Apéndices · Índice.
+(Fig 4.10 Dos requerimientos para una bomba automatica de insulina. )
 
-> 🟡 **"estándar propietario":** es la normativa a la que se apega una empresa para definir  El estándar público más conocido es **IEEE 830** (hoy ISO/IEC/IEEE 29148), en el que se basa la estructura del libro. Usa la plantilla que indique el profesor.
-
-### Atributos de un buen requerimiento (p. 86–87, 94, 110)
+### Atributos de un buen requerimiento funcio (p. 86–87, 94, 110)
 
 | Atributo | Significa |
 |---|---|
@@ -282,31 +282,47 @@ Prefacio · Introducción · Glosario · Requerimientos de usuario · Arquitectu
 | **Verificable** | Se puede escribir una prueba que demuestre que se cumple. |
 | **No ambiguo** | Solo se puede entender de una manera. |
 
-Ejemplo de ambigüedad (p. 86): *"El usuario podrá buscar en las citas de todas las clínicas."* El médico quería buscar en todas a la vez; el programador hizo que primero se eligiera una clínica.
-
-> 🟡 NOTA PERSONAL. La persona que esta a cargo de administrar los requerimientos (pasar de requerimientos de usuario a requerimientos del sistema) [Scrum Master], tendria que ser una alguien con perspicacia en el manejo de personas. Hay que tener mucho tacto tanto al tratar al cliente, como para delegar tareas. Scrum ayuda, por que asume que todo el equipo de trabajo esta imbolucrado en el proyecto, incluyendo el cliente; esto hace un poco mas facil para llegar a acuerdos. 
+Ejemplo de ambigüedad: Banca móvil: "El usuario debe poder transferir dinero a otras cuentas.", Sistema escolar: "El profesor debe poder modificar las calificaciones.", Clínica: "El sistema debe enviar recordatorios de citas a los pacientes."
+> 🟡 Cuando el sistema crece demasiado, puede ser dificil permanecer consistente y completo. Muchas veces el cliente va a requerir funciones que van en contra de las restricciones de otras funciones. (Sobre todo en terminos de autentificacion y seguridad). Hay que tener esto en cuenta cuando se definen las funciones con el cliente.
+> 
+> Ejemplo:
+> 
+> Requerimientos iniciales (consistentes entre sí):
+> - R1: El sistema debe pedir usuario y contraseña para acceder al expediente de un paciente.
+> - R2: Solo el médico tratante puede ver el expediente completo de su paciente.
+> - R3: La sesión se cierra sola tras 5 minutos de inactividad.
+>
+> Meses después, el cliente pide más funciones:
+> - R4: "En urgencias, cualquier médico debe poder abrir el expediente de un paciente al instante, sin esperar." Esto choca con R2, porque el médico de urgencias no es el tratante. También choca con R1 si "al instante" significa sin iniciar sesión.
+> - R5: "Las enfermeras de piso deben poder dejar la sesión abierta en la computadora compartida de la estación para no estar entrando a cada rato." Esto choca directamente con R3.
+> - R6: "El paciente debe poder recuperar su contraseña con solo su fecha de nacimiento." Esto debilita R1, porque la fecha de nacimiento es fácil de averiguar.
+> 
+> Resolucion: no se rechaza la petición, realizas una negociacion. Se busca una versión que respete la restricciónes de las fuciones anteriores:
+> - R4 se convierte en un acceso de emergencia: el médico entra con sus credenciales, escribe un motivo obligatorio y queda registro auditado.
+> - R5 se convierte en inicio de sesión rápido con gafete o huella. Así la sesión puede seguir cerrándose sola sin que entrar cueste trabajo.
+> - R6 se convierte en recuperación de contraseña por correo o SMS con código temporal.
 
 ---
 
-## 1.6 Casos de uso y diagramas de actividad
+## 1.6 Casos de uso y diagramas de actividad UML
 
-### Casos de uso (p. 106–108, 124–126)
+### Casos de uso  UML (p. 106–108, 124–126)
 
-Un **caso de uso** describe una interacción entre el sistema y un **actor** (persona u otro sistema).
+ Son basicamente una tecnica para descrubrir requerimientos, observando la interaccion entre los usuarios (actores) y el sistema. Un **caso de uso** describe un escenario de intereaccion de un **actor** (persona u otro sistema) con el sistema.
 
-- **Actor** → monito (figura de palo).
-- **Caso de uso** → elipse con nombre.
+- **Actor** → Es cada monito que aparece en el diagrama (figura de palo).
+- **Caso de uso** → elipse con la descripcion del caso.
 - **Línea** → une al actor con el caso de uso.
 
 ![Figura 4.15 Casos de uso](figuras/fig_4_15_casos_de_uso.png)
 
-El diagrama solo da la vista general. Cada caso de uso se describe con texto o con una tabla:
+El diagrama solo da la vista general, para despues ser mas detallado. Cada caso de uso se describe con texto o con una tabla (en la practica real, se usan mas los monitos, xq es mas facil de entender con monitos):
 
 ![Figura 5.4 Descripción en tabla de un caso de uso](figuras/fig_5_4_caso_de_uso_tabla.png)
 
 Un caso de uso agrupa varios **escenarios**: uno **normal** (principal) y uno por cada **excepción** (alternativos) (p. 107).
 
-> 🟡 **Complemento — plantilla más completa que se usa en la práctica:**
+> 🟡 **plantilla para definir un caso de uso:**
 >
 > | Campo | Ejemplo |
 > |---|---|
@@ -315,19 +331,21 @@ Un caso de uso agrupa varios **escenarios**: uno **normal** (principal) y uno po
 > | **Precondición** (lo que debe ser cierto antes) | El jugador tiene una cuenta registrada. |
 > | **Escenario principal** | 1. El jugador escribe usuario y contraseña. 2. El sistema valida los datos. 3. El sistema muestra el menú principal. |
 > | **Escenarios alternativos** | 2a. Contraseña incorrecta: el sistema muestra un error y vuelve al paso 1. |
-> | **Postcondición** (lo que es cierto al terminar) | El jugador tiene una sesión activa. |
+> | **Postcondición** (lo que es cierto al terminar) | El jugador tiene una sesión activa. | 
 
-### Diagramas de actividad (p. 122–123)
+### Diagramas de actividad UML (p. 122–123)
 
-Muestran el **flujo** de un proceso: qué actividad sigue a cuál.
+Muestran el **flujo** de un proceso: qué actividad sigue a cuál. Teniendo en cuanta que una **actividad** es un paso o una tarea que algo o alguien realiza durante un proceso. 
 
-![Figura 5.2 Diagrama de actividad](figuras/fig_5_2_actividad.png)
+![Figura 5.2 Diagrama de actividad](figuras/fig_5_2_actividad.png) 
+
+(Bizarro, pero este diagrama, Figura 5.2, describe el flujo de un paciente que ingresa a un psiquiatrico...)
 
 | Símbolo | Significa |
 |---|---|
 | Círculo relleno | Inicio |
 | Círculo relleno dentro de otro círculo | Fin |
-| Rectángulo redondeado | Actividad |
+| Rectángulo redondeado | Actividad (tarea o proceso realizado durante el proceso) |
 | Flecha | Flujo de una actividad a otra |
 | Rombo | **Decisión**; cada salida lleva una **condición** entre corchetes, ej. `[Peligroso]` |
 | Barra gruesa | Divide en actividades **paralelas** o espera a que **todas** terminen |
@@ -338,17 +356,17 @@ Muestran el **flujo** de un proceso: qué actividad sigue a cuál.
 
 ## 1.7 Importancia de la especificación orientada al usuario
 
-(p. 110–111):
+Contenido en (p. 110–111):
 
-- Un error en los requerimientos es **mucho más caro** de corregir que un error de diseño o de código. Cambiar un requerimiento obliga a cambiar el diseño, el código y repetir las pruebas.
+- Un error en los requerimientos es **mucho más caro** de corregir que un error de diseño o de código. Cambiar un requerimiento obliga a cambiar el diseño, el código y repetir las pruebas. 
 - Por eso se **validan** los requerimientos con el cliente. Se revisa:
   - **Validez:** ¿es lo que el usuario realmente necesita?
-  - **Consistencia:** ¿hay contradicciones?
-  - **Completitud:** ¿falta algo?
-  - **Realismo:** ¿se puede construir con la tecnología, el tiempo y el dinero disponibles?
+  - **Consistencia:** ¿hay contradicciones entre funciones del sistema?
+  - **Completitud:** ¿falta algo? (revisar casos extremos)
+  - **Realismo:** ¿se puede construir con la tecnología, el tiempo y el dinero disponibles? 
   - **Verificabilidad:** ¿se puede probar?
 - **Técnicas:** revisiones con el cliente, **prototipos** que el usuario prueba y escribir los **casos de prueba** desde los requerimientos.
-- Los requerimientos **siempre cambian**: el cliente entiende mejor el problema conforme avanza el proyecto.
+- **IMPORTANTE** Los requerimientos **siempre cambian**: el cliente entiende mejor el problema conforme avanza el proyecto. NOTA PERSONAL. Disenar los requerimientos con "holgura" de tiempo y flexiblidad ayudara siempre tanto al cliente como al equipo de desarollo.   
 
 > 🟡 **Complemento — costo según la fase:** estudios clásicos (Boehm, entre otros) muestran que corregir un error cuesta cada vez más mientras más tarde se detecta. Como referencia aproximada:
 >
@@ -358,7 +376,7 @@ Muestran el **flujo** de un proceso: qué actividad sigue a cuál.
 > | Diseño | ~5× |
 > | Construcción | ~10× |
 > | Pruebas | ~20–50× |
-> | Producción (ya entregado) | ~100× o más |
+> | Producción (ya entregado) | ~100× o más | 
 >
 > Los números exactos varían según el estudio; lo importante es la tendencia. Esta es la razón de mostrarle al usuario prototipos y entregas tempranas: **es más barato equivocarse al principio**.
 
@@ -366,13 +384,13 @@ Muestran el **flujo** de un proceso: qué actividad sigue a cuál.
 
 ## Resumen en una frase por subtema
 
-- **Historia:** ágil nace en los 90 como reacción a procesos pesados; se formaliza con el Manifiesto ágil (2001).
-- **Cuándo usarlo:** ágil para equipos pequeños y requerimientos cambiantes; plan para sistemas grandes, regulados o críticos.
+- **Historia:** ágil nace en los 90 como reacción a procesos desarrollo pesados y lentos; se formaliza con el Manifiesto ágil (2001).
+- **Cuándo usarlo:** ágil para equipos pequeños y requerimientos cambiantes; plan de desarollo estandard para sistemas grandes, regulados o críticos.
 
-- **1.1** Se trabaja en sprints cortos que toman historias del backlog y entregan algo que funciona.
-- **1.2** Product Owner decide *qué*, Scrum Master facilita, el equipo decide *cómo*.
-- **1.3** Scrum administra, XP da prácticas técnicas, Kanban controla el flujo.
+- **1.1** En Agil se trabaja en sprints cortos que toman historias del backlog y entregan algo que funciona.
+- **1.2** Product Owner decide *qué implementar*, Scrum Master facilita, el equipo, negocia con el owner y  deciden *cómo implementarlo*.
+- **1.3** Scrum administra un proyecto, XP es mas especifico en las practicas técnicas y de desarrollo.
 - **1.4** Cascada = fases en orden; iterativo = todas las fases en ciclos cortos.
-- **1.5** Requerimientos funcionales, de información y no funcionales: completos, consistentes, verificables y sin ambigüedad.
+- **1.5** Requerimientos funcionales, de información y no funcionales; deben de ser: completos, consistentes, verificables y sin ambigüedad.
 - **1.6** Casos de uso = quién hace qué con el sistema; diagramas de actividad = en qué orden.
 - **1.7** Validar pronto con el usuario, porque un error de requerimientos cuesta más mientras más tarde se encuentra.
