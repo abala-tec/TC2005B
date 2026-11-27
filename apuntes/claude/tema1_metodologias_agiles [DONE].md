@@ -238,7 +238,7 @@ Un **requerimiento** son descripciones sobre lo que **qué debe** hacer un siste
 
 ### Niveles de requrimientos: (p. 83–84)
 
-- **Requerimientos de usuario:** descripciones en lenguaje natural y diagramas simples, para el cliente, entienda lo que se las funciones que el servicio va a prestar y sus restricciones.
+- **Requerimientos de usuario:** descripciones en lenguaje natural y diagramas simples, para el cliente, entienda lo que van a realizar las funciones que el servicio va a prestar y sus restricciones.
 - **Requerimientos de sistema:** es una descripcion mucho mas detallada y precisa de las funciones, servicios, operaciones y sus restricciones, hecha para los desarrolladores.
 
 > 🟡 NOTA PERSONAL. La persona que esta a cargo de administrar los requerimientos (pasar de requerimientos de usuario a requerimientos del sistema) [Scrum Master], tendria que ser una alguien con perspicacia en el manejo de personas. Hay que tener mucho tacto tanto al tratar al cliente, como para delegar tareas. Scrum ayuda, por que asume que todo el equipo de trabajo esta imbolucrado en el proyecto, incluyendo el cliente; esto hace un poco mas facil para llegar a acuerdos. 
@@ -273,7 +273,7 @@ Se dividen en: **de producto** (velocidad, memoria, confiabilidad, seguridad, us
 
 (Fig 4.10 Dos requerimientos para una bomba automatica de insulina. )
 
-### Atributos de un buen requerimiento funcio (p. 86–87, 94, 110)
+### Atributos de un buen requerimiento funcional (p. 86–87, 94, 110)
 
 | Atributo | Significa |
 |---|---|
@@ -301,6 +301,32 @@ Ejemplo de ambigüedad: Banca móvil: "El usuario debe poder transferir dinero a
 > - R4 se convierte en un acceso de emergencia: el médico entra con sus credenciales, escribe un motivo obligatorio y queda registro auditado.
 > - R5 se convierte en inicio de sesión rápido con gafete o huella. Así la sesión puede seguir cerrándose sola sin que entrar cueste trabajo.
 > - R6 se convierte en recuperación de contraseña por correo o SMS con código temporal.
+
+### Estructura del documento de requerimientos — estándar IEEE 830 (p. 91–94)
+
+El **documento de requerimientos** (en inglés *SRS*, *Software Requirements Specification*) es el documento oficial de lo que deben implementar los desarrolladores. **Incluye los requerimientos de usuario y los de sistema** (p. 91).
+
+Lo leen usuarios y desarrolladores, lo tienen que entender y servir a los 2 grupos.
+**El estándar IEEE 830 (IEEE, 1998)** es un estándar genérico que se adapta a cada proyecto. 
+
+| Capítulo | Qué contiene |
+|---|---|
+| **Prefacio** | Historial de versiones: por qué se creó cada versión y qué cambió. |
+| **Introducción** | Por qué se necesita el sistema ? sus funciones en breve, cómo trabaja con otros sistemas y cómo encaja en los objetivos del negocio. |
+| **Glosario** | Definición de los términos técnicos. para los no computologos. |
+| **Definición de requerimientos de usuario** | Servicios que da el sistema al usuario y requerimientos no funcionales, en lenguaje natural y diagramas que el cliente entienda. Estándares de producto y de proceso que hay que seguir. |
+| **Arquitectura del sistema** | Vista general de la arquitectura: cómo se reparten las funciones entre módulos. |
+| **Especificación de requerimientos del sistema** | Requerimientos funcionales y no funcionales con más detalle. Interfaces con otros sistemas. |
+| **Modelos del sistema** | UML modelos de objetos, de flujo de datos, descripcion de clases. |
+| **Evolución del sistema** | Cambios esperados. Para no tomar decisiones de diseño que bloqueen cambios futuros. |
+| **Apéndices** | Requerimientos de hardware (configuración mínima y óptima) y de la base de datos (organización lógica de los datos y sus relaciones). |
+| **Índice** | Índice alfabético. |
+
+**¿Qué tan detallado?** Depende del tipo de sistema y del proceso (p. 92–94):
+- **Más detalle:** sistemas críticos, desarrollo subcontratado a otra empresa y sistemas grandes que mezclan hardware y software. 
+- **Menos detalle:** desarrollo iterativo dentro de la misma empresa o enfoque evolutivo. Se enfoca en los requerimientos de usuario y los no funcionales de alto nivel. 
+
+**¿Y en ágil?** se recomienda escribir un documento corto con los requerimientos de negocio (en la introduccion) y de confiabilidad (definicion de requerimientos de usuario y especificacion del sistema), porque se olvidan fácilmente. 
 
 ---
 
@@ -391,6 +417,6 @@ Contenido en (p. 110–111):
 - **1.2** Product Owner decide *qué implementar*, Scrum Master facilita, el equipo, negocia con el owner y  deciden *cómo implementarlo*.
 - **1.3** Scrum administra un proyecto, XP es mas especifico en las practicas técnicas y de desarrollo.
 - **1.4** Cascada = fases en orden; iterativo = todas las fases en ciclos cortos.
-- **1.5** Requerimientos funcionales, de información y no funcionales; deben de ser: completos, consistentes, verificables y sin ambigüedad.
+- **1.5** Requerimientos funcionales, de información y no funcionales; deben de ser: completos, consistentes, verificables y sin ambigüedad; se documentan con la estructura del estándar IEEE 830.
 - **1.6** Casos de uso = quién hace qué con el sistema; diagramas de actividad = en qué orden.
 - **1.7** Validar pronto con el usuario, porque un error de requerimientos cuesta más mientras más tarde se encuentra.
